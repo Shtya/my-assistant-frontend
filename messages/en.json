@@ -1,0 +1,48 @@
+{
+    "there-no-data": "No results",
+    "search": "Search...",
+    "Dashboard": {
+        "recentFolders": "Recent Folders",
+        "createFolder": "Create Folder",
+        "uploadFolder": "Upload Folder",
+        "recentFiles": "Recent Files",
+        "uploadFile": "Upload File"
+    },
+    "Sidebar": {
+        "main": "Main",
+        "filesAndFolders": "Files & Folders",
+        "sections": "Sections",
+        "aiChat": "Ai Chat",
+        "people": "People",
+        "history" : "History",
+        "messages" : "History",
+        "account" : "My account",
+        "new-chat" : "New chat"
+    },
+
+    
+  "auth": {
+    "signin": {
+      "email_valid": "Enter a valid email",
+      "email_required": "Email is required",
+      "password_required": "Password is required"
+    },
+    "signup": {
+      "name_required": "First name is required",
+      "name_min": "First name must be at least 2 characters",
+      "phone_required": "Phone number is required",
+      "email_valid": "Enter a valid email",
+      "email_required": "Email is required",
+      "password_min": "Password must be at least 6 characters",
+      "password_required": "Password is required",
+      "role": "Please select your role.",
+      "department": "Please select a department.",
+      "avatar": "Please upload a profile picture."
+    },
+    "forgot": {
+      "email_valid": "Enter a valid email",
+      "email_required": "Email is required"
+    }
+  }
+
+}

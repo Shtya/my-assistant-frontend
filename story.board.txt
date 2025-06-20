@@ -1,0 +1,127 @@
+Users
+- id, name, email, password, avatar
+
+Boards
+- id, title, visibility, created_by
+
+BoardMembers
+- board_id, user_id, role
+
+Lists
+- id, title, board_id, position
+
+Cards
+- id, title, description, list_id, due_date, position, issue_type, status, estimate_time, time_spent, time_remaining
+
+CardMembers
+- card_id, user_id
+
+Labels
+- id, title, color, board_id
+
+CardLabels
+- card_id, label_id
+
+Attachments
+- id, url, filename, card_id
+
+Comments
+- id, text, card_id, user_id
+
+Checklists
+- id, title, card_id
+
+ChecklistItems
+- id, content, is_done, checklist_id
+
+Activities
+- id, card_id, user_id, type, message
+
+Notifications
+- id, user_id, card_id, message, read, timestamp
+
+
+
+
+
+| Module                | Responsibilities             |
+| --------------------- | ---------------------------- |
+| `AuthModule`          | تسجيل الدخول والتوثيق        |
+| `UsersModule`         | بيانات المستخدم              |
+| `BoardsModule`        | CRUD للبورد والأعضاء         |
+| `ListsModule`         | CRUD للقوائم                 |
+| `CardsModule`         | إضافة/تعديل الكروت           |
+| `LabelsModule`        | تصنيفات الكروت               |
+| `CommentsModule`      | تعليقات على الكروت           |
+| `ChecklistsModule`    | قوائم فرعية داخل الكروت      |
+| `AttachmentsModule`   | رفع ملفات للكروت             |
+| `NotificationsModule` | تذكيرات وتحديثات             |
+| `TimeTrackingModule`  | تسجيل الوقت المقدر والمستهلك |
+| `ActivityLogModule`   | تاريخ الأنشطة والتعديلات     |
+
+
+
+
+🎨 Frontend (React or Next.js) Features Summary
+🟢 1. Create Card (Inline Input)
+إدخال مباشر داخل القائمة
+
+اختصارات: Enter لإنشاء، Esc لإلغاء
+
+🟢 2. Card Fields
+عنوان + وصف غني (روابط، أكواد، تنسيق)
+
+تصنيفات بالألوان
+
+تاريخ استحقاق + تقويم
+
+رفع مرفقات
+
+تعيين أعضاء (مع @mention)
+
+🟢 3. Checklists
+عدة قوائم داخل الكارت
+
+مؤشر نسبة الإنجاز
+
+🟢 4. Comments & Activity Log
+تعليقات مرتبة (Markdown)
+
+سجل تغييرات + إشعارات
+
+🟡 5. Issue Types (Jira Style)
+أنواع: Task, Bug, Epic, Story, Sub-task
+
+تؤثر على: الأيقونة + القواعد + الحقول
+
+🟡 6. Time Tracking
+الوقت المقدر، المستخدم، المتبقي
+
+عرض تلخيص في الكارت + تقرير قابل للتصدير
+
+🟡 7. Custom Workflows
+مراحل مخصصة حسب النوع
+
+قيود على الانتقال بين المراحل
+
+🟢 8. Notifications & Reminders
+تذكيرات ذكية قبل تاريخ الاستحقاق
+
+إشعارات بالبريد أو داخل التطبيق
+
+🟢 9. Filters & Search
+فلترة حسب: العضو، التصنيف، النوع، التاريخ
+
+بحث كامل في العنوان والوصف
+
+🟢 10. Integration APIs
+API لإنشاء وتعديل الكروت
+
+Webhooks للتحديثات
+
+تكامل مع: Slack, GitHub, Google Calendar
+
+
+
+
+
