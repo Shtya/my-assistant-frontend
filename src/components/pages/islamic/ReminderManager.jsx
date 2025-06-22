@@ -113,7 +113,6 @@ export default function ReminderManager({ prayerTimes }) {
 
   // Start reminder with repetition
   const startReminder = (reminder) => {
-    console.log(`Starting reminder: ${reminder.text}`);
     playAudio(reminder.audio);
     
     if (reminder.repeatInterval > 0) {
@@ -122,7 +121,6 @@ export default function ReminderManager({ prayerTimes }) {
         : reminder.repeatInterval * 60 * 60 * 1000;
       
       repeatTimerRef.current = setInterval(() => {
-        console.log(`Repeating reminder: ${reminder.text}`);
         playAudio(reminder.audio);
       }, intervalMs);
     }
@@ -130,7 +128,6 @@ export default function ReminderManager({ prayerTimes }) {
 
   // Stop reminder
   const stopReminder = (reminder) => {
-    console.log(`Stopping reminder: ${reminder.text}`);
     if (repeatTimerRef.current) {
       clearInterval(repeatTimerRef.current);
     }
@@ -139,7 +136,6 @@ export default function ReminderManager({ prayerTimes }) {
 
   // Play audio
   const playAudio = (audioType) => {
-    console.log(`Playing audio: ${audioType}`);
     // In a real app, this would play the actual audio file
     // audioRef.current.src = getAudioPath(audioType);
     // audioRef.current.play();

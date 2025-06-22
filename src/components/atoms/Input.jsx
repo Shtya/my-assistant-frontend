@@ -45,8 +45,8 @@ export default function Input({ unite = '', label, type = 'text', value, onChang
             )}
 
             {unite && <span className='absolute right-3 top-1/2 -translate-y-1/2 text-primary-light  text-sm pointer-events-none'>{unite}</span>}
-            {label && <span className={` absolute top-0 mt-[-.2px]  bg-white h-[2px] overflow-hidden left-[5px] px-[2px] z-[1] duration-500 ${shouldFloat ? " " : "w-0 !px-0 " }`} > {label} </span>}
-            
+            {label && <span className={` absolute top-0 mt-[-.2px]  bg-white h-[2px] overflow-hidden left-[5px] px-[2px] z-[1] duration-500 ${shouldFloat ? ' ' : 'w-0 !px-0 '}`}> {label} </span>}
+
             <input
                 ref={inputRef}
                 type={type}
@@ -58,7 +58,7 @@ export default function Input({ unite = '', label, type = 'text', value, onChang
                 placeholder={!label ? placeholder : ''}
                 min={type === 'number' ? min : undefined}
                 max={type === 'number' ? max : undefined}
-                className={`w-full pr-10 p-2 h-full rounded border outline-none duration-300 text-text-base placeholder:text-text-soft
+                className={`w-full pr-10 p-2 h-8 rounded border outline-none duration-300 text-text-base placeholder:text-text-soft
           ${shouldFloat ? 'border-primary !bg-white ' : 'bg-background-subtle border-border hover:border-border-hover'}
         `}
             />

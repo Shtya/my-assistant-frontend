@@ -1,0 +1,347 @@
++----------------+       +-------------------+       +-----------------+
+|     Users      |       |      Boards       |       |      Lists      |
++----------------+       +-------------------+       +-----------------+
+| PK: id         |<----->| PK: id            |<----->| PK: id          |
+|    name        |       |    title          |       |    title        |
+|    email       |       |    visibility     |       |    board_id (FK)|
+|    avatar      |       |    created_by (FK)|       |    position     |
++----------------+       +-------------------+       +-----------------+
+       ^                                                    ^
+       |                                                    |
+       v                                                    v
++----------------+       +-------------------+       +-----------------+
+|  BoardMembers  |       |       Cards       |       |   CardLabels    |
++----------------+       +-------------------+       +-----------------+
+| PK: board_id(FK)|      | PK: id            |       | PK: card_id (FK)|
+| PK: user_id (FK)|      |    title          |       | PK: label_id(FK)|
+|    role        |       |    description    |       +-----------------+
++----------------+       |    list_id (FK)   |               ^
+                         |    due_date       |               |
+                         |    position       |               v
+                         |    issue_type     |       +-----------------+
+                         |    status         |       |      Labels      |
+                         |    estimate_time  |       +-----------------+
+                         |    time_spent     |       | PK: id          |
+                         |    time_remaining |       |    title        |
+                         +-------------------+       |    color        |
+                                ^                    |    board_id (FK)|
+                                |                    +-----------------+
+                                v
++----------------+       +-------------------+       +-----------------+
+|  CardMembers   |       |    Checklists     |       | ChecklistItems  |
++----------------+       +-------------------+       +-----------------+
+| PK: card_id (FK)|      | PK: id            |       | PK: id          |
+| PK: user_id (FK)|      |    title          |       |    content      |
++----------------+       |    card_id (FK)   |       |    is_done      |
+                         +-------------------+       | checklist_id(FK)|
+                                ^                    +-----------------+
+                                |                            ^
+                                v                            |
++----------------+       +-------------------+               |
+|  Activities    |       |    Comments       |               |
++----------------+       +-------------------+               |
+| PK: id         |       | PK: id            |               |
+|    card_id (FK)|       |    text           |               |
+|    user_id (FK)|       |    card_id (FK)   |               |
+|    type        |       |    user_id (FK)   |               |
+|    message     |       |    timestamp      |               |
+|    timestamp   |       +-------------------+               |
++----------------+                                          |
+        ^                                                   |
+        |                                                   v
++----------------+       +-------------------+       +-----------------+
+| Notifications  |       | CustomFieldDefs   |       |  CardCustomFields|
++----------------+       +-------------------+       +-----------------+
+| PK: id         |       | PK: id            |       | PK: card_id (FK)|
+|    user_id (FK)|       |    name           |       | PK: field_id(FK)|
+|    card_id (FK)|       |    type           |       |    value        |
+|    board_id(FK)|       |    options        |       +-----------------+
+|    message     |       |    board_id (FK)  |
+|    read        |       +-------------------+
+|    timestamp   |
++----------------+
+
++----------------+       +-------------------+
+|  CardTemplates |       | AutomationRules   |
++----------------+       +-------------------+
+| PK: id         |       | PK: id            |
+|    name        |       |    name           |
+|    description |       |    trigger_type   |
+|    fields (JSON)|      |    trigger_value  |
++----------------+       |    action_type    |
+                         |    action_value   |
+                         |    enabled        |
+                         +-------------------+
+
+
+
+
+-- Enable UUID extension if needed
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+-- Users table
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    avatar TEXT,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Boards table
+CREATE TABLE boards (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    visibility VARCHAR(20) NOT NULL CHECK (visibility IN ('public', 'team', 'private')),
+    created_by INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Board members junction table
+CREATE TABLE board_members (
+    board_id INTEGER REFERENCES boards(id) ON DELETE CASCADE,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    role VARCHAR(20) NOT NULL CHECK (role IN ('admin', 'member')),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (board_id, user_id)
+);
+
+-- Lists table
+CREATE TABLE lists (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    board_id INTEGER REFERENCES boards(id) ON DELETE CASCADE,
+    position INTEGER NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Labels table
+CREATE TABLE labels (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    color VARCHAR(50) NOT NULL,
+    board_id INTEGER REFERENCES boards(id) ON DELETE CASCADE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Cards table
+CREATE TABLE cards (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    list_id INTEGER REFERENCES lists(id) ON DELETE CASCADE,
+    due_date TIMESTAMP WITH TIME ZONE,
+    position INTEGER NOT NULL,
+    issue_type VARCHAR(20) NOT NULL CHECK (issue_type IN ('task', 'bug', 'story', 'epic')),
+    status VARCHAR(20) NOT NULL CHECK (status IN ('open', 'in-progress', 'done', 'blocked')),
+    estimate_time INTEGER DEFAULT 0,
+    time_spent INTEGER DEFAULT 0,
+    time_remaining INTEGER DEFAULT 0,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Card members junction table
+CREATE TABLE card_members (
+    card_id INTEGER REFERENCES cards(id) ON DELETE CASCADE,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (card_id, user_id)
+);
+
+-- Card labels junction table
+CREATE TABLE card_labels (
+    card_id INTEGER REFERENCES cards(id) ON DELETE CASCADE,
+    label_id INTEGER REFERENCES labels(id) ON DELETE CASCADE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (card_id, label_id)
+);
+
+-- Checklists table
+CREATE TABLE checklists (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    card_id INTEGER REFERENCES cards(id) ON DELETE CASCADE,
+    position INTEGER NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Checklist items table
+CREATE TABLE checklist_items (
+    id SERIAL PRIMARY KEY,
+    content TEXT NOT NULL,
+    is_done BOOLEAN DEFAULT FALSE,
+    checklist_id INTEGER REFERENCES checklists(id) ON DELETE CASCADE,
+    position INTEGER NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Comments table
+CREATE TABLE comments (
+    id SERIAL PRIMARY KEY,
+    text TEXT NOT NULL,
+    card_id INTEGER REFERENCES cards(id) ON DELETE CASCADE,
+    user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Activities table (card history)
+CREATE TABLE activities (
+    id SERIAL PRIMARY KEY,
+    card_id INTEGER REFERENCES cards(id) ON DELETE CASCADE,
+    user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
+    type VARCHAR(50) NOT NULL,
+    message TEXT NOT NULL,
+    old_value TEXT,
+    new_value TEXT,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Attachments table
+CREATE TABLE attachments (
+    id SERIAL PRIMARY KEY,
+    url TEXT NOT NULL,
+    filename VARCHAR(255) NOT NULL,
+    card_id INTEGER REFERENCES cards(id) ON DELETE CASCADE,
+    uploaded_by INTEGER REFERENCES users(id) ON DELETE SET NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Notifications table
+CREATE TABLE notifications (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    card_id INTEGER REFERENCES cards(id) ON DELETE SET NULL,
+    board_id INTEGER REFERENCES boards(id) ON DELETE SET NULL,
+    message TEXT NOT NULL,
+    read BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Custom field definitions
+CREATE TABLE custom_field_definitions (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    type VARCHAR(50) NOT NULL CHECK (type IN ('text', 'number', 'select', 'textarea', 'date')),
+    options JSONB,
+    board_id INTEGER REFERENCES boards(id) ON DELETE CASCADE,
+    required BOOLEAN DEFAULT FALSE,
+    position INTEGER NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Card custom field values
+CREATE TABLE card_custom_fields (
+    card_id INTEGER REFERENCES cards(id) ON DELETE CASCADE,
+    field_id INTEGER REFERENCES custom_field_definitions(id) ON DELETE CASCADE,
+    value TEXT,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (card_id, field_id)
+);
+
+-- Card templates
+CREATE TABLE card_templates (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    board_id INTEGER REFERENCES boards(id) ON DELETE CASCADE,
+    fields JSONB NOT NULL, -- Stores template field definitions
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Automation rules
+CREATE TABLE automation_rules (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    board_id INTEGER REFERENCES boards(id) ON DELETE CASCADE,
+    trigger_type VARCHAR(50) NOT NULL CHECK (trigger_type IN ('status_change', 'move', 'due_date')),
+    trigger_value JSONB NOT NULL, -- e.g., {"to": "done"} or {"days_before": 1}
+    action_type VARCHAR(50) NOT NULL CHECK (action_type IN ('log_time', 'notify', 'change_status')),
+    action_value JSONB NOT NULL, -- e.g., {"value": "remaining"} or {"message": "Due soon"}
+    enabled BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Indexes for better performance
+CREATE INDEX idx_cards_list_id ON cards(list_id);
+CREATE INDEX idx_lists_board_id ON lists(board_id);
+CREATE INDEX idx_activities_card_id ON activities(card_id);
+CREATE INDEX idx_notifications_user_id ON notifications(user_id);
+CREATE INDEX idx_notifications_read ON notifications(read);
+CREATE INDEX idx_custom_field_defs_board_id ON custom_field_definitions(board_id);
+
+
+
+
+
+
+
+# مخطط قاعدة البيانات (ERD) لنظام كانبان المحسن
+
+## الكيانات الرئيسية:
+
+١. **المستخدمون (Users)**:
+   - تخزن معلومات جميع المستخدمين في النظام
+   - لكل مستخدم: اسم، بريد إلكتروني، صورة شخصية
+
+٢. **اللوحات (Boards)**:
+   - كل لوحة تمثل مشروعاً أو فريقاً
+   - إعدادات الخصوصية: عامة/فريقية/خاصة
+
+٣. **القوائم (Lists)**:
+   - الأعمدة داخل كل لوحة (مثل: "قيد التنفيذ"، "مكتمل")
+   - لها ترتيب معين داخل اللوحة
+
+٤. **البطاقات (Cards)**:
+   - المهام الفردية داخل القوائم
+   - تحتوي على: عنوان، وصف، موعد نهائي، نوع المهمة
+
+## العلاقات الأساسية:
+
+- كل **لوحة** تحتوي على عدة **قوائم**
+- كل **قائمة** تحتوي على عدة **بطاقات**
+- كل **بطاقة** يمكن أن يكون لها:
+  - أعضاء (أعضاء الفريق المسؤولين)
+  - تسميات (لتصنيف المهام)
+  - قوائم مرجعية (Checklists)
+  - تعليقات
+  - أنشطة (سجل التغييرات)
+
+## الميزات المتقدمة في المخطط:
+
+١. **الحقول المخصصة**:
+   - `CustomFieldDefs`: تحدد أنواع الحقول الإضافية لكل لوحة
+   - `CardCustomFields`: تخزن قيم الحقول لكل بطاقة
+
+٢. **القوالب**:
+   - `CardTemplates`: تخزن هياكل البطاقات الجاهزة
+   - يمكن تطبيقها بسرعة على البطاقات الجديدة
+
+٣. **الأتمتة**:
+   - `AutomationRules`: قواعد تلقائية مثل:
+     - "عند نقل البطاقة إلى 'مكتمل'، سجل الوقت المتبقي"
+     - "أرسل تنبيهاً قبل الموعد النهائي بيوم"
+
+٤. **التحليلات**:
+   - يتم حسابها من خلال:
+     - وقت التنفيذ (`time_spent`)
+     - الوقت المتبقي (`time_remaining`)
+     - سجل الأنشطة (`Activities`)
+
+## فوائد هذا التصميم:
+
+١. **مرونة عالية**: يدعم أنواع مختلفة من المشاريع
+٢. **تتبع كامل**: يسجل كل تغيير يحدث على البطاقات
+٣. **تكامل الميزات**: جميع الميزات المتقدمة متصلة ببعضها
+٤. **أداء جيد**: تصميم مناسب للتطبيقات الكبيرة
+
+هذا المخطط يغطي جميع الميزات التي تمت إضافتها ويسمح بالتوسع المستقبلي دون مشاكل.

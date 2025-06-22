@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Animation({ children }) {
     return (
-        <div className='relative overflow-hidden min-h-[120px]'>
+        <div className='relative overflow-hidden min-h-[80px]'>
             <AnimatePresence mode='wait'>
                 <motion.div key={children} initial={{ opacity: 0, rotateX: 90 }} animate={{ opacity: 1, rotateX: 0 }} exit={{ opacity: 0, rotateX: -90 }} transition={{ duration: 0.5 }} className=''>
                     {children}

@@ -4,10 +4,8 @@ export const fetchPrayerTimes = async (lat, lng) => {
     const today = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
     const response = await fetch(`https://api.aladhan.com/v1/timings/${today}?latitude=${lat}&longitude=${lng}&method=5`);
     const data = await response.json();
-    console.log(data)
     return data.data.timings;
   } catch (error) {
-    console.error('Error fetching prayer times:', error);
     return null;
   }
 };

@@ -5,7 +5,7 @@ import { routing } from '@/i18n/routing';
 import NestedLayout from '@/components/molecules/NestedLayout';
 import { GlobalProvider } from '@/context/Context';
 import { Toaster } from 'react-hot-toast';
-import { Tajawal, Open_Sans } from 'next/font/google';
+import { Tajawal, Open_Sans , Scheherazade_New , Amiri_Quran } from 'next/font/google';
 
 // ✅ Load fonts with custom variables
 const tajawal = Tajawal({
@@ -14,6 +14,20 @@ const tajawal = Tajawal({
   weight: ['400', '500', '700'], // adjust as needed
   display: 'swap',
 });
+
+
+const scheherazade = Scheherazade_New({
+  subsets: ['arabic'],
+  weight: ['400', '700'],
+  variable: '--font-amiri-quran',
+});
+
+// const amiriQuran = Amiri_Quran({
+//   subsets: ['arabic'],
+//   variable: '--font-amiri-quran',
+//   weight: '400', // Amiri Quran has only one weight
+//   display: 'swap',
+// });
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -60,7 +74,7 @@ export default async function RootLayout({ children, params }) {
     }
 
     return (
-        <html lang={locale} className={`${tajawal.variable} ${openSans.variable}`} dir={locale == 'en' ? 'ltr' : 'rtl'}>
+        <html lang={locale} className={`${tajawal.variable} ${scheherazade.variable} ${openSans.variable}`} dir={locale == 'en' ? 'ltr' : 'rtl'}>
             <body className='scroll'>
                 <Toaster />
                 <NextIntlClientProvider locale={locale}>

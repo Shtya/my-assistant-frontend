@@ -1,0 +1,36 @@
+# .cursorrules
+
+# 👇 قواعد عامة
+Always write clean and readable JavaScript.
+Do not use TypeScript.
+Use functional components and arrow functions.
+Avoid unnecessary dependencies or abstraction.
+Comment complex logic clearly.
+
+# 👇 Next.js محددات
+Use Next.js file structure and routing best practices.
+Use dynamic imports for heavy components.
+Use built-in Next.js Image for image optimization.
+Avoid direct access to window/document unless in useEffect.
+
+# 👇 الترجمة باستخدام next-intl
+Always use `useTranslations()` from next-intl for any text visible to the user.
+Never hardcode UI text strings; always use translation keys like t('home.title').
+If missing a key, fallback gracefully and mention it in comments.
+
+# 👇 Tailwind CSS
+Use Tailwind CSS classes for all styling.
+Prefer utility-first styling over custom CSS.
+Use consistent spacing, padding, and rounded classes.
+Avoid inline `style={}` when Tailwind utility can be used instead.
+Group Tailwind classes by layout > spacing > color > interaction.
+
+# 👇 تحسينات واجهة المستخدم
+Prioritize accessibility (a11y): use semantic HTML and `aria` attributes.
+Add hover and focus states to buttons/links.
+Use dark mode support via Tailwind’s dark: modifier.
+
+# 👇 أخرى
+Split components if they exceed 100 lines.
+Use meaningful file and variable names.
+Ensure responsive design using Tailwind's responsive classes.

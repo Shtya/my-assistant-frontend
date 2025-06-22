@@ -14,7 +14,7 @@ export default function NestedLayout({ children }) {
             </div>
 
             <Sidebar />
-            <main className={` relative ml-[70px] flex-1 transition-all  duration-300 w-full ${collapsed ? '!max-w-[calc(100%-60px)]' : '!max-w-[calc(100%-260px)]'} `}>{children}</main>
+            <main className={` relative ml-[70px] flex-1 transition-all  duration-300 rtl:pl-[10px] ltr:pr-[10px] w-full ${collapsed ? '!max-w-[calc(100%-60px)]' : '!max-w-[calc(100%-260px)]'} `}>{children}</main>
         </div>
     );
 }

@@ -31,7 +31,7 @@ export default function Sidebar() {
      [collapsed]);
 
     return (
-        <aside className={cn('ml-[10px] bg-white/80 text-text-base shadow-md rounded-2xl border border-border/70', 'backdrop-blur-md fixed  top-[16px] h-[calc(100vh-32px)] z-50 flex flex-col transition-all duration-300 ease-in-out', collapsed ? 'w-[60px]' : 'w-[260px]')}>
+        <aside className={cn('ml-[10px] shadow-inner bg-white/80 text-text-base  rounded-lg border border-border/70', 'backdrop-blur-md fixed  top-[16px] h-[calc(100vh-32px)] z-50 flex flex-col transition-all duration-300 ease-in-out', collapsed ? 'w-[60px]' : 'w-[260px]')}>
             {/* Header */}
             <div className='flex  items-center justify-between p-3 border-b border-border'>
                 {!collapsed && <span className='text-sm font-bold text-text-base'>Ahmed Assistant</span>}
