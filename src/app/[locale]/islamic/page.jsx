@@ -130,10 +130,11 @@ export default function IslamicCompanion() {
         });
         setShowNotification(true);
     };
+    
 
     return (
         <div dir='rtl' className=' cairo min-h-screen   text-text-base'>
-            <div className='  py-8'>
+            <div className='  py-4 max-[700px]:ml-2  ml-4 '>
                 <div className='text-center mb-4 mt-8'>
                     <h1 className='text-3xl max-md:text-xl font-bold mb-2 text-green-800'> {tabs.find(e => e.id == activeTab)?.title} </h1>
                 </div>

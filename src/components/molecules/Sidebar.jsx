@@ -1,6 +1,6 @@
 'use client';
-
-import { Home, Hourglass, HeartPulse, Notebook, MoonStar, BookOpen, Trophy, ListIcon, Podcast, ChevronLeft, ChevronRight, Moon, Sun, Menu } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Home, Hourglass, HeartPulse, Notebook, MoonStar, BookOpen, Trophy, ListIcon, Podcast, ChevronLeft, ChevronRight, Moon, Sun, Menu, Expand, Minimize, Minimize2, Headphones, Maximize2, Languages, Shield, CircleDashed, Sunrise, Hand, Droplets, Sprout, HandHeart, Palmtree, MenuIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { useValues } from '@/context/Context';
@@ -8,8 +8,9 @@ import { useLocale } from 'next-intl';
 import { cn } from '@/helper/cn';
 
 export default function Sidebar() {
-    const { collapsed, setCollapsed, isMobile, setIsMobile } = useValues();
+    const { collapsed, setCollapsed, isMobile, setIsMobile, fullScreenMode, setFullScreenMode } = useValues();
     const [theme, setTheme] = useState('light');
+    const [browserFullscreen, setBrowserFullscreen] = useState(false);
 
     const router = useRouter();
     const locale = useLocale();
@@ -20,6 +21,14 @@ export default function Sidebar() {
             setTheme(saved);
             document.documentElement.classList.toggle('dark', saved === 'dark');
         }
+
+        // Handle browser fullscreen change events
+        const handleFullscreenChange = () => {
+            setBrowserFullscreen(!!document.fullscreenElement);
+        };
+
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
     }, []);
 
     const toggleTheme = () => {
@@ -29,42 +38,68 @@ export default function Sidebar() {
         localStorage.setItem('theme', newTheme);
     };
 
-    const pathname = usePathname(); // Get current path
+    const toggleContainerFullscreen = () => {
+        setFullScreenMode(!fullScreenMode);
+    };
+
+    const toggleBrowserFullscreen = async () => {
+        try {
+            if (!document.fullscreenElement) {
+                await document.documentElement.requestFullscreen();
+                setBrowserFullscreen(true);
+            } else {
+                if (document.exitFullscreen) {
+                    await document.exitFullscreen();
+                    setBrowserFullscreen(false);
+                }
+            }
+        } catch (err) {
+            console.error('Error toggling fullscreen:', err);
+        }
+    };
+
+    const pathname = usePathname();
 
     const toggleLocale = () => {
         const newLocale = locale === 'en' ? 'ar' : 'en';
-        router.replace(pathname, { locale: newLocale }); // Use current path instead of '/'
+        router.replace(pathname, { locale: newLocale });
     };
 
     const handleAction = action => {
         if (action === 'toggleTheme') toggleTheme();
         if (action === 'toggleLocale') toggleLocale();
+        if (action === 'toggleContainerFullscreen') toggleContainerFullscreen();
+        if (action === 'toggleBrowserFullscreen') toggleBrowserFullscreen();
     };
 
     useEffect(() => {
         document.body.classList.toggle('sidebar-collapsed', collapsed === false);
     }, [collapsed]);
 
-    // ✅ Dynamic menu items based on theme and locale
     const items = [
-        { label: 'Home', icon: Home, href: '/' },
-        { label: 'Pomodoro', icon: Hourglass, href: '/pomodoro' },
-        { label: 'Routine Tracker', icon: HeartPulse, href: '/routine-tracker' },
-        { label: 'Note', icon: Notebook, href: '/note' },
+        { label: 'Dashboard', icon: Home, href: '/' },
+        { label: 'Focus Timer', icon: Hourglass, href: '/pomodoro' },
+        { label: 'Habit Tracker', icon: HeartPulse, href: '/routine-tracker' },
+        { label: 'Quick Notes', icon: Notebook, href: '/note' },
         { divider: true },
-        { label: 'Muslim Life', icon: MoonStar, href: '/islamic' },
-        { label: 'English Lab', icon: BookOpen, href: '/english' },
-        { label: 'My Fitness Journey', icon: Trophy, href: '/fitness-journey' },
-        { label: 'To Do', icon: ListIcon, href: '/to-do-list' },
-        { label: 'Podcasts', icon: Podcast, href: '/bodcast' },
+        { label: 'Spiritual Growth', icon: MoonStar, href: '/islamic' },
+        { label: 'Language Learning', icon: BookOpen, href: '/english' },
+        { label: 'Fitness Goals', icon: Trophy, href: '/fitness-journey' },
+        { label: 'Tasks & Reminders', icon: ListIcon, href: '/to-do-list' },
+        { label: 'Audio Library', icon: Headphones, href: '/bodcast' }, // Changed from Podcast to Headphones
         { divider: true },
         {
-            label: locale === 'en' ? 'العربية' : 'English',
-            icon: () => <span className='text-xs font-bold'>{locale === 'en' ? 'AR' : 'EN'}</span>,
+            label: browserFullscreen ? 'Exit Fullscreen' : 'Full View',
+            icon: browserFullscreen ? Minimize2 : Maximize2, // More modern icons
+            action: 'toggleBrowserFullscreen',
+        },
+        {
+            label: locale === 'en' ? 'Switch to Arabic' : 'التغيير إلى الإنجليزية',
+            icon: Languages, // Using Languages icon instead of text
             action: 'toggleLocale',
         },
         {
-            label: theme === 'light' ? 'Dark Mode' : 'Light Mode',
+            label: theme === 'light' ? 'Night Mode' : 'Day Mode',
             icon: theme === 'light' ? Moon : Sun,
             action: 'toggleTheme',
         },
@@ -72,15 +107,28 @@ export default function Sidebar() {
 
     return (
         <>
-            <div onClick={() => setCollapsed(!collapsed)} className={` ${isMobile ? "scale-1" : "scale-0"} duration-500 cursor-pointer group top-0 z-[10000000000] ltr:left-0 rtl:right-0 fixed bg-primary w-[30px] h-[30px] flex items-center justify-center`}>
-                <Menu size={16} className=" group-hover:scale-[.95] duration-500 " />
-            </div>
-            
+
+
             <aside className={cn(`${isMobile ? ' left-0 ' : 'ltr:ml-[10px] rtl:mr-[10px]'}`, ' max-[700px]:-left-[70px]  shadow-inner bg-white/80  text-text-base rounded-lg border border-border/70', 'backdrop-blur-md fixed top-[16px] h-[calc(100vh-32px)] z-50 flex flex-col transition-all duration-300 ease-in-out', collapsed ? 'w-[60px]' : '!left-1 w-[260px]')}>
                 <div className='flex items-center justify-between p-3 border-b border-border dark:border-gray-700'>
-                    {!collapsed && <span className='text-sm font-bold'>Ahmed Assistant</span>}
-                    <button onClick={() => setCollapsed(!collapsed)} className='p-1 rounded hover:bg-primary hover:text-white text-text-soft dark:text-gray-300'>
-                        {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
+                    {!collapsed && (
+                        <motion.span initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3 }} className='flex items-center gap-2 px-1'>
+                            <motion.div
+                                animate={{ rotate: 10 }}
+                                transition={{
+                                    repeat: Infinity,
+                                    repeatType: 'reverse',
+                                    duration: 2,
+                                }}>
+                                <Sprout size={22} className='text-primary' />
+                            </motion.div>
+                            <span className='text-xl font-bold bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent'>Barakah</span>
+                        </motion.span>
+                    )}
+
+
+                    <button onClick={() => setCollapsed(!collapsed)} className={` ${isMobile ? ` ${collapsed && "text-white !left-[60px] top-[-25px] relative duration-500 cursor-pointer group z-[10000000000]  bg-primary w-[30px] h-[30px] flex items-center justify-center"} ` : ""} p-1 rounded hover:bg-primary hover:text-white text-gray-700 dark:text-gray-300`}>
+                        {collapsed ? ( !isMobile  ? <ChevronRight size={20} />  : <MenuIcon size={18} /> ) : <ChevronLeft size={20} />}
                     </button>
                 </div>
 

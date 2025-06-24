@@ -335,6 +335,11 @@ html {
     @apply border border-border/70 shadow-inner relative rounded-lg  w-full bg-white/80 backdrop-blur-[2px] p-8;
 }
 
+.arabic-text {
+  /* font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade New', serif; */
+  line-height: 1.7;
+}
+
 .card::before {
     content: '';
     position: absolute;
