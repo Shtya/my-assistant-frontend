@@ -46,7 +46,7 @@ export default function Adhkar() {
 
     return (
         <>
-            <div className={`bg-white  rounded-lg shadow max-md:!px-2 p-6 ${fullScreenMode ? 'fixed inset-0 z-50 overflow-y-auto' : 'relative'}`}>
+            <div className={`card2 shadow max-md:!px-2 p-6 ${fullScreenMode ? 'fixed inset-0 z-50 overflow-y-auto' : 'relative'}`}>
                 {/* Full screen toggle button */}
                 <button onClick={toggleFullScreen} className={`absolute top-2 left-2  md:top-4 md:left-4 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors z-10 ${fullScreenMode ? 'text-primary' : 'text-gray-600'}`} aria-label={fullScreenMode ? 'Minimize' : 'Expand'}>
                     {fullScreenMode ? <Minimize size={20}  className="max-md:!w-4 " /> : <Expand size={20} className="max-md:!w-4 "  />}
@@ -68,9 +68,9 @@ export default function Adhkar() {
                             {filteredAdhkar.map((item, index) => (
                                 <motion.div key={item.dhikr + index} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.05 }} className='group relative'>
                                     {/* 3D Container */}
-                                    <div className={` -mx-4 relative rounded-xl max-md:p-2 p-5 transition-all duration-300 bg-white/80 border border-gray-100 shadow-[5px_5px_10px_rgba(184,185,190,0.2),-5px_-5px_10px_rgba(255,255,255,0.8)] hover:shadow-[7px_7px_15px_rgba(184,185,190,0.3),-7px_-7px_15px_rgba(255,255,255,0.9)] active:shadow-[inset_3px_3px_5px_rgba(184,185,190,0.2),inset_-3px_-3px_5px_rgba(255,255,255,0.8)] `}>
+                                    <div className={`  card2 relative max-md:p-2 !p-5 transition-all duration-300  shadow-[5px_5px_10px_rgba(184,185,190,0.2),-5px_-5px_10px_rgba(255,255,255,0.8)] hover:shadow-[7px_7px_15px_rgba(184,185,190,0.3),-7px_-7px_15px_rgba(255,255,255,0.9)] active:shadow-[inset_3px_3px_5px_rgba(184,185,190,0.2),inset_-3px_-3px_5px_rgba(255,255,255,0.8)] `}>
                                         {/* 3D Accent Bar */}
-                                        <div className={` max-md:hidden absolute top-0 left-0 h-full max-md:w-1 w-1.5 rounded-l-lg bg-gradient-to-b from-primary to-secondary shadow-[2px_0_3px_rgba(0,0,0,0.1)] `}></div>
+                                        <div className={` absolute top-0 left-0 h-full max-md:w-1 w-1.5 rounded-l-lg bg-gradient-to-b from-primary to-secondary shadow-[2px_0_3px_rgba(0,0,0,0.1)] `}></div>
 
                                         {/* Content */}
                                         <div className='flex flex-col gap-4 max-md:pl-1 pl-4'>
