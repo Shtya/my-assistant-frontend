@@ -25,6 +25,7 @@ import PropheticSunnahs from '@/components/pages/islamic/PropheticSunnahs';
 import IslamicCorrections from '@/components/pages/islamic/IslamicCorrections';
 import { fetchPrayerTimes } from '@/helper/prayerUtils';
 import MistakeTracker from '@/components/pages/islamic/MistakeTracker';
+import TabSlider from '@/components/atoms/TabSlider';
 
 export default function IslamicCompanion() {
     const [activeTab, setActiveTab] = useState('prayer');
@@ -110,14 +111,14 @@ export default function IslamicCompanion() {
     };
 
     const tabs = [
-        {id: 'prayer', name: 'أوقات الصلاة' ,  title : "",  },
-        {id: 'adhkar', name: 'الأذكار' ,  title : "",  },
-        {id: 'mistake-tracker', name: 'مساعد الحفظ' ,  title : "رفيق حفظ القرآن المتقدم",  },
-        {id: 'faith-essentials', name: 'زاد المسلم' ,  title : "",  },
-        {id: 'organizer', name: 'منظم المسلم' ,  title : "",  },
-        {id: 'prophetic-sunnahs', name: 'سنن النبي ﷺ' ,  title : "",  },
-        {id: 'islamic-corrections', name: 'تصحيحات شرعية' ,  title : "",  },
-        {id: 'reminders', name: 'التنبيهات' ,  title : "",  },
+        { id: 'prayer', name: 'أوقات الصلاة', title: '' },
+        { id: 'adhkar', name: 'الأذكار', title: '﴿وَقَالَ رَبُّكُمُ ادْعُونِي أَسْتَجِبْ لَكُمْ﴾' },
+        { id: 'mistake-tracker', name: 'مساعد الحفظ', title: 'رفيق حفظ القرآن المتقدم' },
+        { id: 'faith-essentials', name: 'زاد المسلم', title: '' },
+        { id: 'organizer', name: 'منظم المسلم', title: '' },
+        { id: 'prophetic-sunnahs', name: 'سنن النبي ﷺ', title: '' },
+        { id: 'islamic-corrections', name: 'تصحيحات شرعية', title: '' },
+        { id: 'reminders', name: 'التنبيهات', title: '' },
     ];
 
     const showDhikrNotification = dhikr => {
@@ -130,23 +131,14 @@ export default function IslamicCompanion() {
         setShowNotification(true);
     };
 
-
-
     return (
         <div dir='rtl' className=' cairo min-h-screen   text-text-base'>
-            <div className='container mx-auto px-4  py-8'>
-                <div className='text-center mb-8 mt-[20px]'>
-                    <h1 className='text-3xl font-bold mb-2 text-green-800'> {tabs.find(e => e.id == activeTab)?.title} </h1>
+            <div className='  py-8'>
+                <div className='text-center mb-4 mt-8'>
+                    <h1 className='text-3xl max-md:text-xl font-bold mb-2 text-green-800'> {tabs.find(e => e.id == activeTab)?.title} </h1>
                 </div>
 
-                <div className='flex overflow-x-auto flex-wrap justify-center w-fit mx-auto border border-border/60 mb-6 gap-1 bg-white rounded-lg p-2 shadow-inner'>
-                    {tabs.map(tab => (
-                        <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={`relative whitespace-nowrap px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${activeTab === tab.id ? 'bg-primary text-white shadow-sm' : 'text-gray-800 hover:bg-background-muted hover:shadow-inner'}`}>
-                            <span className='capitalize'>{tab.name}</span>
-                        </button>
-                    ))}
-                </div>
-
+                <TabSlider tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
                 {/* <Animation> */}
                 {activeTab === 'prayer' && <PrayerTimes muteBeforePrayer={muteBeforePrayer} showDhikrNotification={showDhikrNotification} prayerTimes={prayerTimes} nextPrayer={nextPrayer} setTimeRemaining={setTimeRemaining} />}
                 {activeTab === 'adhkar' && <Adhkar showDhikrNotification={showDhikrNotification} />}

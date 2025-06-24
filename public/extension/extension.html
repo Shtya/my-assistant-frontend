@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Search</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 12px;
+      width: 300px;
+    }
+    input {
+      width: 100%;
+      padding: 6px;
+      margin-bottom: 8px;
+    }
+    button {
+      padding: 6px 12px;
+    }
+    img {
+      margin-top: 10px;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h3>Search Word</h3>
+  <input type="text" id="word" placeholder="Type a word" />
+  <button onclick="getImage()">Get Image</button>
+  <div id="result"></div>
+
+  <script>
+    async function getImage() {
+      const word = document.getElementById('word').value;
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = 'Loading...';
+
+      try {
+        const res = await fetch(`https://api.openverse.org/v1/images/?q=${encodeURIComponent(word)}`);
+        const data = await res.json();
+        const imgUrl = data.results?.[0]?.thumbnail;
+        if (imgUrl) {
+          resultDiv.innerHTML = `<img src="${imgUrl}" alt="Image of ${word}" />`;
+        } else {
+          resultDiv.innerHTML = 'No image found.';
+        }
+      } catch (err) {
+        resultDiv.innerHTML = 'Error loading image.';
+        console.error(err);
+      }
+    }
+  </script>
+</body>
+</html>

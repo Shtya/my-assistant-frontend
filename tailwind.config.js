@@ -58,6 +58,66 @@ module.exports = {
                     medium: '#d1d5db', // gray-300
                     dark: '#4b5563', // gray-700
                 },
+
+                d: {
+                    primary: {
+                        DEFAULT: '#3b82f6', // lighter blue
+                        light: '#60a5fa', // blue-400
+                        dark: '#2563eb', // blue-600
+                        hover: '#1d4ed8', // blue-700
+                    },
+
+                    secondary: {
+                        DEFAULT: '#22c55e', // green-500
+                        light: '#4ade80', // green-400
+                        dark: '#15803d', // green-700
+                        hover: '#166534', // green-800
+                    },
+
+                    background: {
+                        DEFAULT: '#0f172a', // slate-900
+                        soft: '#1e293b', // slate-800
+                        subtle: '#334155', // slate-700
+                        muted: '#475569', // slate-600
+                    },
+
+                    text: {
+                        base: '#e2e8f0', // slate-200
+                        muted: '#94a3b8', // slate-400
+                        soft: '#64748b', // slate-500
+                        inverse: '#0f172a',
+                    },
+
+                    border: {
+                        DEFAULT: '#475569', // slate-600
+                        hover: '#64748b', // slate-500
+                        focus: '#3b82f6', // blue-500
+                    },
+
+                    success: {
+                        DEFAULT: '#22c55e', // same
+                        bg: '#052e16', // dark green bg
+                        text: '#bbf7d0', // green-200
+                    },
+
+                    error: {
+                        DEFAULT: '#ef4444', // same
+                        bg: '#450a0a', // dark red bg
+                        text: '#fecaca', // red-200
+                    },
+
+                    warning: {
+                        DEFAULT: '#facc15', // same
+                        bg: '#78350f', // amber-800
+                        text: '#fef08a', // yellow-200
+                    },
+
+                    neutral: {
+                        light: '#1e293b', // slate-800
+                        medium: '#334155', // slate-700
+                        dark: '#475569', // slate-600
+                    },
+                },
             },
             animation: {
                 'pulse-smooth': 'pulseSmooth 2s ease-in-out infinite',

@@ -1,10 +1,22 @@
 'use client';
-import { createContext, useContext, useState, useRef } from 'react';
+import { createContext, useEffect, useContext, useState, useRef } from 'react';
 const GlobalContext = createContext();
 
 // Provider Component
 export const GlobalProvider = ({ children }) => {
     const [collapsed, setCollapsed] = useState(true);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkScreen = () => {
+            setIsMobile(window.innerWidth < 700);
+        };
+
+        checkScreen();
+        window.addEventListener('resize', checkScreen);
+        return () => window.removeEventListener('resize', checkScreen);
+    }, []);
+
     const [activeCard, setActiveCard] = useState(null);
     const [activeModal, setActiveModal] = useState(null);
     const [notifications, setNotifications] = useState([]);
@@ -358,32 +370,31 @@ export const GlobalProvider = ({ children }) => {
         }
     };
 
-        const logTime = (cardId, timeSpent) => {
-            const card = cards.find(c => c.id === cardId);
-            if (card) {
-                const updatedCard = {
-                    ...card,
-                    time_spent: card.time_spent + timeSpent,
-                    time_remaining: Math.max(0, card.time_remaining - timeSpent),
-                };
-    
-                setCards(cards.map(c => (c.id === cardId ? updatedCard : c)));
-    
-                // Log activity
-                const newActivity = {
-                    id: Math.max(...activities.map(a => a.id), 0) + 1,
-                    card_id: cardId,
-                    user_id: currentUser.id,
-                    type: 'time',
-                    message: `logged ${timeSpent}h on this card`,
-                    timestamp: new Date().toISOString(),
-                };
-                setActivities([...activities, newActivity]);
-            }
-        };
-    
+    const logTime = (cardId, timeSpent) => {
+        const card = cards.find(c => c.id === cardId);
+        if (card) {
+            const updatedCard = {
+                ...card,
+                time_spent: card.time_spent + timeSpent,
+                time_remaining: Math.max(0, card.time_remaining - timeSpent),
+            };
 
-    return <GlobalContext.Provider value={{ logTime, checkAutomationRules , updateCard , closeModal, getUserById, getCardMembers, getCardLabels, getCardAttachments, getCardComments, getCardChecklists, getChecklistItems, getCardActivities, getBoardMembers, filteredCards, currentBoard, boardLists, boardLabels, boardCustomFields, userBoards, dragItem, dragOverItem, activeCard, setActiveCard, activeModal, setActiveModal, notifications, setNotifications, searchQuery, setSearchQuery, currentBoardId, setCurrentBoardId, showBoardSelector, setShowBoardSelector, inviteEmail, setInviteEmail, focusMode, setFocusMode, focusedUserId, setFocusedUserId, filter, setFilter, users, setUsers, currentUser, setCurrentUser, boards, setBoards, boardMembers, setBoardMembers, lists, setLists, cards, setCards, cardMembers, setCardMembers, labels, setLabels, cardLabels, setCardLabels, attachments, setAttachments, comments, setComments, checklists, setChecklists, checklistItems, setChecklistItems, activities, setActivities, notificationsData, setNotificationsData, aiQuery, setAiQuery, aiResponse, setAiResponse, isAiProcessing, setIsAiProcessing, riskItems, setRiskItems, predictions, setPredictions, automationRules, setAutomationRules, cardTemplates, setCardTemplates, customFieldDefinitions, setCustomFieldDefinitions, collapsed, setCollapsed }}>{children}</GlobalContext.Provider>;
+            setCards(cards.map(c => (c.id === cardId ? updatedCard : c)));
+
+            // Log activity
+            const newActivity = {
+                id: Math.max(...activities.map(a => a.id), 0) + 1,
+                card_id: cardId,
+                user_id: currentUser.id,
+                type: 'time',
+                message: `logged ${timeSpent}h on this card`,
+                timestamp: new Date().toISOString(),
+            };
+            setActivities([...activities, newActivity]);
+        }
+    };
+
+    return <GlobalContext.Provider value={{ isMobile, setIsMobile ,logTime, checkAutomationRules, updateCard, closeModal, getUserById, getCardMembers, getCardLabels, getCardAttachments, getCardComments, getCardChecklists, getChecklistItems, getCardActivities, getBoardMembers, filteredCards, currentBoard, boardLists, boardLabels, boardCustomFields, userBoards, dragItem, dragOverItem, activeCard, setActiveCard, activeModal, setActiveModal, notifications, setNotifications, searchQuery, setSearchQuery, currentBoardId, setCurrentBoardId, showBoardSelector, setShowBoardSelector, inviteEmail, setInviteEmail, focusMode, setFocusMode, focusedUserId, setFocusedUserId, filter, setFilter, users, setUsers, currentUser, setCurrentUser, boards, setBoards, boardMembers, setBoardMembers, lists, setLists, cards, setCards, cardMembers, setCardMembers, labels, setLabels, cardLabels, setCardLabels, attachments, setAttachments, comments, setComments, checklists, setChecklists, checklistItems, setChecklistItems, activities, setActivities, notificationsData, setNotificationsData, aiQuery, setAiQuery, aiResponse, setAiResponse, isAiProcessing, setIsAiProcessing, riskItems, setRiskItems, predictions, setPredictions, automationRules, setAutomationRules, cardTemplates, setCardTemplates, customFieldDefinitions, setCustomFieldDefinitions, collapsed, setCollapsed }}>{children}</GlobalContext.Provider>;
 };
 
 export const useValues = () => {

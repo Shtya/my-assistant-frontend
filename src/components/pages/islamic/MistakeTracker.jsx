@@ -17,7 +17,6 @@ import dynamic from 'next/dynamic';
 import { surahs } from '@/data/arrays';
 import allVerses from '@/data/quran.json';
 import SelectDefault from '@/components/atoms/SelectDefault';
-import Input from '@/components/atoms/Input';
 import Input2 from '@/components/atoms/Input2';
 import Button from '@/components/atoms/Button';
 

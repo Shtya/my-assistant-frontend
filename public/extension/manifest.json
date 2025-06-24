@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Word Image Search",
+  "version": "1.0",
+  "action": {
+    "default_popup": "extension.html"
+  },
+  "description": "Search and display images for a word using Openverse API",
+  "host_permissions": ["https://api.openverse.org/"]
+}

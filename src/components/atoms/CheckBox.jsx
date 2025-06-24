@@ -1,12 +1,37 @@
 'use client';
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { CheckCircle, Circle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function CheckToggle({ colorUncheckd="text-gray-300" , checked, onToggle, size = 25, className = '' , color="text-primary" , label, passProps }) {
+export default function CheckBox({ sound = true, colorUncheckd = 'text-gray-300', checked, onToggle, size = 25, className = '', color = 'text-primary', label, passProps }) {
+    const checkSoundRef = useRef(null);
+    const uncheckSoundRef = useRef(null);
+
+    // Create sound elements on mount
+    useEffect(() => {
+        checkSoundRef.current = new Audio('/sounds/check.wav');
+        uncheckSoundRef.current = new Audio('/sounds/check.wav');
+    }, []);
+
+    const handleToggle = () => {
+        if (!sound) return;
+
+        // Play appropriate sound
+        if (checked) {
+            uncheckSoundRef.current?.play().catch(() => {});
+        } else {
+            checkSoundRef.current?.play().catch(() => {});
+        }
+    };
     return (
-        <button onClick={onToggle} className={`flex items-center gap-2 text-gray-500 focus:outline-none ${className}`} {...passProps}>
+        <button
+            onClick={e => {
+                onToggle(e);
+                handleToggle();
+            }}
+            className={`flex items-center gap-2 text-gray-500 focus:outline-none ${className}`}
+            {...passProps}>
             <AnimatePresence mode='wait'>
                 {checked ? (
                     <motion.div

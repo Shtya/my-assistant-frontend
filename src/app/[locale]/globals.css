@@ -9,6 +9,15 @@
 
 
 
+[dir='rtl'] body.sidebar-collapsed main {
+    margin-right: 270px !important;
+}
+
+[dir='ltr'] body.sidebar-collapsed main {
+    margin-left: 270px !important;
+}
+
+
 
 
 
@@ -31,7 +40,7 @@ a {
 body {
     background-color: #fff;
     overflow-x: hidden;
-} /*# sourceMappingURL=style.css.map */
+} 
 
 .cairo * {
     font-family: var(--font-tajawal) !important;
@@ -53,9 +62,7 @@ body {
 
 
 
-body.sidebar-collapsed main {
-    margin-left: 270px !important;
-}
+
 
 .body.modal-active {
     transform: scale(1.2);

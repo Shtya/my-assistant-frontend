@@ -3,12 +3,13 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import adhkarData from '@/data/adhkar.json';
-import MotivationalPhrases from './Animation';
+import { Expand, Minimize } from 'lucide-react';
 
 export default function Adhkar() {
     const [activeCategory, setActiveCategory] = useState('morning');
     const [expandedItems, setExpandedItems] = useState({});
     const [counters, setCounters] = useState({});
+    const [fullScreenMode, setFullScreenMode] = useState(false);
 
     useEffect(() => {
         const initialCounters = {};
@@ -23,6 +24,10 @@ export default function Adhkar() {
             ...prev,
             [index]: !prev[index],
         }));
+    };
+
+    const toggleFullScreen = () => {
+        setFullScreenMode(!fullScreenMode);
     };
 
     const filteredAdhkar = adhkarData.adhkar.filter(item => item.category.includes(activeCategory));
@@ -41,15 +46,13 @@ export default function Adhkar() {
 
     return (
         <>
-            <MotivationalPhrases>
-                <div className='card !py-4 mb-4 text-center space-y-2'>
-                    <h2 className='text-base font-semibold text-primary leading-relaxed'>﴿وَقَالَ رَبُّكُمُ ادْعُونِي أَسْتَجِبْ لَكُمْ﴾</h2>
-                    <p className='text-sm text-gray-700 font-medium italic'>قال النبي ﷺ: "الدعاء هو العبادة"، وليس شيء أكرم على الله من الدعاء.</p>
-                </div>
-            </MotivationalPhrases>
+            <div className={`bg-white  rounded-lg shadow p-6 ${fullScreenMode ? 'fixed inset-0 z-50 overflow-y-auto' : 'relative'}`}>
+                {/* Full screen toggle button */}
+                <button onClick={toggleFullScreen} className={`absolute top-4 left-4 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors z-10 ${fullScreenMode ? 'text-primary' : 'text-gray-600'}`} aria-label={fullScreenMode ? 'Minimize' : 'Expand'}>
+                    {fullScreenMode ? <Minimize size={20} /> : <Expand size={20} />}
+                </button>
 
-            <div className='bg-white rounded-lg shadow p-6'>
-                <h1 className=' text-center mb-3 text-2xl font-semibold text-primary '>الأذكار</h1>
+                <h1 className='text-center mb-3 text-2xl font-semibold text-primary'>{getCategoryName(activeCategory)}</h1>
 
                 <div className='flex flex-wrap gap-2 mb-6 justify-center'>
                     {bar.map(category => (
@@ -60,24 +63,26 @@ export default function Adhkar() {
                 </div>
 
                 <AnimatePresence mode='wait'>
-                    <motion.div key={activeCategory} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }} className='space-y-6'>
-                        {filteredAdhkar.map((item, index) => (
-                            <div key={item.dhikr + index} className='group relative overflow-hidden bg-background-soft border border-gray-200 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-5'>
-                                {/* Accent Bar */}
-                                <div className='absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-primary via-secondery to-success '></div>
+                    <motion.div key={activeCategory} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }} className={`space-y-6 ${fullScreenMode ? 'max-w-4xl mx-auto' : ''}`}>
+                        <div className={`${fullScreenMode ? 'max-h-[calc(100vh-200px)] overflow-y-auto pr-2' : ''}`}>
+                            {filteredAdhkar.map((item, index) => (
+                                <div key={item.dhikr + index} className='group relative overflow-hidden bg-background-soft border border-gray-200 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-5'>
+                                    {/* Accent Bar */}
+                                    <div className='absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-primary via-secondery to-success'></div>
 
-                                {/* Content */}
-                                <div className='flex flex-col gap-4'>
-                                    <p className='text-center text-lg font-medium text-gray-800 leading-relaxed tracking-wide'>{item.dhikr}</p>
+                                    {/* Content */}
+                                    <div className='flex flex-col gap-4'>
+                                        <p className='text-center text-lg font-medium text-gray-800 leading-relaxed tracking-wide'>{item.dhikr}</p>
 
-                                    {item.benefits && (
-                                        <div onClick={() => toggleExpanded(index)} className={`mx-auto relative bg-yellow-100 hover:bg-yellow-200 px-4 py-2 text-sm text-yellow-800 rounded-md cursor-pointer transition-all duration-300 max-w-full ${expandedItems[index] ? '' : ' truncate line-clamp-1'}`}>
-                                            {item.benefits}
-                                        </div>
-                                    )}
+                                        {item.benefits && (
+                                            <div onClick={() => toggleExpanded(index)} className={`mx-auto relative bg-yellow-100 hover:bg-yellow-200 px-4 py-2 text-sm text-yellow-800 rounded-md cursor-pointer transition-all duration-300 max-w-full ${expandedItems[index] ? '' : 'truncate line-clamp-1'}`}>
+                                                {item.benefits}
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </motion.div>
                 </AnimatePresence>
             </div>
