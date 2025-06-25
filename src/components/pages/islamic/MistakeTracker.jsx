@@ -12,7 +12,7 @@
 
 import { useState, useEffect } from 'react';
 import { Mic as FaMicrophone, BookOpenCheck as FaQuran, Star as FaStar, StopCircle as FaStop, Play, Pause } from 'lucide-react';
-import { IoMdCheckmarkCircleOutline } from 'react-icons/io';
+// import { IoMdCheckmarkCircleOutline } from 'react-icons/io';
 import dynamic from 'next/dynamic';
 import { surahs } from '@/data/arrays';
 import allVerses from '@/data/quran.json';
@@ -318,7 +318,7 @@ export default function EnhancedMistakeTracker() {
     };
 
     const tabs = [
-        { id: 'add', label: 'إضافة خطأ جديد', icon: <IoMdCheckmarkCircleOutline size={16} /> },
+        { id: 'add', label: 'إضافة خطأ جديد', icon: "" },
         { id: 'review', label: 'مراجعة الأخطاء', icon: <img src='/sync.png' className='w-4 h-4 object-contain' /> },
         { id: 'stats', label: 'إحصائيات', icon: <img src='/bar-chart.png' className='w-4 h-4 object-contain' /> },
         { id: 'bookmarks', label: 'الآيات المفضلة', icon: <FaStar size={16} /> },

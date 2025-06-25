@@ -7,6 +7,7 @@ import { GlobalProvider } from '@/context/Context';
 import { Toaster } from 'react-hot-toast';
 import { Tajawal, Open_Sans , Scheherazade_New , Amiri_Quran } from 'next/font/google';
 
+
 // ✅ Load fonts with custom variables
 const tajawal = Tajawal({
   subsets: ['arabic'],
@@ -21,13 +22,6 @@ const scheherazade = Scheherazade_New({
   weight: ['400', '700'],
   variable: '--font-amiri-quran',
 });
-
-// const amiriQuran = Amiri_Quran({
-//   subsets: ['arabic'],
-//   variable: '--font-amiri-quran',
-//   weight: '400', // Amiri Quran has only one weight
-//   display: 'swap',
-// });
 
 const openSans = Open_Sans({
   subsets: ['latin'],

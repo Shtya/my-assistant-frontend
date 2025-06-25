@@ -10,7 +10,6 @@
 
 'use client';
 import { useState, useEffect } from 'react';
-import Head from 'next/head';
 
 import PrayerTimes from '@/components/pages/islamic/PrayerTimes';
 import Adhkar from '@/components/pages/islamic/Adhkar';
@@ -19,7 +18,6 @@ import Motivation from '@/components/pages/islamic/Motivation';
 import ReminderManager from '@/components/pages/islamic/ReminderManager';
 import Notification from '@/components/pages/islamic/Notification';
 import FaithEssentials from '@/components/pages/islamic/FaithEssentials';
-import Animation from '@/components/pages/islamic/Animation';
 import MuslimOrganizer from '@/components/pages/islamic/MuslimOrganizer';
 import PropheticSunnahs from '@/components/pages/islamic/PropheticSunnahs';
 import IslamicCorrections from '@/components/pages/islamic/IslamicCorrections';

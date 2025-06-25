@@ -639,3 +639,35 @@ html {
 
 
 
+
+.prose {
+  @apply max-w-none;
+}
+
+.prose code {
+  @apply bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-sm;
+}
+
+.prose pre {
+  @apply bg-gray-100 dark:bg-gray-700 p-4 rounded overflow-x-auto my-3;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose img {
+  @apply max-w-full h-auto;
+}
+
+.prose a {
+  @apply text-blue-600 dark:text-blue-400 hover:underline;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  @apply dark:text-white;
+}
+
+.prose p, .prose li {
+  @apply dark:text-gray-300;
+}

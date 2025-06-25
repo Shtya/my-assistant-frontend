@@ -1,4 +1,96 @@
 {
+    "KnowledgeBase": {
+        "title": "Personal Knowledge Base",
+        "filters": {
+            "all": "All",
+            "read": "Read",
+            "unread": "Unread",
+            "tags": "Tags",
+            "clearFilters": "Clear filters"
+        },
+        "recap": {
+            "title": "Quick Recap"
+        },
+
+        "categories": {
+            "all": "All",
+            "javascript": "JavaScript",
+            "css": "CSS",
+            "html": "HTML",
+            "problemSolving": "Problem Solving",
+            "others": "Others"
+        },
+        "editQuestion": {
+            "title": "Edit Question",
+            "questionLabel": "Question",
+            "answerLabel": "Answer",
+            "recapLabel": "Quick Recap",
+            "tagsLabel": "Tags",
+            "categoryLabel": "Category",
+            "saveButton": "Save Changes"
+        },
+
+        "tags": {
+            "edit": "Edit Tags",
+            "important": "Important",
+            "needReview": "Need Review"
+        },
+        "actions": {
+            "edit": "Edit",
+            "save": "Save",
+            "lightMode": "Light Mode",
+            "darkMode": "Dark Mode",
+            "addQuestion": "Add Question",
+            "cancel": "Cancel",
+            "randomQuestion": "Random Question",
+            "reviewMode": "Review Mode",
+            "exitReview": "Exit Review",
+            "export": "Export",
+            "import": "Import",
+            "confirmImport": "Confirm Import",
+            "delete": "Delete",
+            "previous": "Previous",
+            "next": "Next",
+            "showAnswer": "Show Answer",
+            "hideAnswer": "Hide Answer"
+        },
+        "addQuestion": {
+            "title": "Add New Question",
+            "questionLabel": "Question Title",
+            "questionPlaceholder": "Enter your question...",
+            "categoryLabel": "Category",
+            "answerLabel": "Answer (HTML supported)",
+            "answerPlaceholder": "Enter your answer (you can use HTML tags like <b>, <code>, etc.)",
+            "tagsLabel": "Tags",
+            "saveButton": "Save Question",
+            "recapLabel": "Quick Recap",
+            "recapPlaceholder": "Enter a brief summary or key points..."
+        },
+        "reviewMode": {
+            "title": "Review Mode ({current}/{total})",
+            "previous": "Previous",
+            "next": "Next",
+            "showAnswer": "Show Answer",
+            "hideAnswer": "Hide Answer"
+        },
+        "search": {
+            "placeholder": "Search questions..."
+        },
+        "emptyState": {
+            "default": "No questions found. Try adding a new question.",
+            "filtered": "No questions found in {category}. Try changing the category or adding a new question."
+        },
+        "question": {
+            "addedOn": "Added: {date}"
+        },
+        "alerts": {
+            "importSuccess": "Data imported successfully!",
+            "invalidFormat": "Invalid data format. Expected an array of questions.",
+            "importError": "Failed to parse JSON",
+            "editSuccess": "Question updated successfully!",
+            "editError": "Error updating question:"
+        }
+    },
     "BoardSettings": {
         "board_title": "Board Title",
         "visibility": "Visibility",

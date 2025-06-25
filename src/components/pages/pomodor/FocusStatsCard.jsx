@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import dayjs from 'dayjs';
 import DateSelector from '@/components/atoms/DateSelector';
-import CircleProgress from '@/components/atoms/CircleProgress';
 import ProgressSummary from '@/components/atoms/Progressbar2';
 
 export default function FocusStatsCard() {
