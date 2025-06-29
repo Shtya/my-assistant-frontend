@@ -1,67 +1,3 @@
-/* 
-
-  - i use js not ts  in nextjs with tailwindcss
-  - واعمل الكود منظم ومتقسم كمبونانتس ولكن كل الكمبونانتس دي ف فايل واحد ونظم الكود بحيث كل اللوجيك بجانب الجزء المختص به لسهوله نقله بعد ذلك ف فايلات خارجيه
-  - use next-intl to add the values and rturn the json objct contain on ar and en values
-  - and if you need import icons use this library ( lucide-react )
-  - and if somethign need animation use this library ( framer-motion)
-    - and use dark Mode form tailwind like this in case dark use dark:text-  in case light text-
-
-  - this all my components if you need something fomr them use it 
-      import { motion, AnimatePresence } from 'framer-motion';
-      import Input2 from '@/components/atoms/Input2';
-      import Button from '@/components/atoms/Button';
-      import CheckBox from '@/components/atoms/CheckBox';
-      import TabSlider from '@/components/atoms/TabSlider';
-      import SelectDefault from '@/components/atoms/SelectDefault';
-
-
-  <Input2 type='text' onEnter={} value={} onChange={} placeholder='' />
-  <Button onClick={() =>} label='' color={"red"} cn='!h-[30px] !px-[10px]' />  
-  <CheckBox className='mt-[3px]' size={20} checked={} onToggle={} />
-  <TabSlider tabs={[ { id: '', name: '', icon : Value }, ];} activeTab={activeTab} setActiveTab={setActiveTab} />
-  <SelectDefault value={} onChange={} options={[ { value: '', label: '' }, ]} />
-
-
-
-
-  - merge those question and return the all question  on this patern 
-   [{
-    "id": "language_progrmming_name-1",
-    "category": "language progrmming name",
-    "question": "the questoin",
-    "answer": "<b>var</b>: Function-scoped, hoisted, can be redeclared<br>\n<b>let</b>: Block-scoped, can be reassigned but not redeclared<br>\n<b>const</b>: Block-scoped, cannot be reassigned or redeclared<br>\n<pre><code>var x = 1;\nlet y = 2;\nconst z = 3;\n\nx = 10; // OK\ny = 20; // OK\nz = 30; // Error</code></pre>",
-    "recap-ar" : "",
-    "tags": [""],
-    "dateAdded": ""
-  },]
-
-
-
-
-
-  Generate 15 or more if exist more question important technical and behavioral interview questions for a [  performance in fornt and back end  ] role, targeting senior developers. The questions should:
-    - Test advanced knowledge (e.g., architecture, optimization, trade-offs).
-    - Include real-world scenarios (e.g., debugging, scaling, team conflicts).
-    - Assess leadership/mentorship (e.g., guiding juniors, decision-making).
-    - Avoid trivial/conceptual questions (focus on depth over basics).
-    - Be phrased clearly with optional follow-up probes (e.g., ‘How would you handle X if Y constraint exists?’).
-
-
-    and this qustion genrate it to add in file json on this paattern 
-  [{
-    "id": "language_progrmming_name-1",
-    "category": "language progrmming name",
-    "question": "the questoin",
-    "answer": "<b>var</b>: Function-scoped, hoisted, can be redeclared<br>\n<b>let</b>: Block-scoped, can be reassigned but not redeclared<br>\n<b>const</b>: Block-scoped, cannot be reassigned or redeclared<br>\n<pre><code>var x = 1;\nlet y = 2;\nconst z = 3;\n\nx = 10; // OK\ny = 20; // OK\nz = 30; // Error</code></pre>",
-    "recap-ar" : "",
-    "tags": [""],
-    "dateAdded": ""
-  },]
-
-
-*/
-
 'use client';
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -71,7 +7,7 @@ import Input2 from '@/components/atoms/Input2';
 import Button from '@/components/atoms/Button';
 import SelectDefault from '@/components/atoms/SelectDefault';
 import TextEditor from '@/components/atoms/TextEditor';
-import qs_progrmming from '@/data/programming-question.json';
+import qs_progrmming from '@/data/qs-progrmming';
 import Tabs from '@/components/atoms/Tabs';
 
 const KnowledgeBase = () => {
@@ -86,7 +22,6 @@ const KnowledgeBase = () => {
         tags: [],
         dateAdded: new Date().toISOString().split('T')[0],
         recap: '',
-        isChecked: false
     });
     const [searchTerm, setSearchTerm] = useState('');
     const [isAdding, setIsAdding] = useState(false);
@@ -94,6 +29,7 @@ const KnowledgeBase = () => {
     const [importData, setImportData] = useState('');
     const [activeTagsFilter, setActiveTagsFilter] = useState([]);
     const [readStatusFilter, setReadStatusFilter] = useState('all');
+    const [readCards, setReadCards] = useState([]);
     const [editorContent, setEditorContent] = useState('');
     const [editingId, setEditingId] = useState(null);
     const [editFormData, setEditFormData] = useState({
@@ -102,7 +38,6 @@ const KnowledgeBase = () => {
         recap: '',
         tags: [],
         category: '',
-        isChecked: false
     });
 
     // Load questions from API
@@ -123,6 +58,17 @@ const KnowledgeBase = () => {
         };
         fetchQuestions();
     }, []);
+
+    // Load read cards from localStorage
+    useEffect(() => {
+        const savedReadCards = localStorage.getItem('knowledgeBaseReadCards');
+        setReadCards(savedReadCards ? JSON.parse(savedReadCards) : []);
+    }, []);
+
+    // Save read cards to localStorage
+    useEffect(() => {
+        localStorage.setItem('knowledgeBaseReadCards', JSON.stringify(readCards));
+    }, [readCards]);
 
     const categories = useMemo(() => {
         const foundCategories = [...new Set(questions.map(q => q.category))];
@@ -166,7 +112,6 @@ const KnowledgeBase = () => {
             ...newQuestion,
             id: `q-${Date.now()}`,
             answer: editorContent || newQuestion.answer,
-            isChecked: false
         };
 
         try {
@@ -191,7 +136,6 @@ const KnowledgeBase = () => {
                     tags: [],
                     dateAdded: new Date().toISOString().split('T')[0],
                     recap: '',
-                    isChecked: false
                 });
                 setEditorContent('');
                 setIsAdding(false);
@@ -216,6 +160,7 @@ const KnowledgeBase = () => {
 
             if (response.ok) {
                 setQuestions(prev => prev.filter(q => q.id !== id));
+                setReadCards(prev => prev.filter(cardId => cardId !== id));
             }
         } catch (error) {
             console.error('Failed to delete question:', error);
@@ -225,34 +170,15 @@ const KnowledgeBase = () => {
     const toggleQuestion = id => {
         const newExpanded = { [id]: !expandedQuestions[id] };
         setExpandedQuestions(newExpanded);
+
+        if (!expandedQuestions[id] && !readCards.includes(id)) {
+            setReadCards(prev => [...prev, id]);
+        }
     };
 
-    const toggleReadStatus = async (id, e) => {
+    const toggleReadStatus = (id, e) => {
         e.stopPropagation();
-        try {
-            const response = await fetch('/api/questions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    action: 'toggleCheck',
-                    id,
-                }),
-            });
-
-            if (response.ok) {
-                setQuestions(prev =>
-                    prev.map(q =>
-                        q.id === id
-                            ? { ...q, isChecked: !q.isChecked }
-                            : q
-                    )
-                );
-            }
-        } catch (error) {
-            console.error('Failed to toggle check status:', error);
-        }
+        setReadCards(prev => (prev.includes(id) ? prev.filter(cardId => cardId !== id) : [...prev, id]));
     };
 
     const toggleTagFilter = tag => {
@@ -267,7 +193,6 @@ const KnowledgeBase = () => {
             recap: question.recap || '',
             tags: [...question.tags] || [],
             category: question.category,
-            isChecked: question.isChecked
         });
     };
 
@@ -297,12 +222,12 @@ const KnowledgeBase = () => {
                     prev.map(q =>
                         q.id === id
                             ? {
-                                ...q,
-                                ...editFormData,
-                                dateAdded: new Date().toISOString().split('T')[0],
-                            }
-                            : q
-                    )
+                                  ...q,
+                                  ...editFormData,
+                                  dateAdded: new Date().toISOString().split('T')[0],
+                              }
+                            : q,
+                    ),
                 );
                 setEditingId(null);
             }
@@ -321,22 +246,17 @@ const KnowledgeBase = () => {
 
     const filteredQuestions = useMemo(() => {
         return questions.filter(q => {
-            const matchesSearch = q.question.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                               q.answer.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                               (q.recap && q.recap.toLowerCase().includes(searchTerm.toLowerCase()));
+            const matchesSearch = q.question.toLowerCase().includes(searchTerm.toLowerCase()) || q.answer.toLowerCase().includes(searchTerm.toLowerCase()) || (q.recap && q.recap.toLowerCase().includes(searchTerm.toLowerCase()));
 
             const matchesCategory = activeTab === 'All' || q.category === activeTab;
 
-            const matchesTags = activeTagsFilter.length === 0 || 
-                             activeTagsFilter.every(tag => q.tags?.includes(tag));
+            const matchesTags = activeTagsFilter.length === 0 || activeTagsFilter.every(tag => q.tags?.includes(tag));
 
-            const matchesReadStatus = readStatusFilter === 'all' || 
-                                   (readStatusFilter === 'read' && q.isChecked) || 
-                                   (readStatusFilter === 'unread' && !q.isChecked);
+            const matchesReadStatus = readStatusFilter === 'all' || (readStatusFilter === 'read' && readCards.includes(q.id)) || (readStatusFilter === 'unread' && !readCards.includes(q.id));
 
             return matchesSearch && matchesCategory && matchesTags && matchesReadStatus;
         });
-    }, [questions, searchTerm, activeTab, activeTagsFilter, readStatusFilter]);
+    }, [questions, searchTerm, activeTab, activeTagsFilter, readStatusFilter, readCards]);
 
     const exportData = () => {
         const dataStr = JSON.stringify(questions, null, 2);
@@ -545,7 +465,7 @@ const KnowledgeBase = () => {
                         ) : (
                             <AnimatePresence>
                                 {filteredQuestions.map(q => (
-                                    <div key={q.id} className={`rounded-lg shadow-md overflow-hidden transition-all duration-200 border-l-4 ${q.isChecked ? 'border-green-500' : 'border-transparent'} ${expandedQuestions[q.id] ? 'bg-white dark:bg-gray-800' : 'bg-white dark:bg-gray-800 hover:shadow-lg'}`}>
+                                    <div key={q.id} className={`rounded-lg shadow-md overflow-hidden transition-all duration-200 border-l-4 ${readCards.includes(q.id) ? 'border-green-500' : 'border-transparent'} ${expandedQuestions[q.id] ? 'bg-white dark:bg-gray-800' : 'bg-white dark:bg-gray-800 hover:shadow-lg'}`}>
                                         {editingId === q.id ? (
                                             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className='p-4'>
                                                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-4'>
@@ -585,8 +505,8 @@ const KnowledgeBase = () => {
                                             <>
                                                 <div className='p-4 cursor-pointer flex justify-between items-start' onClick={() => toggleQuestion(q.id)}>
                                                     <div className='flex items-start gap-3 w-full'>
-                                                        <div className={`mt-1 flex-shrink-0 w-5 h-5 border rounded flex items-center justify-center ${q.isChecked ? 'bg-green-500 border-green-500 text-white' : 'border-gray-300 dark:border-gray-600'}`} onClick={e => toggleReadStatus(q.id, e)}>
-                                                            {q.isChecked && <Check size={14} />}
+                                                        <div className={`mt-1 flex-shrink-0 w-5 h-5 border rounded flex items-center justify-center ${readCards.includes(q.id) ? 'bg-green-500 border-green-500 text-white' : 'border-gray-300 dark:border-gray-600'}`} onClick={e => toggleReadStatus(q.id, e)}>
+                                                            {readCards.includes(q.id) && <Check size={14} />}
                                                         </div>
 
                                                         <div className='flex-grow'>

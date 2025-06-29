@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Home, Hourglass, HeartPulse, Notebook, MoonStar, BookOpen, Trophy, ListIcon, Podcast, ChevronLeft, ChevronRight, Moon, Sun, Menu, Expand, Minimize, Minimize2, Headphones, Maximize2, Languages, Shield, CircleDashed, Sunrise, Hand, Droplets, Sprout, HandHeart, Palmtree, MenuIcon, HelpCircleIcon } from 'lucide-react';
+import { Home, Hourglass, HeartPulse , Target , Notebook, MoonStar, BookOpen, Trophy, ListIcon, Podcast, ChevronLeft, ChevronRight, Moon, Sun, Menu, Expand, Minimize, Minimize2, Headphones, Maximize2, Languages, Shield, CircleDashed, Sunrise, Hand, Droplets, Sprout, HandHeart, Palmtree, MenuIcon, HelpCircleIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { useValues } from '@/context/Context';
@@ -89,6 +89,8 @@ export default function Sidebar() {
         { label: 'Audio Library', icon: Headphones, href: '/bodcast' }, // Changed from Podcast to Headphones
         { divider: true },
         { label: 'Q&A Memory', icon: HelpCircleIcon, href: '/qa-memory' },
+        {  label: 'Deep Work Mode',  icon: Target ,  href: '/focus'},
+
         { divider: true },
         {
             label: browserFullscreen ? 'Exit Fullscreen' : 'Full View',
