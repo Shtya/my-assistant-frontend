@@ -1,1737 +1,755 @@
-أكيد يا أحمد، دي قائمة شاملة ومركزة لأهم الأسئلة اللي:
-
-هتفيدك في الشغل اليومي كمطور جافاسكريبت
-
-ممكن تيجي في انترفيوهات
-
-ولو ذاكرتها بتركيز هترفع مستواك جدًا
-
-وفي الآخر هتلاقي كمان ليست بالأخطاء الشائعة والممارسات الغلط اللي لازم تتجنبها
-
-✅ قائمة أسئلة مهمة جدًا في JavaScript
-الأساسيات والفهم العميق:
-ما الفرق بين var, let, و const؟
-
-إيه هو الـ Hoisting وبيأثر إزاي على الكود؟
-
-إزاي تشرح الـ Scope وأنواعه في JavaScript؟
-
-يعني إيه Closure؟ وبيستخدم في إيه؟
-
-إيه هو الفرق بين == و ===؟
-
-إيه هو الـ Event Loop؟ وازاي JavaScript بتتعامل مع الـ async code؟
-
-إيه الفرق بين synchronous و asynchronous؟
-
-إزاي بتشتغل الـ setTimeout و setInterval من جوا؟
-
-إيه الفرق بين Call Stack و Callback Queue و Microtask Queue؟
-
-يعني إيه IIFE؟ وبتستخدمها إمتى؟
-
-الفرق بين pass by value و pass by reference؟
-
-يعني إيه Mutable و Immutable؟
-
-إيه هي الـ Primitive types وإيه هي Non-Primitive types؟
-
-إمتى تستخدم null وإمتى تستخدم undefined؟
-
-إزاي بتتعامل JavaScript مع NaN؟
-
-الفنكشنز:
-يعني إيه Higher Order Function؟
-
-الفرق بين Function Declaration و Function Expression؟
-
-يعني إيه Arrow Function وبتفرق في إيه عن العادية؟
-
-إزاي بيشتغل الـ this في context مختلف؟
-
-إزاي تحل مشكلة الـ this لما يتهنج؟
-
-إزاي تستخدم bind, call, و apply؟
-
-إزاي تكتب currying function؟
-
-إيه هو الـ Debounce و Throttle؟
-
-الـ OOP و الـ Functional Programming:
-إزاي تشرح الـ Prototypal Inheritance؟
-
-يعني إيه الـ Prototype chain؟
-
-الفرق بين class و constructor function؟
-
-إزاي تعمل Inheritance بالـ classes؟
-
-إزاي تكتب كود functional أكتر؟
-
-الفرق بين map, filter, reduce؟
-
-إزاي تعمل composition للفنكشنز؟
-
-الـ Asynchronous JavaScript:
-الفرق بين Callback و Promise؟
-
-إزاي تكتب Promise من الصفر؟
-
-إزاي تتعامل مع async/await؟
-
-إزاي تعمل Error Handling في الـ async code؟
-
-الفرق بين parallel و sequential execution؟
-
-المتقدم:
-إزاي تكتب كود Modular باستخدام ES Modules؟
-
-إزاي بتشتغل الـ Garbage Collection؟
-
-إزاي تمنع Memory Leaks في كود JavaScript؟
-
-يعني إيه WeakMap و WeakSet وبيفيدوك في إيه؟
-
-إزاي تكتب Custom Iterator؟
-
-إزاي تعمل Generator function وبيفيدك في إيه؟
-
-يعني إيه Proxy و Reflect API؟
-
-يعني إيه Event Delegation؟
-
-إزاي تكتب Observer pattern في JavaScript؟
-
-الفرق بين Shallow Copy و Deep Copy؟
-
-⚠️ أخطاء وممارسات خاطئة شائعة في JavaScript
-استخدام var بدل let أو const
-
-تعديل المتغيرات اللي معمولة بـ const
-
-تجاهل التعامل مع الأخطاء في الكود الـ async
-
-استخدام الكولباك بشكل عشوائي بدون Promise أو async/await
-
-كتابة كود مكرر بدل ما تستخدم reusable functions
-
-نسيان الـ return في الـ arrow functions
-
-استخدام == بدل ===
-
-سوء فهم الـ this داخل الفنكشنز
-
-العمل على كائنات مباشرة بدون عمل نسخ منها (مما يسبب side effects)
-
-استخدام forEach لما تكون محتاج return أو async logic (استخدم map أو for...of)
-
-التعامل مع الكود بطريقة Imperative بدل ما تكتب بشكل Declarative
-
-استخدام setTimeout بطريقة غلط تؤدي لمشاكل في الأداء
-
-تجاهل استخدام أدوات الـ linting زي ESLint
-
-الإفراط في استخدام Global variables
-
-نسيان أو سوء استخدام الـ break في switch
-
-لو حبيت أبدأ أشرحهم لك واحد واحد بشكل منظم أو نحطهم في خطة مذاكرة يومية، بلغني وهنقسمهم مع مصادر عملية وامتحانات تدريب.
-
-
-
-
-
-
-
-
-You said:
-وهات كمان  علي التايب سكريب بشرط لا تكرر شئ ذكرته من قبل 
-
-
-ChatGPT said:
-تمام يا أحمد، دي دلوقتي قائمة أسئلة مهمة جدًا في TypeScript، ومش مكررة من الأسئلة اللي فاتت في JavaScript. الأسئلة دي هتفيدك سواء في:
-
-تحسين جودة شغلك بـ TypeScript في المشاريع الفعلية
-
-التحضير لأي interview
-
-فهمك العميق للغة وكتابتها بشكل احترافي
-
-✅ قائمة أسئلة TypeScript مهمة جدًا (بدون تكرار)
-الأساسيات:
-إيه الفرق بين Type و Interface في TypeScript؟ وإمتى تستخدم كل واحد؟
-
-إزاي تكتب type لكائن فيه خصائص optional؟
-
-إزاي تعرف Tuple في TypeScript؟
-
-إيه هو الـ Literal Type وبيفيدك في إيه؟
-
-إيه الفرق بين any, unknown, و never؟
-
-يعني إيه type assertion وإمتى تحتاجه؟
-
-إزاي تمنع implicit any في الكود؟
-
-إيه هو Enum؟ وإيه الفرق بين string و numeric enums؟
-
-إزاي تكتب type لـ function بتاخد parameter وبتـرجّع value؟
-
-إيه هو الفرق بين void و never في الدوال؟
-
-المتقدم:
-إزاي تستخدم Union Types وIntersection Types؟
-
-يعني إيه Discriminated Union؟ وبتفيدك في إيه؟
-
-إزاي تكتب Recursive type؟
-
-إزاي تكتب Conditional Type؟ وإيه أهم استخداماته؟
-
-إيه الفرق بين Partial<T>, Required<T>, و Readonly<T>؟
-
-إزاي تكتب type لأوبچيكت فيه keys ديناميكية؟
-
-يعني إيه keyof و typeof في TypeScript؟
-
-إزاي تعمل Mapped Types؟
-
-إزاي تكتب Generic Function؟
-
-إيه هي Constraints في الـ Generics؟ وليه بنحتاجها؟
-
-التعامل مع الكود وجعل الشغل قوي:
-إزاي TypeScript بيمنع الـ runtime errors في الكود؟
-
-إزاي تكتب type آمن للـ API response؟
-
-إزاي تتأكد إن كل الخصائص اتحطت قبل الاستخدام (definite assignment)?
-
-إزاي Type Inference بيشتغل في TypeScript؟
-
-إزاي تحمي الكود من null و undefined باستخدام strictNullChecks؟
-
-إزاي تكتب أنواع مركبة ومعقدة بدون تعقيد الكود؟
-
-إزاي تحول كود JavaScript موجود لكود TypeScript خطوة بخطوة؟
-
-إزاي تكتب Utility Types بنفسك؟
-
-إزاي TypeScript بيشتغل تحت الغطاء؟ وهل هو فعلاً "Superset"؟
-
-إزاي تربط بين TypeScript و المكتبات اللي مش بتدعم TS (باستخدام .d.ts)؟
-
-⚠️ أخطاء شائعة وممارسات غلط في TypeScript
-الإفراط في استخدام any اللي بيخلي الكود يفقد أمان الـ types
-
-كتابة أنواع معقدة بدون داعي (Overengineering)
-
-استخدام type بدل interface في حالات الـ OOP والميراث
-
-عدم التعامل مع الـ null والـ undefined بشكل آمن
-
-استخدام Generics بدون Constraints
-
-عدم تحديث الأنواع لما يتغير الـ data structure
-
-تجاهل الـ strict mode في tsconfig
-
-كتابة الكود بنفس طريقة JavaScript وعدم الاستفادة من ميزات TypeScript
-
-إهمال توثيق الأنواع للمطورين الآخرين
-
-عدم كتابة return types للدوال المهمة (خصوصًا في الـ services و الـ handlers)
-
-لو حابب نعمل خطة مذاكرة أو نعمل سلسلة تطبيقية نغطي فيها كل ده عملي على مشروع حقيقي أو نماذج انترفيو، بلغني.
-
-
-
-
-
-
-
-
-You said:
-وعن الريأكت 
-
-
-ChatGPT said:
-تمام يا أحمد، دلوقتي جايب لك قائمة أسئلة قوية جدًا عن React (مش مكررة من JavaScript أو TypeScript)، وهتفيدك في:
-
-الشغل الفعلي وتطوير المشاريع
-
-اجتياز الانترفيوهات
-
-تحسين مستواك في كتابة React احترافي
-
-وفي الآخر هتلاقي قائمة بأشهر الأخطاء والممارسات الغلط في React برضو ✅
-
-✅ قائمة أسئلة مهمة جدًا في React
-المفاهيم الأساسية:
-إيه الفرق بين الـ Functional Components و Class Components؟
-
-إزاي React بيشتغل تحت الغطاء (Virtual DOM & Reconciliation)؟
-
-إزاي بيشتغل الـ JSX؟ وإيه هو أصله؟
-
-إيه الفرق بين Controlled و Uncontrolled components؟
-
-إزاي بتعمل conditional rendering؟
-
-يعني إيه lifting state up؟
-
-إزاي React بيتعامل مع الـ keys في المصفوفات؟ وليه مهمين؟
-
-إزاي تفرق بين props و state؟ ومين بيستخدم إيه وإمتى؟
-
-إيه الفرق بين one-way binding و two-way binding؟
-
-إمتى الكومبوننت بيتعمله re-render؟ وإزاي تمنع الـ re-renders الغير ضرورية؟
-
-الـ Hooks:
-إيه هو useState؟ وإزاي تشتغل بيه؟
-
-إيه الفرق بين useEffect و useLayoutEffect؟
-
-إزاي تكتب custom hook؟ وبتفيدك في إيه؟
-
-إزاي تستخدم useRef؟ وإيه الفرق بينه وبين useState؟
-
-إزاي تستخدم useMemo و useCallback لتحسين الأداء؟
-
-إمتى تستخدم useReducer بدل useState؟
-
-إزاي تعمل cleanup في useEffect؟ وإمتى بيحصل؟
-
-ليه لازم تستخدم dependency array في useEffect؟ وإيه المشاكل اللي بتحصل لو نسيتها؟
-
-المتقدم:
-إزاي تكتب كود performant في React؟ (memoization, virtualization)
-
-إزاي تشتغل بالـ Context API؟ وإمتى تستخدمه بدل state lifting؟
-
-إيه المشاكل اللي ممكن تحصل من الاستخدام المفرط لـ Context؟
-
-إزاي تعمل Error Boundaries؟ وإيه اللي ممكن يقع بدونها؟
-
-إزاي React بيشتغل في السيرفر؟ (SSR مع Next.js مثلاً)
-
-إزاي تستخدم Suspense و lazy loading؟
-
-إزاي تكتب Forms مع Formik أو React Hook Form؟ وأيه الفرق بينهم؟
-
-إزاي React بيهندل الـ synthetic events؟
-
-إزاي تبني reusable components بشكل سليم؟
-
-إزاي تعمل animation باستخدام framer-motion أو react-spring؟
-
-إزاي تنظم ملفات مشروع React كبير (Structure, Patterns)؟
-
-إزاي تكتب اختبارات لوحدات React باستخدام Testing Library أو Jest؟
-
-⚠️ أخطاء وممارسات خاطئة شائعة في React
-استخدام state في أماكن غلط بيؤدي لإعادة ريندر كتير
-
-نسيان تزويد key عند عمل map على عناصر
-
-كتابة useEffect بدون dependency array أو بمصفوفة غلط
-
-استخدام props/state مباشرة داخل setState
-
-استخدام useEffect في async functions بشكل خاطئ
-
-تكرار logic بدل ما تعمله custom hook
-
-التعامل مع DOM مباشرة بدل useRef أو React abstractions
-
-كتابة كل حاجة في كومبوننت واحد (مفيش separation of concerns)
-
-تجاهل الأداء وعدم استخدام React.memo, useMemo, useCallback
-
-نسيان cleanup للـ subscriptions أو الـ timers داخل useEffect
-
-الإفراط في استخدام Context API بدل إدارة state محلية
-
-نسيان تهيئة القيم الافتراضية للـ state أو الـ props
-
-تكرار الكود بدل ما تعمل component reuse
-
-كتابة event handlers جوا JSX بدون useCallback (يؤدي إلى rerenders)
-
-لو حابب، أقدر أجهزلك جدول مذاكرة يومي أو تدريبات عملية على مشروع وهمي أو مشروعك الحالي، بحيث نغطي كل ده واحدة واحدة، ومعاه مصادر لكل سؤال (Docs + Code Examples).
-
-
-
-
-
-
-
-
-You said:
-ولل نيكست جي اس
-
-
-ChatGPT said:
-جميل جدًا يا أحمد، دلوقتي نكمل السلسلة مع أهم الأسئلة اللي لازم تعرفها في Next.js – أسئلة بتساعدك في:
-
-تطوير مشاريع احترافية باستخدام Next.js
-
-فهم عميق للبنية والمميزات القوية بتاعته
-
-اجتياز أي Interview بيتطلب معرفة قوية بـ React + SSR/SSG
-
-تجنب الأخطاء اللي بتتكرر حتى مع ناس عندها خبرة
-
-✅ قائمة أسئلة قوية جدًا في Next.js
-الأساسيات:
-إيه الفرق بين Next.js و React؟
-
-إيه الفرق بين SSR (Server-Side Rendering) و SSG (Static Site Generation)؟
-
-إمتى تستخدم getServerSideProps؟ وإيه عيوبه؟
-
-إمتى تستخدم getStaticProps مع getStaticPaths؟ وبيفيدوا في إيه؟
-
-إزاي تهيكل صفحات المشروع باستخدام الـ File-based Routing في Next.js؟
-
-إيه الفرق بين pages و app directory في Next.js 13+؟
-
-إزاي تشتغل Dynamic Routes في Next.js؟
-
-إزاي تعمل API Routes في Next.js؟ وإمتى تستخدمها؟
-
-إزاي تـredirect أو تعمل rewrite في Next.js؟
-
-إزاي تهيأ Metadata للصفحات (SEO) باستخدام next/head أو metadata API الجديد؟
-
-الأداء و SEO:
-إزاي Next.js بيساعدك في تحسين SEO مقارنةً بـ React؟
-
-إزاي تستخدم Image component بالشكل الصحيح لتحسين الأداء؟
-
-إزاي تـpreload بيانات أو ملفات معينة لتحسين سرعة الـ page load؟
-
-إزاي Next.js بيستخدم Automatic Code Splitting؟
-
-إزاي تعمل lazy load للـ components أو الصور في Next.js؟
-
-المتقدم (App Router - Next.js 13+):
-إيه هو الفرق بين Layout.js, Page.js, و Template.js؟
-
-إزاي تكتب Server Component؟ وإمتى تستخدمها؟
-
-إزاي تدمج Client Component جوه Server Component والعكس؟
-
-إزاي تكتب loading.tsx, error.tsx, و not-found.tsx في app router؟
-
-إزاي تكتب generateStaticParams و generateMetadata؟
-
-إزاي تـhandle Authentication في Next.js؟ (مثال: NextAuth.js)
-
-إزاي تتعامل مع Middlewares في Next.js؟ وبيفيدوا في إيه؟
-
-إزاي تكتب Layouts متداخلة Nested Layouts؟
-
-إزاي تـcache البيانات باستخدام الـ caching layers في Next.js؟
-
-إزاي تـstream محتوى الصفحة تدريجيًا (Streaming with Suspense)؟
-
-التكامل:
-إزاي تستخدم TypeScript في Next.js بطريقة صح؟
-
-إزاي تدمج Tailwind CSS في مشروع Next.js؟
-
-إزاي تـdeploy مشروع Next.js على Vercel؟ وهل فيه بدائل؟
-
-إزاي تكتب API handler في Next.js وتمرر context للـ backend؟
-
-إزاي تعمل Localization / i18n في Next.js (بما فيها App Router)؟
-
-⚠️ أخطاء شائعة وممارسات غلط في Next.js
-استخدام getServerSideProps بدون داعي (بيبطّأ الصفحات)
-
-الإفراط في تحميل البيانات من الكلاينت بدل السيرفر
-
-وضع مكونات ثقيلة داخل Server Components بدون caching
-
-نسيان التعامل مع الصور بشكل صحيح (باستخدام <Image />)
-
-استخدام API Routes للحاجات الكبيرة بدل Backend مستقل
-
-تجاهل SEO metadata وترك الصفحة فاضية
-
-عدم استخدام dynamic imports و lazy loading
-
-دمج client/server components بشكل عشوائي بدون تحديد الهدف
-
-استخدام useEffect لجلب بيانات بدل ما تستخدم get*Props
-
-نسيان error boundaries في الصفحات المهمة
-
-لو حابب، ممكن نكمل بخطة مذاكرة مرتبة تغطي:
-
-JavaScript > TypeScript > React > Next.js
-
-أو نبدأ نطبق مشروع عملي كامل بـ Next.js من الصفر للديبلوي
-
-أو نحل مع بعض simulation لأسئلة Interview فنية حقيقية
-
-تحب نبدأ بإيه؟
-
-
-
-
-
-
-
-
-You said:
-واسئله كسنيور فرونت اند 
-
-
-ChatGPT said:
-تمام يا أحمد 👨‍💻، دلوقتي هديك قائمة قوية جدًا بأسئلة Senior Frontend Developer – الأسئلة دي مش بس تقيلة فنيًا، لكنها كمان بتوضح إزاي تكون شخص قادر تقود فريق، تحل مشاكل حقيقية، وتحسن الأداء والكود والمنتج ككل.
-
-كل الأسئلة دي مفيدة:
-
-للتحضير لانترفيوهات سينيور فعلية
-
-لفهم عميق لأفضل الممارسات
-
-لتطوير جودة شغلك وإدارة الفريق أو المشروع
-
-✅ قائمة أسئلة Senior Frontend Developer (تقنية + معمارية + UI + قيادة)
-🔹 هندسة وأداء
-إزاي بتحسن أداء تطبيق SPA كبير؟
-
-إزاي تكتشف وتقيس الـ performance bottlenecks في متصفح المستخدم؟
-
-إزاي تستخدم أدوات مثل Lighthouse وWeb Vitals وChrome DevTools لتحديد مشاكل الأداء؟
-
-إيه الفرق بين Debounce و Throttle؟ وإمتى تستخدم كل واحد؟
-
-إزاي تنفذ lazy loading وcode splitting بشكل فعال في مشروع React أو Next.js؟
-
-إزاي تتعامل مع التطبيقات الكبيرة من حيث scalability وإعادة استخدام الـ components؟
-
-إزاي تنظم structure المشروع (folders, modules, layers) في تطبيق كبير؟
-
-إزاي تختار بين Server Rendering و Client Rendering في حالات حقيقية؟
-
-إزاي تتعامل مع long lists أو heavy DOM rendering؟ (مثلاً virtualization)
-
-🔹 أمان وحماية التطبيقات
-إزاي تحمي تطبيقك من XSS وCSRF؟
-
-إزاي تتأكد إن أي بيانات من الـ API ما تكونش مصدر خطر على واجهتك؟
-
-إزاي تتعامل مع الـ tokens والتخزين الآمن (localStorage vs cookies)؟
-
-إزاي تمنع أو تتعامل مع session hijacking؟
-
-🔹 إدارة الحالة والـ Architecture
-إمتى تستخدم state management library زي Redux أو Zustand؟
-
-إزاي تنظم الـ state بين local state, lifted state, و global state؟
-
-إزاي تتعامل مع التطبيقات اللي فيها تعقيد في الـ UI flow؟
-
-إزاي تنفذ architecture زي MVVM أو Presenter Pattern في React؟
-
-إزاي تطبق مفهوم الـ separation of concerns في React؟
-
-🔹 التجربة البصرية والـ UI/UX
-إزاي تطبق تصميم متجاوب (responsive) بكفاءة عالية؟
-
-إزاي تتعامل مع accessibility (A11y)؟ وإيه الأدوات اللي بتستخدمها؟
-
-إزاي تقيس وتحسن الـ Core Web Vitals؟
-
-إزاي توازن بين جمالية التصميم وفاعلية الأداء؟
-
-إزاي تطبق dark mode / RTL / localization بشكل نظيف؟
-
-🔹 أنظمة التصميم (Design Systems)
-إزاي تبني Design System خاص بشركتك أو مشروعك؟
-
-إزاي تدمج Figma tokens أو Storybook في الـ workflow؟
-
-إزاي تكتب reusable components قابلة للثيمات والتخصيص؟
-
-إزاي تحافظ على consistency بين الـ UI والـ UX في الفريق كله؟
-
-🔹 الاختبارات والجودة
-إزاي تحدد إيه اللي يتعمله Unit test وIntegration test؟
-
-إزاي تكتب tests للكومبوننتس؟
-
-إزاي تقيس الـ coverage وإزاي تتعامل مع flaky tests؟
-
-إزاي تبني test pipeline (CI) لأي Pull Request؟
-
-🔹 قيادة فريق وكود كلين
-إزاي تراجع PRs بشكل احترافي؟
-
-إزاي تكتب كود نظيف وسهل القراءة والصيانة؟
-
-إزاي تعلم وتوجه junior developers في الفريق؟
-
-إزاي تعمل planning sprint لواجهة جديدة؟
-
-إزاي تتعامل مع نزاعات أو آراء تقنية متضاربة داخل الفريق؟
-
-إزاي تبني وDocument واجهات الـ APIs بين الـ frontend والـ backend؟
-
-إزاي تشرح اختياراتك التقنية لناس غير تقنيين (مثل مدير منتج أو ديزاينر)؟
-
-🔹 أسئلة تقيم فيها نفسك كسينيور
-ما هو تعريفك لـ "كود ناجح"؟
-
-إيه أصعب مشكلة واجهتك كـ Frontend Developer؟ إزاي حليتها؟
-
-لو استلمت مشروع مكتوب بطريقة سيئة، إزاي تبدأ في refactoring؟
-
-إزاي تبني ثقافة تقنية قوية جوه الفريق؟
-
-إزاي تختار tech stack لمشروع جديد؟
-
-لو حابب أجهزلك نسخة PDF أو جدول مذاكرة بالأسئلة دي مع روابط لمصادر (Docs + فيديوهات متقدمة + تمارين)، قولّي.
-ولو حابب نحضر Simulation حقيقي لانترفيو سينيور، نبدأه سوا من بكرة برضو 💪
-
-تحب نبدأ بإيه؟
-
-
-
-
-
-
-
-
-You said:
-وايضا ف نيست جي اس
-
-
-ChatGPT said:
-ممتاز يا أحمد 👨‍💻، دلوقتي نكمل آخر جزء من السلسلة: أسئلة Senior Backend Developer باستخدام NestJS
-الأسئلة دي بتفيدك سواء كنت بتحضّر لانترفيو، أو عايز تراجع وتطوّر مستوى شغلك، أو تراجع الهندسة المعمارية لمشاريعك.
-
-✅ أسئلة متقدمة (Senior Level) في NestJS
-🔹 الهندسة والمعمارية (Architecture)
-إيه الفرق بين monolithic و modular architecture في NestJS؟
-
-إمتى تستخدم Feature Modules وShared Modules؟
-
-إزاي تطبق CQRS pattern في NestJS؟
-
-إزاي تطبق Hexagonal Architecture باستخدام NestJS؟
-
-إزاي تنفذ DDD (Domain-Driven Design) داخل NestJS project؟
-
-إزاي تعمل decoupling بين الـ services والـ controllers؟
-
-إزاي تفصل بين application layer و domain layer و infrastructure layer؟
-
-إزاي تبني multi-tenant architecture باستخدام NestJS؟
-
-🔹 الأداء والمعالجة
-إزاي تـ optimize queries باستخدام TypeORM أو Prisma داخل NestJS؟
-
-إزاي تطبق caching باستخدام @CacheInterceptor و Redis؟
-
-إزاي تدير background jobs باستخدام Bull Queue وWorkers؟
-
-إزاي تتعامل مع الـ rate limiting داخل APIs؟
-
-إزاي تستخدم Interceptors لقياس وقت تنفيذ request؟
-
-إزاي تعمل throttling على مستوى global أو route؟
-
-إزاي تتعامل مع request/response streaming (مثل file uploads)؟
-
-🔹 الحماية والأمان
-إزاي تطبق RBAC (Role-Based Access Control)؟
-
-إزاي تستخدم Guards + Custom decorators لفلترة الوصول؟
-
-إزاي تطبق authentication باستخدام JWT + Refresh Tokens؟
-
-إزاي تحمي API من هجمات XSS و CSRF و Brute Force؟
-
-إزاي تستخدم Middleware للحماية من دخول غير مصرح؟
-
-إزاي تطبق 2FA أو OTP داخل NestJS؟
-
-🔹 الاختبارات والجودة
-إزاي تكتب Unit Tests باستخدام Jest لخدمة فيها Dependency Injection؟
-
-إزاي تعمل Mock للـ Repositories أو External Services في NestJS؟
-
-إزاي تكتب Integration Tests للـ Endpoints كاملة؟
-
-إزاي تعمل Test للـ Guards وInterceptors؟
-
-إزاي تبني CI pipeline للـ testing + linting + coverage؟
-
-إزاي تتعامل مع flaky tests في بيئة حقيقية؟
-
-🔹 الربط والتكامل (Integration)
-إزاي تتعامل مع الـ WebSockets (مثلاً باستخدام @WebSocketGateway)؟
-
-إزاي تبني Microservices باستخدام Transport layers (مثل Redis / Kafka / gRPC)؟
-
-إزاي تعمل Event-Driven Architecture داخل NestJS؟
-
-إزاي تتعامل مع External APIs وتعيد هيكلة responses؟
-
-إزاي تنفذ versioning للـ API؟ (v1, v2, ...)
-
-إزاي تتعامل مع GraphQL APIs في NestJS؟
-
-إزاي تطبق file upload + validation + security في NestJS؟
-
-🔹 إدارة المشروع والتنظيم
-إزاي تنظم مشروع كبير يحتوي على عشرات الوحدات؟
-
-إزاي تكتب Documentation للـ APIs باستخدام Swagger؟
-
-إزاي تحافظ على separation بين DTOs, Entities, و Domain Models؟
-
-إزاي تتعامل مع طلبات معقدة تحتوي على فلترة، ترتيب، Pagination؟
-
-إزاي تبني dynamic query builder للـ reports أو search؟
-
-🔹 تجارب وخبرة حقيقية
-إيه أصعب مشكلة قابلتك في NestJS؟ إزاي حليتها؟
-
-إزاي تعمل Migration من مشروع Express قديم إلى NestJS؟
-
-إزاي تراجع كود كبير في PR كتب باستخدام NestJS؟
-
-إزاي توازن بين سرعة التطوير والـ Best Practices في ضغط الوقت؟
-
-إمتى تبني حلك كموديلات مستقلة، وإمتى تدمجها؟
-
-إزاي تختار بين Prisma و TypeORM و Sequelize في مشروع NestJS؟
-
-⚠️ أخطاء شائعة وممارسات سيئة كسينيور
-دمج business logic داخل controllers
-
-استخدام DTOs كـ entities أو العكس
-
-إهمال modular structure → مشروع كله داخل ملفين
-
-استخدام any في TypeScript بدل التايب الدقيق
-
-تجاهل الأخطاء داخل الخدمات وعدم استخدام try/catch
-
-الاعتماد على console.log بدل structured logging
-
-كتابة كثير من الـ logic داخل pipes أو interceptors غلط
-
-لو حابب، أجهزلك بعد كده:
-
- خطة مذاكرة مرتبة حسب الأولوية (بتبدأ من هندسة المشروع لحد الأداء والاختبارات)
-
- ملف PDF أو Notion فيه كل الأسئلة دي مع مصادر للمراجعة
-
- امتحان وهمي (Mock Interview) مع سيناريوهات حقيقية
-
-تحب نبدأ بإيه؟
-
-
-
-
-
-
-
-
-You said:
-ولل بوستجر سكول  ومونجو دي بي 
-
-
-ChatGPT said:
-تمام يا أحمد 👌 دلوقتي هديك قائمتين:
-واحدة لـ PostgreSQL والثانية لـ MongoDB، والأسئلة فيها هتكون على مستوى سينيور عملي وفعلي – تساعدك في:
-
-تحسين استعلاماتك وأداء قواعد البيانات
-
-مراجعة مشاريعك الحالية
-
-دخول أي انترفيو تقيل وانت جاهز
-
-✅ أولًا: أسئلة سينيور لـ PostgreSQL
-🔹 الاستعلامات المتقدمة
-إزاي تكتب Query يحتوي على JOIN + GROUP BY + HAVING؟
-
-إمتى تستخدم LEFT JOIN بدل INNER JOIN؟
-
-إزاي تعمل recursive query باستخدام WITH RECURSIVE؟
-
-إزاي تحسب الـ running total أو moving average باستخدام WINDOW FUNCTIONS؟
-
-إزاي تستخدم CASE داخل SELECT أو WHERE؟
-
-إزاي تعمل Query dynamic filter باستخدام ILIKE, IN, و COALESCE؟
-
-إزاي تعمل search نصي سريع؟ وإيه الفرق بين LIKE و GIN index و tsvector؟
-
-🔹 الأداء والتحسين
-إزاي تقرأ وتفهم خطة تنفيذ EXPLAIN ANALYZE؟
-
-إمتى تضيف Index؟ وإمتى بيكون عبء على الأداء؟
-
-إزاي تختار بين B-Tree و GIN و Hash Index؟
-
-إزاي تتعامل مع Slow Queries في تطبيق production؟
-
-إزاي تستخدم Materialized Views لتحسين الأداء؟
-
-إزاي تتعامل مع Deadlocks؟
-
-إزاي تنفذ partitioning لجدول ضخم؟
-
-🔹 التحكم في البيانات
-إزاي تكتب Transaction فيها أكثر من عملية CRUD؟
-
-إيه الفرق بين SERIALIZABLE و READ COMMITTED؟
-
-إزاي تعمل Trigger؟ وإمتى تستخدمه بدل logic من NestJS؟
-
-إزاي تعمل وظيفة داخل PostgreSQL باستخدام PL/pgSQL؟
-
-إزاي تتعامل مع JSONB columns؟
-
-إزاي تبحث داخل JSONB field؟ وإزاي تـ index الحقول دي؟
-
-🔹 التصميم والمعمارية
-إزاي تعمل تصميم قاعدة بيانات normalized؟
-
-إمتى تفك ارتباط جدولين (denormalization) لتحسين الأداء؟
-
-إزاي تتعامل مع العلاقات many-to-many بكفاءة؟
-
-إزاي تدير علاقة polymorphic داخل PostgreSQL؟
-
-إزاي تبني ERD وتطابقه مع الـ schema الموجود؟
-
-إزاي تدير الـ migrations والـ seed data بطريقة آمنة؟
-
-🔹 ممارسات سلبية
-استخدام SELECT * في production
-
-تجاهل الـ indexing على الجداول الكبيرة
-
-الاعتماد على قواعد البيانات بدل منطق التطبيق بالكامل
-
-تخزين بيانات كبيرة داخل JSON بدل العلاقات الحقيقية
-
-كتابة queries غير محمية من SQL Injection
-
-✅ ثانيًا: أسئلة سينيور لـ MongoDB
-🔹 التصميم والمعمارية
-إزاي تختار بين Embed vs Reference؟
-
-إزاي تصمم قاعدة Mongo فيها nested arrays كبيرة؟
-
-إزاي تعمل schema validation باستخدام Mongoose؟
-
-إزاي تدير multi-tenant schema في MongoDB؟
-
-إزاي تعمل soft deletes في MongoDB؟
-
-إزاي تبني compound index يدعم الفلترة والـ sorting؟
-
-🔹 الاستعلامات المتقدمة
-إزاي تكتب aggregate pipeline بـ stages زي $match, $group, $lookup؟
-
-إزاي تستخدم $facet لجمع نتائج متعددة في نفس الوقت؟
-
-إزاي تنفذ full-text search في Mongo؟
-
-إزاي تكتب query فيها فلترة + pagination + sorting بطريقة فعالة؟
-
-إزاي تستخدم $expr أو $cond للفلترة الشرطية؟
-
-🔹 الأداء
-إزاي تقيس أداء استعلام في Mongo؟
-
-إزاي تستخدم explain() وتفهم خطته؟
-
-إزاي تعمل indexing مناسب للـ nested fields؟
-
-إزاي تعمل TTL index للبيانات المؤقتة؟
-
-إزاي تتعامل مع document size limit (16MB)؟
-
-إمتى تستخدم sharding في MongoDB؟
-
-إزاي تعمل rate limiting أو throttling بالاعتماد على Mongo؟
-
-🔹 الدمج في NestJS
-إزاي تستخدم @Schema() + @Prop() داخل Mongoose مع Nest؟
-
-إزاي تستخدم transactions داخل Mongoose؟
-
-إزاي تعمل populate لعلاقات multiple في Mongoose؟
-
-إزاي تفصل بين الـ schemas و الـ DTOs في مشروع NestJS؟
-
-إزاي تعمل soft delete بفلترة البيانات الحقيقية؟
-
-إزاي تدير النسخ الاحتياطي والـ seeding لبيانات Mongo؟
-
-🔹 أخطاء شائعة
-تخزين بيانات ضخمة داخل document واحد
-
-استخدام $or و$in بكثافة بدون فكر
-
-تجاهل عمل indexing للعلاقات أو التواريخ
-
-الاعتماد الكلي على populate بدل تصميم schema نظيف
-
-استخدام Mongo لمجالات relational بحتة (زي financial systems)
-
-تحب أجهزلك:
-
-✅ نسخة PDF للأسئلة دي كلها؟
-
-✅ مذكرة مذاكرة سريعة أو امتحان وهمي؟
-
-✅ مقارنة بين PostgreSQL و MongoDB للمشاريع القادمة؟
-
-قولي تختار إيه؟
-
-
-
-
-
-
-
-
-You said:
-وكمان عاوز للداتا بيز 
-
-
-ChatGPT said:
-تمام يا أحمد 👌 دلوقتي هقدملك:
-
-✅ قائمة شاملة بأهم الأسئلة لمستوى سينيور في مجال قواعد البيانات (Database Design & Optimization)
-الأسئلة دي عامة لأي DBMS، وبتغطي التصميم، الأداء، الـ normalization، الـ indexing، المعمارية، المعاملات، والأمان، وبتفيدك في:
-
-الانترفيوهات
-
-تحليل المشكلات المعقدة
-
-تحسين جودة مشاريعك فعليًا
-
-✅ أسئلة سينيور DataBase Design & Management
-🔹 التصميم المعماري (Data Modeling & Architecture)
-ما الفرق بين الـ OLTP و OLAP؟ وإمتى تستخدم كل واحد؟
-
-ما الفرق بين الـ Normalization و Denormalization؟
-
-اشرح قواعد الـ Normal Forms (1NF, 2NF, 3NF, BCNF).
-
-إمتى تستخدم الـ denormalization رغم عيوبه؟
-
-كيف تصمم علاقة many-to-many بطريقة صحيحة؟
-
-كيف تصمم قاعدة بيانات تحتوي على أنواع متعددة من المستخدمين (polymorphic relations)؟
-
-ما الفرق بين surrogate key و natural key؟ ومتى تستخدم كل واحد؟
-
-كيف تصمم ERD لمشروع معقد يحتوي على أكثر من 20 جدول؟
-
-كيف تصمم Audit Log system داخل قاعدة البيانات؟
-
-إزاي تمثل الـ hierarchy (شجرة تصنيفات مثلاً) داخل DB؟ (Adjacency List vs Closure Table)
-
-🔹 الأداء والتحسين (Performance & Optimization)
-ما هي أنواع الـ Indexes؟ ومتى تستخدم كل نوع؟
-
-ما الفرق بين clustered و non-clustered index؟
-
-كيف تقيس وتحسن أداء استعلامات بطيئة؟
-
-ما معنى Cardinality؟ وكيف يؤثر على كفاءة الفهرسة؟
-
-ما هو الـ Query Plan؟ وكيف تقرأه؟
-
-ما أسباب وجود full table scan؟ وكيف تعالجها؟
-
-كيف تتعامل مع قاعدة بيانات تحتوي على ملايين السجلات؟
-
-ما الفرق بين read-heavy و write-heavy DB design؟
-
-ما الفرق بين vertical scaling و horizontal scaling؟
-
-ما الفرق بين sharding و partitioning؟
-
-🔹 المعاملات والحماية (Transactions & Security)
-ما هي خصائص الـ ACID؟
-
-اشرح مستويات العزل (Isolation Levels):
-
-READ UNCOMMITTED
-
-READ COMMITTED
-
-REPEATABLE READ
-
-SERIALIZABLE
-
-ما هو الـ deadlock؟ وكيف تمنعه؟
-
-كيف تعمل locking strategy آمنة وفعالة؟
-
-ما الفرق بين optimistic و pessimistic locking؟
-
-كيف تمنع SQL Injection من جهة قاعدة البيانات؟
-
-ما أفضل الممارسات لحماية البيانات الحساسة (مثل كلمات السر أو معلومات الدفع)؟
-
-كيف تدير صلاحيات الوصول للمستخدمين المختلفين على مستوى الـ DB؟
-
-كيف تنفذ auditing داخل قاعدة البيانات؟
-
-🔹 العمل الجماعي والمشاريع
-كيف تدير عمليات migration بشكل منظم وآمن؟
-
-كيف تعمل version control للـ schema؟
-
-كيف تعمل seeding آمن وقابل لإعادة التشغيل؟
-
-كيف تتعامل مع rollbacks أثناء deployment؟
-
-كيف تختار بين SQL و NoSQL لمشروع جديد؟
-
-كيف توثق تصميم قاعدة البيانات؟
-
-كيف تكتب test data بطريقة تضمن كفاءة الأداء وجودة النتائج؟
-
-كيف تقرر إن كان حقل معين nullable أم لا؟
-
-كيف تتعامل مع البيانات الحساسة والقوانين مثل GDPR؟
-
-كيف تتعامل مع عمليات حذف ضخمة دون التأثير على الأداء؟
-
-ما استراتيجيات الـ backup و الـ restore لقواعد البيانات المهمة؟
-
-⚠️ أخطاء شائعة يجب تجنبها
-استخدام SELECT * في Queries
-
-تخزين كلمات السر بنص صريح بدون Hash
-
-استخدام الأعمدة كمكان لتخزين أكثر من قيمة (comma-separated values)
-
-تجاهل التعامل مع حالات NULL
-
-عدم إضافة Indexات للحقول المستخدمة في WHERE أو JOIN
-
-تجاهل خطة التنفيذ وعدم مراقبة الأداء
-
-الاعتماد الكلي على ORMs بدون فهم الـ SQL الحقيقي
-
-تخزين ملفات داخل الـ DB بدل من File System
-
-استخدام Data Types غير مناسبة (مثل تخزين تواريخ كنصوص)
-
-لو حابب أجهزلك:
-
-📘 ملف PDF أو Notion فيه كل الأسئلة دي مرتبة حسب المستوى
-
-🧠 خطة مذاكرة تدريجية من الأساسيات لغاية التحديات
-
-✅ سيناريوهات انترفيو حقيقية (Mock DB Interviews)
-
-تحب أبدأ بإيه منهم؟
-
-
-
-
-
-
-
-
-You said:
-ولل باك اند.سينيور 
-
-
-ChatGPT said:
-تمام يا أحمد 🙌
-دي أقوى ليستة شاملة لأسئلة الباك إند على مستوى سينيور – مناسبة للانترفيوهات، لمراجعة مستواك، وتحسين أي مشروع حالي.
-
-✅ أسئلة Senior Backend Developer (بشكل عام – مش مرتبطة بتقنية معينة)
-🔹 المفاهيم الأساسية (Core Concepts)
-ما الفرق بين الـ synchronous و asynchronous؟
-
-ما الفرق بين thread و process؟
-
-اشرح مفهوم الـ event loop (في Node.js مثلًا).
-
-ما الفرق بين REST و GraphQL؟ وإمتى تختار كل واحد؟
-
-ما الفرق بين monolithic و microservices؟
-
-ما هو الـ API Gateway؟ وما دوره في نظام Microservices؟
-
-ما الفرق بين stateless و stateful APIs؟
-
-ما المقصود بـ idempotent requests؟
-
-ما الفرق بين PUT و PATCH؟
-
-إزاي تتعامل مع rate limiting؟
-
-🔹 الأداء والتحسين (Performance & Optimization)
-إزاي تقلل الـ response time؟
-
-إزاي تعمل caching في الباك إند؟ وإيه الفرق بين in-memory cache و distributed cache؟
-
-ما الفرق بين LRU و LFU؟ وأين يستخدمان؟
-
-ما الفرق بين synchronous jobs و background jobs؟
-
-إزاي تتعامل مع high-concurrency (عدد كبير من الطلبات المتزامنة)؟
-
-إزاي تحل مشاكل N+1 Query؟
-
-إزاي تختار بين queue system زي Bull أو RabbitMQ؟
-
-🔹 المعماريات المتقدمة (Architecture & Design)
-ما هو الـ SOLID principles؟
-
-ما هو الـ Domain-Driven Design (DDD)؟
-
-ما الفرق بين Service Layer و Repository Layer؟
-
-إزاي تصمم API modular وقابل للتوسيع؟
-
-ما الفرق بين CQRS و CRUD؟
-
-ما هو الـ Event Sourcing؟
-
-اشرح Pub/Sub Model.
-
-إزاي تعمل multi-tenant application؟
-
-🔹 الأمان (Security)
-ما الفرق بين JWT و Session؟
-
-إزاي تعمل 2FA؟
-
-ما هو CSRF؟ وإزاي تمنعه؟
-
-ما هو CORS؟ وإزاي تسيطر عليه؟
-
-ما هو الـ OAuth2؟
-
-إزاي تحمي الـ APIs بتاعتك من brute-force؟
-
-إزاي تطبق Role-Based Access Control؟
-
-ما الفرق بين Encryption و Hashing و Encoding؟
-
-🔹 التعامل مع قواعد البيانات (DBs)
-إزاي تختار بين SQL و NoSQL؟
-
-إزاي تكتب query performant؟
-
-إزاي تعمل transactions داخل الكود؟
-
-إزاي تتعامل مع migration tools (زي TypeORM أو Prisma أو Sequelize)؟
-
-إزاي تصمم schema مرن لتطبيق قابل للنمو؟
-
-إزاي تعمل soft delete بطريقة فعالة؟
-
-إزاي تتعامل مع large datasets؟
-
-🔹 الاختبارات والجودة (Testing & Quality)
-ما الفرق بين unit test و integration test و e2e test؟
-
-إزاي تعمل mock للـ DB أو external APIs؟
-
-ما الفرق بين TDD و BDD؟
-
-إزاي تكتب test cases تضمن عدم حدوث regressions؟
-
-إزاي تدمج CI/CD pipelines مع testing؟
-
-ما هي code smells الشائعة في الباك إند؟
-
-🔹 الـ DevOps و CI/CD
-ما الفرق بين Docker و VM؟
-
-إزاي تكتب Dockerfile جيد؟
-
-ما الفرق بين build و release؟
-
-إزاي تستخدم GitHub Actions أو GitLab CI؟
-
-ما المقصود بـ blue/green deployment؟
-
-إزاي تراقب السيرفرات والخدمات؟ (Monitoring & Alerting)
-
-ما الفرق بين horizontal و vertical scaling؟
-
-⚠️ أخطاء وممارسات خاطئة (Anti-patterns)
-كتابة logic في controllers بدل service layer
-
-استخدام الكاش بدون invalidation واضح
-
-التعامل مع الأخطاء بطريقة عامة جدًا (catch (e) {} بس)
-
-عدم استخدام timeouts للـ HTTP/DB requests
-
-إرسال بيانات حساسة في responses
-
-تجاهل structure الكود وفصل المسؤوليات
-
-كتابة استعلامات ضخمة جدًا وغير قابلة للإدارة
-
-لو حابب، أقدر أجهزلك كمان:
-
-💡 تمارين واقعية أو سيناريوهات تصميم
-
-📄 ملف PDF فيه الأسئلة دي مرتبة بمستوى تصاعدي
-
-✅ Mock Interview خاص بالباك إند
-
-تحب أبدأ بإيه منهم؟
-
-
-
-
-
-
-
-
-You said:
-ولل فول ستاك ديفلوبر سينيور 
-
-
-ChatGPT said:
-تمام يا أحمد ✅
-ودي أقوى ليستة شاملة لأسئلة Senior Full-Stack Developer
-هتفيدك في:
-
-الانترفيوهات السينيور
-
-تقييم نفسك بدقة
-
-تحسين شغلك من منظور “النظام الكامل” مش بس فرونت أو باك
-
-✅ أسئلة Senior Full Stack Developer
-🔹 القسم الأول: المعمارية العامة (Architecture)
-ما الفرق بين الـ Monolith و Microservices و Modular Monolith؟
-
-كيف تصمم System قابل للتوسع (Scalable System)؟
-
-كيف تتعامل مع high availability؟
-
-ما الفرق بين horizontal و vertical scaling؟
-
-كيف تصمم API Gateway يدير microservices مختلفة؟
-
-ما الفرق بين WebSockets و REST و GraphQL؟
-
-كيف تبني CI/CD pipeline متكاملة؟
-
-كيف تقرر بين SPA و MPA و SSR و SSG؟
-
-ما هو الـ BFF (Backend for Frontend)؟ ومتى تحتاجه؟
-
-كيف تتعامل مع multi-language apps (i18n) بشكل كامل (front + back)؟
-
-🔹 القسم الثاني: فرونت إند (React/Next.js + Performance)
-كيف تعمل code-splitting و lazy loading في React؟
-
-كيف تحل مشكلة hydration mismatch في Next.js؟
-
-كيف تتعامل مع SEO في SSR apps؟
-
-كيف تحسّن من الأداء العام لتطبيق الويب؟ (LCP, FID, CLS...)
-
-ما الفرق بين controlled و uncontrolled components؟
-
-كيف تدير global state في React app كبير؟
-
-متى تستخدم useMemo و useCallback؟
-
-كيف تبني dynamic forms في React/Next.js؟
-
-كيف تضمن أن الـ UI متوافق مع جميع الشاشات؟
-
-كيف تتعامل مع حماية المسارات (route guards) في الـ frontend؟
-
-🔹 القسم الثالث: باك إند (NestJS/Node + Design)
-ما الفرق بين Middleware و Interceptor و Guard في NestJS؟
-
-كيف تدير background jobs داخل التطبيق؟
-
-كيف تتعامل مع rate limiting في NestJS؟
-
-ما هي CQRS؟ وهل استخدمتها؟
-
-كيف تطبق SOLID principles في تصميم الباك إند؟
-
-كيف تصمم خدمة إرسال إشعارات قابلة للتوسيع (SMS, Email, Push)؟
-
-كيف تربط NestJS مع Redis؟ وإمتى تستخدمه؟
-
-ما هي أفضل ممارسات الـ DTOs في NestJS؟
-
-كيف تصمم ACL أو Role-based access؟
-
-كيف تتعامل مع الـ versioning في REST APIs؟
-
-🔹 القسم الرابع: الداتا بيز (PostgreSQL, MongoDB, Design)
-كيف تصمم جدول يحتوي على سجلّات متعددة اللغات؟
-
-ما الفرق بين Eager و Lazy loading في ORM؟
-
-كيف تطبق full-text search في PostgreSQL؟
-
-كيف تدير العلاقات بين الكيانات في MongoDB؟
-
-متى تستخدم aggregation pipeline في Mongo؟
-
-كيف تتعامل مع Migrations وإعادة الهيكلة بدون فقد بيانات؟
-
-ما الفرق بين soft delete و hard delete؟ ومتى تستخدم كل نوع؟
-
-ما هو الـ database sharding؟
-
-كيف تعمل indexing فعال في Mongo و SQL؟
-
-كيف تدير نسخة staging و dev من نفس قاعدة البيانات؟
-
-🔹 القسم الخامس: التكامل بين الفرونت والباك
-كيف تبني system login متكامل (JWT + Refresh Tokens + Front protection)؟
-
-كيف تعمل file upload (مثلاً صور المستخدم)؟
-
-كيف تتعامل مع CORS؟
-
-كيف تبني realtime chat (REST + Socket + DB + Front)؟
-
-كيف تعمل error handling موحّدة بين الفرونت والباك؟
-
-كيف ترسل إشعارات إلى المستخدمين في الوقت الحقيقي؟
-
-كيف تتابع الأحداث المهمة باستخدام logs و monitoring؟
-
-كيف تعمل throttling على APIs المستهلكة في الـ frontend؟
-
-كيف تبني dashboard إحصائي حيّ باستخدام WebSockets؟
-
-كيف تكتب integration tests تغطي full flow من front ل back؟
-
-🔹 القسم السادس: أمان وتوثيق وجودة
-كيف تؤمّن التطبيق من XSS, CSRF, SQL Injection؟
-
-كيف تدير صلاحيات متعددة على مستوى UI و DB؟
-
-كيف تكتب tests تغطي business logic المعقّد؟
-
-كيف تعمل logging ذكي على الباك إند؟
-
-ما هي أفضل طرق التوثيق (Swagger، Postman، Storybook)؟
-
-كيف تقيس التغطية الاختبارية (Code Coverage)؟
-
-كيف تستخدم feature flags داخل المشاريع؟
-
-كيف تبني نظام rollback سريع في حالة فشل النشر؟
-
-كيف تدير secret keys بأمان (env، vault، إلخ)؟
-
-كيف تكتب reusable components أو services على مستوى المشروع؟
-
-⚠️ أخطاء وممارسات خاطئة شائعة
-الـ backend يرسل أكتر من اللازم → frontend بطيء
-
-تكرار الـ logic بين الواجهة والخلفية
-
-تجاهل الأمن في النماذج والـ APIs
-
-استعلامات بدون index على جداول ضخمة
-
-تجاهل structure المجلدات مع كبر المشروع
-
-hardcoded values بدل config
-
-الاعتماد الكلي على ORMs بدون فهم SQL
-
-📘 لو حابب:
-أجهزلك نسخة PDF أو Notion
-
-أعملك Mock Interview حسب المستويات
-
-أديك خطة مذاكرة كاملة على أسبوعين أو شهر
-
-تحب أبدأ بإيه؟
-
-
-
-
-
-
-
-
-You said:
-هاتي كل الاسئله الي مسئلتهاش ليك ف رحلتي الي ان اصبح full stack developer ويجب ان اكون علي درايه ولو حتي مصطلحات او تكنولوجي او اشياء تقنيه بشرط لا تكرر سؤال سئلته من قبل  ولو نسيت مواضيع اسئلك فيها هاتلي عليها اسئله 
-
-
-ChatGPT said:
-تمام يا أحمد،
-دلوقتي هقدملك مجموعة شاملة من الأسئلة والمفاهيم اللي لسه متكلمناش عنها
-لكن لازم تكون على دراية بيها علشان تكون فعلاً Full Stack Developer محترف 🔥
-الأسئلة دي بتغطي جوانب ومفاهيم مهمة فاتتنا، سواء أدوات أو مفاهيم بنستخدمها كل يوم، أو بتبان في شغل الشركات الكبيرة.
-
-✅ أسئلة وتقنيات مهمة لم نغطيها سابقًا:
-🔹 1. DevOps / Deployment
-ما الفرق بين Docker و Docker Compose؟
-
-ما فائدة Dockerfile و .dockerignore؟
-
-ما معنى Container vs Image؟
-
-ما الفرق بين Volume و Bind Mount في Docker؟
-
-ما الفرق بين Nginx و Apache؟
-
-كيف تهيئ HTTPS على موقعك باستخدام Nginx و Let's Encrypt؟
-
-ما هو الـ Reverse Proxy؟
-
-ما الفرق بين Jenkins و GitHub Actions؟
-
-ما هو مفهوم Blue-Green Deployment؟
-
-ما الفرق بين PM2 و systemd لتشغيل تطبيقات Node.js في الإنتاج؟
-
-🔹 2. Web Fundamentals
-كيف يعمل البروتوكول HTTP من حيث: Request/Response؟
-
-ما الفرق بين HTTP/1.1 و HTTP/2 و HTTP/3؟
-
-ما الفرق بين PUT و PATCH؟
-
-ما معنى Caching headers مثل: ETag, Cache-Control, Last-Modified؟
-
-ما معنى preflight request؟
-
-ما هو HSTS؟
-
-ما هو Content Security Policy (CSP)؟
-
-ما هي SameSite cookies؟
-
-ما الفرق بين Session و JWT؟
-
-ما هو MIME type؟
-
-🔹 3. APIs & Communication
-ما هو Webhook؟ ومتى تستخدمه؟
-
-ما الفرق بين REST و gRPC؟
-
-ما هو OpenAPI و Swagger؟
-
-كيف تصمم WebSocket protocol خاص بك؟
-
-ما الفرق بين Polling و Long Polling و WebSockets؟
-
-🔹 4. Authentication & Authorization
-ما هو OAuth 2.0؟
-
-ما الفرق بين OAuth و OpenID Connect؟
-
-ما الفرق بين Token-based و Cookie-based authentication؟
-
-كيف تطبق MFA (Multi-Factor Authentication)؟
-
-ما هو RBAC مقابل ABAC؟
-
-🔹 5. Testing
-ما الفرق بين Unit و Integration و E2E Testing؟
-
-ما الفرق بين Mock و Stub و Spy؟
-
-ما هو Test Pyramid؟
-
-ما هو Snapshot Testing في React؟
-
-كيف تكتب test يغطي GraphQL أو WebSocket؟
-
-🔹 6. GraphQL
-ما هو الفرق بين Query و Mutation؟
-
-كيف تعمل Subscriptions في GraphQL؟
-
-ما هي Resolvers؟
-
-كيف تبني schema متقدمة بـ TypeGraphQL أو Apollo؟
-
-ما هي مشاكل n+1 في GraphQL؟
-
-🔹 7. Web Performance
-ما الفرق بين SSR و CSR و ISR و SSG؟
-
-كيف تستخدم lazy loading للصور والـ components؟
-
-ما معنى Critical Rendering Path؟
-
-ما الفرق بين TBT و TTI و FID؟
-
-كيف تستخدم Lighthouse لتحليل موقعك؟
-
-🔹 8. Security
-ما هو Rate Limiting و Brute Force Protection؟
-
-ما معنى JWT replay attack؟
-
-ما الفرق بين hashing و encryption؟
-
-ما هو CORS Misconfiguration؟
-
-ما الفرق بين bcrypt و argon2؟
-
-🔹 9. Tools و Ecosystem
-ما هو ESLint و Prettier؟ وكيف يستخدموا سويًا؟
-
-ما الفرق بين npm و yarn و pnpm؟
-
-ما الفرق بين .env.local و .env.production؟
-
-ما فائدة Husky و lint-staged؟
-
-ما هو Vite.js؟ ولماذا أسرع من Webpack؟
-
-🔹 10. Git & Collaboration
-ما هو git rebase مقابل git merge؟
-
-ما الفرق بين git reset --hard و git revert؟
-
-ما معنى Git Flow؟
-
-ما هو الـ squash merge؟
-
-كيف تستخدم git hooks؟
-
-🔹 11. Clean Code & Patterns
-ما هو الـ Factory Pattern؟
-
-ما الفرق بين Singleton و Service Locator؟
-
-ما هو Anti-Corruption Layer؟
-
-ما هو Dependency Injection؟
-
-ما الفرق بين Separation of Concerns و Single Responsibility؟
-
-🔹 12. Miscellaneous Concepts
-ما الفرق بين SSR hydration و client hydration؟
-
-ما هو الـ Web Worker؟
-
-ما الفرق بين ISO date و Unix timestamp؟
-
-ما معنى Debouncing و Throttling؟
-
-ما هو الـ Event Loop في JavaScript؟
-
-✍️ ممكن تكون فاتت علينا المواضيع دي كمان:
-البنية الصحيحة لمشاريع الـ monorepo
-
-كيفية تصميم dashboard تقارير متقدمة
-
-استخدام أنظمة event-driven architecture
-
-استخدام Webhooks في Stripe, GitHub...
-
-أنظمة الـ Queue زي Bull و RabbitMQ
-
-تحب أعملك نسخة PDF بالأسئلة كلها؟
-ولا نبدأ سلسلة إجابات منظمة للأسئلة على دفعات عشان تحفظها وتفهمها؟
-
-
-
-
-
-
-
-
-You said:
-ف اسئله ممكن تكون مهمه مذكرتهاش 
-
-
-ChatGPT said:
-سؤال ممتاز جدًا يا أحمد 👏
-رغم إن القائمة السابقة ضخمة وشاملة، لكن فعلاً في مجالات وأسئلة تقيلة ومهمة ما اتذكرتش، خاصة الحاجات اللي بتفرق "سينيور" حقيقي عن أي حد تاني، سواء من منظور تصميم الأنظمة، إدارة الفريق، الحلول التقنية المتقدمة أو حتى أدوات إنتاجية ومهارات معمارية.
-
-هقسمهم لك حسب فئة لم يتم تغطيتها، وفي الآخر أحط لك أفكار إضافية لموضيع مشهورة جدًا لازم تبقى على دراية بيها على الأقل كمصطلحات 👇
-
-🧠 أسئلة وتقنيات لم نذكرها من قبل لكنها مهمة جدًا:
-🔹 1. System Design (تخطيط الأنظمة الكبيرة)
-كيف تصمم نظام شبيه بـ Instagram من حيث الصور والتفاعل؟
-
-كيف تصمم chat app يتحمل آلاف المستخدمين؟
-
-كيف تتعامل مع scaling لقاعدة بيانات Postgres أو Mongo؟
-
-ما الفرق بين vertical scaling و horizontal scaling؟
-
-كيف تصمم rate limiter على مستوى IP/user؟
-
-ما الفرق بين monolith و microservices و modular monolith؟
-
-كيف تصمم خدمة تعمل على event-driven architecture؟
-
-متى تستخدم CDN وكيف يساعد في تقليل الـ latency؟
-
-كيف تبني queue system للتعامل مع المهام الثقيلة؟
-
-ما هي CAP Theorem؟ (Consistency, Availability, Partition tolerance)
-
-🔹 2. Architecture & Design Principles
-ما هو Domain Driven Design (DDD)؟
-
-ما هو Hexagonal Architecture؟
-
-متى تستخدم CQRS و Event Sourcing؟
-
-ما الفرق بين SOLID و KISS و DRY؟
-
-ما هو الـ Service Oriented Architecture؟
-
-كيف تعمل Layered Architecture لتطبيقاتك؟
-
-كيف تصمم Public API قابلة للتوسّع؟
-
-ما الفرق بين Repository Pattern و DAO؟
-
-ما هو الـ Circuit Breaker؟ ومتى تستخدمه؟
-
-كيف تصمم system resilient ضد الـ failure؟
-
-🔹 3. Real-Time Systems
-كيف تبني real-time notification system؟
-
-كيف تتعامل مع presence (online/offline users)؟
-
-كيف تمنع فقدان الرسائل في WebSocket communication؟
-
-ما الفرق بين socket.io و native WebSocket؟
-
-متى تستخدم pub/sub systems زي Redis أو Kafka؟
-
-🔹 4. Performance & Scalability
-كيف تعمل load balancing بين أكثر من سيرفر؟
-
-ما هو sticky sessions؟
-
-كيف تراقب الـ performance باستخدام APM tools؟
-
-ما الفرق بين cold start و warm start؟
-
-كيف تستخدم cache layer بين API و DB؟
-
-🔹 5. Debugging & Monitoring
-ما هو الـ Observability؟
-
-ما هو الفرق بين logging و tracing؟
-
-ما هو distributed tracing؟
-
-كيف تستخدم أدوات مثل Sentry أو LogRocket؟
-
-كيف تراقب APIs أو DB performance من خلال Grafana أو Prometheus؟
-
-🔹 6. Testing (Advanced)
-كيف تختبر load/performance لتطبيقك؟
-
-ما الفرق بين TDD و BDD؟
-
-كيف تكتب automated tests لتطبيق يعمل بـ microservices؟
-
-ما معنى contract testing؟
-
-ما هو chaos engineering؟
-
-🔹 7. Productivity & Developer Experience
-كيف تستخدم Storybook لتوثيق الـ UI components؟
-
-ما هو الـ Monorepo؟ ومتى تفضله؟
-
-كيف تستخدم NX أو TurboRepo؟
-
-كيف تبني design system وتستخدمه عبر فرق متعددة؟
-
-كيف تهيئ GitHub Actions لعمل CI/CD باحترافية؟
-
-🔹 8. Security (متقدم)
-كيف تمنع SQL injection أو NoSQL injection؟
-
-كيف تؤمن Uploading الصور أو الملفات؟
-
-كيف تطبق Rate Limiting بطريقة آمنة؟
-
-ما معنى Security Headers؟
-
-ما هو X-XSS-Protection و X-Frame-Options؟
-
-🔹 9. Testing Yourself
-أسئلة تقييم ذاتي تقدر تسألها لنفسك كل فترة:
-
-هل يمكن لأي مطور بعدي قراءة الكود وفهمه؟
-
-هل النظام بتاعي يقدر يتحمل 100x user growth؟
-
-هل في Single Point of Failure في نظامي؟
-
-هل أقدر أغير ميزة أساسية بدون ما أعدل 30 ملف؟
-
-هل عندي tests كفاية للتحديثات المستقبلية؟
-
-📚 مصطلحات مهمة لازم تكون عارفها (على الأقل بالاسم):
-Zero downtime deployment
-
-WebAssembly
-
-Edge functions (Cloudflare Workers, Vercel Edge)
-
-Service mesh (Istio, Linkerd)
-
-BFF (Backend for Frontend)
-
-Multi-tenant architecture
-
-JSON:API, HAL
-
-OAuth PKCE flow
-
-GraphQL Federation
-
-Distributed systems
-
-Database sharding
-
-Immutable infrastructure
-
-Infrastructure as Code (Terraform)
-
-Eventual consistency
-
-Async/Await pitfalls
-
-Singleton vs static in JS
-
-The “Zod” schema validation (مع tRPC)
-
-Request Collapsing / Deduplication
-
-Cold/Warm/Hot cache
+✅ JavaScript Fundamentals
+--1-- الفرق بين var و let و const ✅
+--2-- ما هو الـ Hoisting؟ ✅
+--3-- أنواع الـ Scope في JavaScript ✅
+--4-- ما هو الـ Closure واستخداماته ✅
+--5-- الفرق بين == و === ✅
+--6-- الفرق بين pass by value و pass by reference ✅
+--7-- ما معنى Mutable و Immutable؟ ✅
+--8-- أنواع البيانات: Primitive vs Non-Primitive ✅
+--9-- الفرق بين null و undefined ✅
+--10-- التعامل مع NaN في JavaScript ✅
+🔄 Async & Execution
+--11-- ما هو الـ Event Loop؟ ✅
+--12-- الفرق بين synchronous و asynchronous ✅
+--13-- كيف تعمل setTimeout و setInterval من الداخل؟ ✅
+--14-- الفرق بين Call Stack و Callback Queue و Microtask Queue ✅
+--15-- الفرق بين Callback و Promise ✅
+--16-- كيفية كتابة Promise من الصفر ✅
+--17-- التعامل مع async/await ✅
+--18-- إدارة الأخطاء في الكود غير المتزامن ✅
+--19-- الفرق بين parallel و sequential execution ✅
+🧠 Functions
+--20-- ما هي Higher Order Functions؟ ✅
+--21-- الفرق بين Function Declaration و Function Expression ✅
+--22-- ما هي Arrow Functions ومتى تستخدمها؟ ✅
+--23-- كيف يعمل this في سياقات مختلفة؟ ✅
+--24-- طرق التعامل مع مشكلة this (bind, call, apply) ✅
+--25-- ما هو currying؟ ✅
+--26-- ما الفرق بين Debounce و Throttle؟ ✅
+🧱 OOP vs FP
+--27-- ما هو Prototypal Inheritance؟ ✅
+--28-- ما هي الـ Prototype Chain؟ ✅
+--29-- الفرق بين class و constructor function ✅
+--30-- كيف تنفذ Inheritance باستخدام classes ✅
+--31-- كيفية كتابة كود functional أكثر ✅
+--32-- الفرق بين map, filter, reduce ✅
+--33-- ما معنى composition للفنكشنز؟ ✅
+🧪 Advanced JS
+--34-- كيفية كتابة كود Modular باستخدام ES Modules ✅
+--35-- كيف تعمل الـ Garbage Collection؟ ✅
+--36-- كيفية منع Memory Leaks ✅
+--37-- ما الفرق بين WeakMap و WeakSet؟ ✅
+--38-- كيفية كتابة Custom Iterator ✅
+--39-- ما هي Generator Functions؟ ✅
+--40-- ما هو Proxy و Reflect API؟ ✅
+--41-- ما معنى Event Delegation؟ ✅
+--42-- كيفية كتابة Observer Pattern ✅
+--43-- الفرق بين Shallow Copy و Deep Copy ✅
+⚠️ Common Mistakes
+استخدام var بدل let أو const ❌
+
+تعديل متغيرات معرفة بـ const ❌
+
+--44-- تجاهل إدارة الأخطاء في async code ✅
+--45-- الاعتماد الكامل على Callbacks ✅
+--46-- تكرار الكود بدل كتابة reusable functions ✅
+نسيان return في arrow functions ❌
+
+استخدام == بدل === ❌
+
+--47-- سوء استخدام this ✅
+--48-- تعديل الكائنات الأصلية بدون نسخ ✅
+--49-- استخدام forEach مع async logic ✅
+--50-- كتابة كود imperative بدل declarative ✅
+--51-- استخدام خاطئ لـ setTimeout ✅
+--52-- تجاهل أدوات linting مثل ESLint ✅
+--53-- استخدام متغيرات Global بشكل مفرط ✅
+نسيان استخدام break في switch ❌
+
+✅ TypeScript
+--54-- إيه الفرق بين Type و Interface في TypeScript؟ وإمتى تستخدم كل واحد؟ ✅
+--55-- إزاي تكتب type لكائن فيه خصائص optional؟ ✅
+--56-- إزاي تعرف Tuple في TypeScript؟ ✅
+--57-- إيه هو الـ Literal Type وبيفيدك في إيه؟ ✅
+--58-- إيه الفرق بين any, unknown, و never؟ ✅
+--59-- يعني إيه type assertion وإمتى تحتاجه؟ ✅
+--60-- إزاي تمنع implicit any في الكود؟ ✅
+--61-- إيه هو Enum؟ وإيه الفرق بين string و numeric enums؟ ✅
+--62-- إزاي تكتب type لـ function بتاخد parameter وبتـرجّع value؟ ✅
+--63-- إيه هو الفرق بين void و never في الدوال؟ ✅
+--64-- إزاي تستخدم Union Types وIntersection Types؟ ✅
+--65-- يعني إيه Discriminated Union؟ وبتفيدك في إيه؟ ✅
+--66-- إزاي تكتب Recursive type؟ ✅
+--67-- إزاي تكتب Conditional Type؟ وإيه أهم استخداماته؟ ✅
+--68-- إيه الفرق بين Partial<T>, Required<T>, و Readonly<T>؟ ✅
+--69-- إزاي تكتب type لأوبچيكت فيه keys ديناميكية؟ ✅
+--70-- يعني إيه keyof و typeof في TypeScript؟ ✅
+--71-- إزاي تعمل Mapped Types؟ ✅
+--72-- إزاي تكتب Generic Function؟ ✅
+--73-- إيه هي Constraints في الـ Generics؟ وليه بنحتاجها؟ ✅
+--74-- إزاي TypeScript بيمنع الـ runtime errors في الكود؟ ✅
+--75-- إزاي تكتب type آمن للـ API response؟ ✅
+--76-- إزاي تتأكد إن كل الخصائص اتحطت قبل الاستخدام (definite assignment)? ✅
+--77-- إزاي Type Inference بيشتغل في TypeScript؟ ✅
+--78-- إزاي تحمي الكود من null و undefined باستخدام strictNullChecks؟ ✅
+--79-- إزاي تكتب أنواع مركبة ومعقدة بدون تعقيد الكود؟ ✅
+--80-- إزاي تحول كود JavaScript موجود لكود TypeScript خطوة بخطوة؟ ✅
+--81-- إزاي تكتب Utility Types بنفسك؟ ✅
+--82-- إزاي TypeScript بيشتغل تحت الغطاء؟ وهل هو فعلاً "Superset"؟ ✅
+--83-- إزاي تربط بين TypeScript و المكتبات اللي مش بتدعم TS (باستخدام .d.ts)؟ ✅
+--84-- الإفراط في استخدام any اللي بيخلي الكود يفقد أمان الـ types ✅
+--85-- كتابة أنواع معقدة بدون داعي (Overengineering) ✅
+--86-- استخدام type بدل interface في حالات الـ OOP والميراث ✅
+--87-- عدم التعامل مع الـ null والـ undefined بشكل آمن ✅
+--88-- استخدام Generics بدون Constraints ✅
+--89-- عدم تحديث الأنواع لما يتغير الـ data structure ✅
+--90-- تجاهل الـ strict mode في tsconfig ✅
+--91-- كتابة الكود بنفس طريقة JavaScript وعدم الاستفادة من ميزات TypeScript ✅
+--92-- إهمال توثيق الأنواع للمطورين الآخرين ✅
+--93-- عدم كتابة return types للدوال المهمة (خصوصًا في الـ services و الـ handlers) ✅
+✅ React
+--94-- الفرق بين Functional Components و Class Components؟ ✅
+--95-- كيف يعمل React تحت الغطاء (Virtual DOM & Reconciliation)؟ ✅
+--96-- كيف يعمل الـ JSX؟ وما أصله؟ ✅
+--97-- الفرق بين Controlled و Uncontrolled components؟ ✅
+--98-- كيف تعمل conditional rendering؟ ✅
+--99-- ما المقصود بـ lifting state up؟ ✅
+--100-- كيف يتعامل React مع الـ keys في المصفوفات؟ ولماذا هي مهمة؟ ✅
+--101-- الفرق بين props و state؟ ومتى نستخدم كلًا منهما؟ ✅
+--102-- الفرق بين one-way binding و two-way binding؟ ✅
+--103-- متى يتم إعادة ريندر للكومبوننت؟ وكيف تمنع الـ re-renders الغير ضرورية؟ ✅
+--104-- ما هو useState؟ وكيف نستخدمه؟ ✅
+--105-- الفرق بين useEffect و useLayoutEffect؟ ✅
+--106-- كيف تكتب custom hook؟ وما فائدته؟ ✅
+--107-- استخدام useRef والفرق بينه وبين useState؟ ✅
+--108-- استخدام useMemo و useCallback لتحسين الأداء ✅
+--109-- متى تستخدم useReducer بدلاً من useState؟ ✅
+--110-- كيف يتم cleanup داخل useEffect؟ ومتى يحدث؟ ✅
+--111-- لماذا يجب استخدام dependency array داخل useEffect؟ وما المشاكل عند نسيانها؟ ✅
+--112-- كيف تكتب كود performant في React؟ (memoization, virtualization) ✅
+--113-- استخدام Context API؟ ومتى تستخدمه بدلاً من state lifting؟ ✅
+--114-- ما المشاكل الناتجة عن الإفراط في استخدام Context؟ ✅
+--115-- كيف تنشئ Error Boundaries؟ ✅
+--116-- كيف يعمل React في السيرفر؟ (SSR مع Next.js مثلاً) ✅
+--117-- استخدام Suspense و lazy loading ✅
+--118-- كتابة Forms باستخدام Formik أو React Hook Form؟ والفرق بينهما ✅
+--119-- كيف يتعامل React مع synthetic events؟ ✅
+--120-- كيفية بناء reusable components بشكل سليم؟ ✅
+--121-- إضافة animation باستخدام framer-motion أو react-spring ✅
+--122-- تنظيم ملفات مشروع React كبير (Structure, Patterns) ✅
+--123-- كتابة اختبارات لوحدات React باستخدام Testing Library أو Jest ✅
+--124-- استخدام state في أماكن غلط يؤدي لإعادة ريندر كثيرة ✅
+--125-- نسيان key عند عمل map ✅
+--126-- كتابة useEffect بدون dependency array ✅
+--127-- استخدام props/state مباشرة داخل setState ✅
+--128-- استخدام async داخل useEffect بشكل خاطئ ✅
+--129-- تكرار logic بدلاً من كتابته داخل custom hook ✅
+--130-- التعامل المباشر مع DOM بدل useRef ✅
+--131-- تجميع كل شيء في كومبوننت واحد (انعدام التنظيم) ✅
+--132-- تجاهل الأداء وعدم استخدام React.memo/useMemo/useCallback ✅
+--133-- نسيان cleanup للـ subscriptions أو التايمرز داخل useEffect ✅
+--134-- الإفراط في استخدام Context API ✅
+--135-- نسيان تهيئة القيم الافتراضية للـ state/props ✅
+--136-- تكرار الكود بدلاً من عمل إعادة استخدام components ✅
+--137-- كتابة event handlers مباشرة داخل JSX بدون useCallback ✅
+✅ Next.js
+--138-- الفرق بين Next.js و React؟ ✅
+--139-- الفرق بين SSR (Server-Side Rendering) و SSG (Static Site Generation)؟ ✅
+--140-- متى تستخدم getServerSideProps؟ وما عيوبه؟ ✅
+--141-- متى تستخدم getStaticProps و getStaticPaths؟ ✅
+--142-- كيف تهيكل صفحات المشروع باستخدام File-based Routing؟ ✅
+--143-- الفرق بين pages و app directory في Next.js 13+ ✅
+--144-- كيف تعمل Dynamic Routes؟ ✅
+--145-- كيفية إنشاء API Routes ومتى تستخدمها؟ ✅
+--146-- كيفية عمل redirect أو rewrite؟ ✅
+--147-- كيفية تهيئة Metadata باستخدام next/head أو metadata API الجديد؟ ✅
+--148-- كيف يساعدك Next.js في تحسين SEO مقارنةً بـ React؟ ✅
+--149-- استخدام Image component بالشكل الصحيح لتحسين الأداء ✅
+--150-- كيفية preload بيانات أو ملفات لتحسين سرعة الصفحة ✅
+--151-- كيف يعمل Automatic Code Splitting؟ ✅
+--152-- كيفية عمل lazy load للـ components أو الصور ✅
+--153-- الفرق بين Layout.js, Page.js, و Template.js؟ ✅
+--154-- كيفية كتابة Server Component؟ ومتى تستخدمها؟ ✅
+--155-- دمج Client Component داخل Server Component والعكس ✅
+--156-- كتابة loading.tsx, error.tsx, و not-found.tsx ✅
+--157-- كتابة generateStaticParams و generateMetadata ✅
+--158-- إدارة Authentication باستخدام NextAuth.js ✅
+--159-- التعامل مع Middlewares ✅
+--160-- إنشاء Layouts متداخلة (Nested Layouts) ✅
+--161-- عمل Caching باستخدام Next.js caching layers ✅
+--162-- استخدام Streaming مع Suspense ✅
+--163-- استخدام TypeScript في Next.js بشكل صحيح ✅
+--164-- دمج Tailwind CSS في المشروع ✅
+--165-- نشر المشروع على Vercel أو بدائل ✅
+--166-- كتابة API handler وتمرير context ✅
+--167-- عمل Localization / i18n (بما فيها App Router) ✅
+--168-- استخدام getServerSideProps بدون داعي ✅
+--169-- الإفراط في تحميل البيانات من client ✅
+--170-- وضع مكونات ثقيلة في Server Components بدون caching ✅
+--171-- نسيان استخدام <Image /> للصور ✅
+--172-- استخدام API Routes كبديل للـ backend المستقل ✅
+--173-- إهمال SEO metadata ✅
+--174-- عدم استخدام dynamic imports و lazy loading ✅
+--175-- دمج client/server components بشكل غير منظم ✅
+--176-- استخدام useEffect لتحميل البيانات بدل get*Props ✅
+--177-- نسيان error boundaries للصفحات المهمة ✅
+✅ Senior Frontend
+--178-- إزاي بتحسن أداء تطبيق SPA كبير؟ ✅
+--179-- إزاي تكتشف وتقيس الـ performance bottlenecks في متصفح المستخدم؟ ✅
+--180-- إزاي تستخدم أدوات مثل Lighthouse وWeb Vitals وChrome DevTools لتحديد مشاكل الأداء؟ ✅
+--181-- إيه الفرق بين Debounce و Throttle؟ وإمتى تستخدم كل واحد؟ ✅
+--182-- إزاي تنفذ lazy loading وcode splitting بشكل فعال في مشروع React أو Next.js؟ ✅
+--183-- إزاي تتعامل مع التطبيقات الكبيرة من حيث scalability وإعادة استخدام الـ components؟ ✅
+--184-- إزاي تنظم structure المشروع (folders, modules, layers) في تطبيق كبير؟ ✅
+--185-- إزاي تختار بين Server Rendering و Client Rendering في حالات حقيقية؟ ✅
+--186-- إزاي تتعامل مع long lists أو heavy DOM rendering؟ (مثلاً virtualization) ✅
+--187-- إزاي تحمي تطبيقك من XSS وCSRF؟ ✅
+--188-- إزاي تتأكد إن أي بيانات من الـ API ما تكونش مصدر خطر على واجهتك؟ ✅
+--189-- إزاي تتعامل مع الـ tokens والتخزين الآمن (localStorage vs cookies)؟ ✅
+--190-- إزاي تمنع أو تتعامل مع session hijacking؟ ✅
+--191-- إمتى تستخدم state management library زي Redux أو Zustand؟ ✅
+--192-- إزاي تنظم الـ state بين local state, lifted state, و global state؟ ✅
+--193-- إزاي تتعامل مع التطبيقات اللي فيها تعقيد في الـ UI flow؟ ✅
+--194-- إزاي تنفذ architecture زي MVVM أو Presenter Pattern في React؟ ✅
+--195-- إزاي تطبق مفهوم الـ separation of concerns في React؟ ✅
+--196-- إزاي تطبق تصميم متجاوب (responsive) بكفاءة عالية؟ ✅
+--197-- إزاي تتعامل مع accessibility (A11y)؟ وإيه الأدوات اللي بتستخدمها؟ ✅
+--198-- إزاي تقيس وتحسن الـ Core Web Vitals؟ ✅
+--199-- إزاي توازن بين جمالية التصميم وفاعلية الأداء؟ ✅
+--200-- إزاي تطبق dark mode / RTL / localization بشكل نظيف؟ ✅
+--201-- إزاي تبني Design System خاص بشركتك أو مشروعك؟ ✅
+--202-- إزاي تدمج Figma tokens أو Storybook في الـ workflow؟ ✅
+--203-- إزاي تكتب reusable components قابلة للثيمات والتخصيص؟ ✅
+--204-- إزاي تحافظ على consistency بين الـ UI والـ UX في الفريق كله؟ ✅
+--205-- إزاي تحدد إيه اللي يتعمله Unit test وIntegration test؟ ✅
+--206-- إزاي تكتب tests للكومبوننتس؟ ✅
+--207-- إزاي تقيس الـ coverage وإزاي تتعامل مع flaky tests؟ ✅
+--208-- إزاي تبني test pipeline (CI) لأي Pull Request؟ ✅
+--209-- إزاي تراجع PRs بشكل احترافي؟ ✅
+--210-- إزاي تكتب كود نظيف وسهل القراءة والصيانة؟ ✅
+--211-- إزاي تعلم وتوجه junior developers في الفريق؟ ✅
+--212-- إزاي تعمل planning sprint لواجهة جديدة؟ ✅
+--213-- إزاي تتعامل مع نزاعات أو آراء تقنية متضاربة داخل الفريق؟ ✅
+--214-- إزاي تبني وDocument واجهات الـ APIs بين الـ frontend والـ backend؟ ✅
+--215-- إزاي تشرح اختياراتك التقنية لناس غير تقنيين (مثل مدير منتج أو ديزاينر)؟ ✅
+--216-- ما هو تعريفك لـ "كود ناجح"؟ ✅
+--217-- إيه أصعب مشكلة واجهتك كـ Frontend Developer؟ إزاي حليتها؟ ✅
+--218-- لو استلمت مشروع مكتوب بطريقة سيئة، إزاي تبدأ في refactoring؟ ✅
+--219-- إزاي تبني ثقافة تقنية قوية جوه الفريق؟ ✅
+--220-- إزاي تختار tech stack لمشروع جديد؟ ✅
+✅ Senior Backend (NestJS)
+--221-- إيه الفرق بين monolithic و modular architecture في NestJS؟ ✅
+--222-- إمتى تستخدم Feature Modules وShared Modules؟ ✅
+--223-- إزاي تطبق CQRS pattern في NestJS؟ ✅
+--224-- إزاي تطبق Hexagonal Architecture باستخدام NestJS؟ ✅
+--225-- إزاي تنفذ DDD (Domain-Driven Design) داخل NestJS project؟ ✅
+--226-- إزاي تعمل decoupling بين الـ services والـ controllers؟ ✅
+--227-- إزاي تفصل بين application layer و domain layer و infrastructure layer؟ ✅
+--228-- إزاي تبني multi-tenant architecture باستخدام NestJS؟ ✅
+--229-- إزاي تـ optimize queries باستخدام TypeORM أو Prisma داخل NestJS؟ ✅
+--230-- إزاي تطبق caching باستخدام @CacheInterceptor و Redis؟ ✅
+--231-- إزاي تدير background jobs باستخدام Bull Queue وWorkers؟ ✅
+--232-- إزاي تتعامل مع الـ rate limiting داخل APIs؟ ✅
+--233-- إزاي تستخدم Interceptors لقياس وقت تنفيذ request؟ ✅
+--234-- إزاي تعمل throttling على مستوى global أو route؟ ✅
+--235-- إزاي تتعامل مع request/response streaming (مثل file uploads)؟ ✅
+--236-- إزاي تطبق RBAC (Role-Based Access Control)؟ ✅
+--237-- إزاي تستخدم Guards + Custom decorators لفلترة الوصول؟ ✅
+--238-- إزاي تطبق authentication باستخدام JWT + Refresh Tokens؟ ✅
+--239-- إزاي تحمي API من هجمات XSS و CSRF و Brute Force؟ ✅
+--240-- إزاي تستخدم Middleware للحماية من دخول غير مصرح؟ ✅
+--241-- إزاي تطبق 2FA أو OTP داخل NestJS؟ ✅
+--242-- إزاي تكتب Unit Tests باستخدام Jest لخدمة فيها Dependency Injection؟ ✅
+--243-- إزاي تعمل Mock للـ Repositories أو External Services في NestJS؟ ✅
+--244-- إزاي تكتب Integration Tests للـ Endpoints كاملة؟ ✅
+--245-- إزاي تعمل Test للـ Guards وInterceptors؟ ✅
+--246-- إزاي تبني CI pipeline للـ testing + linting + coverage؟ ✅
+--247-- إزاي تتعامل مع flaky tests في بيئة حقيقية؟ ✅
+--248-- إزاي تتعامل مع الـ WebSockets (مثلاً باستخدام @WebSocketGateway)؟ ✅
+--249-- إزاي تبني Microservices باستخدام Transport layers (مثل Redis / Kafka / gRPC)؟ ✅
+--250-- إزاي تعمل Event-Driven Architecture داخل NestJS؟ ✅
+--251-- إزاي تتعامل مع External APIs وتعيد هيكلة responses؟ ✅
+--252-- إزاي تنفذ versioning للـ API؟ (v1, v2, ...) ✅
+--253-- إزاي تتعامل مع GraphQL APIs في NestJS؟ ✅
+--254-- إزاي تطبق file upload + validation + security في NestJS؟ ✅
+--255-- إزاي تنظم مشروع كبير يحتوي على عشرات الوحدات؟ ✅
+--256-- إزاي تكتب Documentation للـ APIs باستخدام Swagger؟ ✅
+--257-- إزاي تحافظ على separation بين DTOs, Entities, و Domain Models؟ ✅
+--258-- إزاي تتعامل مع طلبات معقدة تحتوي على فلترة، ترتيب، Pagination؟ ✅
+--259-- إزاي تبني dynamic query builder للـ reports أو search؟ ✅
+--260-- إيه أصعب مشكلة قابلتك في NestJS؟ إزاي حليتها؟ ✅
+--261-- إزاي تعمل Migration من مشروع Express قديم إلى NestJS؟ ✅
+--262-- إزاي تراجع كود كبير في PR كتب باستخدام NestJS؟ ✅
+--263-- إزاي توازن بين سرعة التطوير والـ Best Practices في ضغط الوقت؟ ✅
+--264-- إمتى تبني حلك كموديلات مستقلة، وإمتى تدمجها؟ ✅
+--265-- إزاي تختار بين Prisma و TypeORM و Sequelize في مشروع NestJS؟ ✅
+دمج business logic داخل controllers ❌
+
+استخدام DTOs كـ entities أو العكس ❌
+
+إهمال modular structure → مشروع كله داخل ملفين ❌
+
+استخدام any في TypeScript بدل التايب الدقيق ❌
+
+تجاهل الأخطاء داخل الخدمات وعدم استخدام try/catch ❌
+
+الاعتماد على console.log بدل structured logging ❌
+
+كتابة كثير من الـ logic داخل pipes أو interceptors غلط ❌
+
+✅ PostgreSQL
+--266-- إزاي تكتب Query يحتوي على JOIN + GROUP BY + HAVING؟ ✅
+--267-- إمتى تستخدم LEFT JOIN بدل INNER JOIN؟ ✅
+--268-- إزاي تعمل recursive query باستخدام WITH RECURSIVE؟ ✅
+--269-- إزاي تحسب الـ running total أو moving average باستخدام WINDOW FUNCTIONS؟ ✅
+--270-- إزاي تستخدم CASE داخل SELECT أو WHERE؟ ✅
+--271-- إزاي تعمل dynamic filter باستخدام ILIKE, IN, و COALESCE؟ ✅
+--272-- إزاي تعمل search نصي سريع؟ وإيه الفرق بين LIKE و GIN index و tsvector؟ ✅
+--273-- إزاي تقرأ وتفهم خطة تنفيذ EXPLAIN ANALYZE؟ ✅
+--274-- إمتى تضيف Index؟ وإمتى بيكون عبء على الأداء؟ ✅
+--275-- إزاي تختار بين B-Tree و GIN و Hash Index؟ ✅
+--276-- إزاي تتعامل مع Slow Queries في تطبيق production؟ ✅
+--277-- إزاي تستخدم Materialized Views لتحسين الأداء؟ ✅
+--278-- إزاي تتعامل مع Deadlocks؟ ✅
+--279-- إزاي تنفذ partitioning لجدول ضخم؟ ✅
+--280-- إزاي تكتب Transaction فيها أكثر من عملية CRUD؟ ✅
+--281-- إيه الفرق بين SERIALIZABLE و READ COMMITTED؟ ✅
+--282-- إزاي تعمل Trigger؟ وإمتى تستخدمه بدل logic من NestJS؟ ✅
+--283-- إزاي تعمل وظيفة داخل PostgreSQL باستخدام PL/pgSQL؟ ✅
+--284-- إزاي تتعامل مع JSONB columns؟ ✅
+--285-- إزاي تبحث داخل JSONB field؟ وإزاي تـ index الحقول دي؟ ✅
+--286-- إزاي تعمل تصميم قاعدة بيانات normalized؟ ✅
+--287-- إمتى تفك ارتباط جدولين (denormalization) لتحسين الأداء؟ ✅
+--288-- إزاي تتعامل مع العلاقات many-to-many بكفاءة؟ ✅
+--289-- إزاي تدير علاقة polymorphic داخل PostgreSQL؟ ✅
+--290-- إزاي تبني ERD وتطابقه مع الـ schema الموجود؟ ✅
+--291-- إزاي تدير الـ migrations والـ seed data بطريقة آمنة؟ ✅
+استخدام SELECT * في production ❌
+
+تجاهل الـ indexing على الجداول الكبيرة ❌
+
+الاعتماد على DB بدل منطق التطبيق ❌
+
+تخزين JSON بدل العلاقات ❌
+
+Queries غير محمية من SQL Injection ❌
+
+✅ MongoDB
+--292-- إزاي تختار بين Embed vs Reference؟ ✅
+--293-- إزاي تصمم قاعدة Mongo فيها nested arrays كبيرة؟ ✅
+--294-- إزاي تعمل schema validation باستخدام Mongoose؟ ✅
+--295-- إزاي تدير multi-tenant schema في MongoDB؟ ✅
+--296-- إزاي تعمل soft deletes في MongoDB؟ ✅
+--297-- إزاي تبني compound index يدعم الفلترة والـ sorting؟ ✅
+--298-- إزاي تكتب aggregate pipeline بـ stages زي $match, $group, $lookup؟ ✅
+--299-- إزاي تستخدم $facet لجمع نتائج متعددة في نفس الوقت؟ ✅
+--300-- إزاي تنفذ full-text search في Mongo؟ ✅
+--301-- إزاي تكتب query فيها فلترة + pagination + sorting بكفاءة؟ ✅
+--302-- إزاي تستخدم $expr أو $cond للفلترة الشرطية؟ ✅
+--303-- إزاي تقيس أداء استعلام في Mongo؟ ✅
+--304-- إزاي تستخدم explain() وتفهم خطته؟ ✅
+--305-- إزاي تعمل indexing مناسب للـ nested fields؟ ✅
+--306-- إزاي تعمل TTL index للبيانات المؤقتة؟ ✅
+--307-- إزاي تتعامل مع document size limit (16MB)؟ ✅
+--308-- إمتى تستخدم sharding في MongoDB؟ ✅
+--309-- إزاي تعمل rate limiting أو throttling بالاعتماد على Mongo؟ ✅
+--310-- إزاي تستخدم @Schema() + @Prop() داخل Mongoose مع Nest؟ ✅
+--311-- إزاي تستخدم transactions داخل Mongoose؟ ✅
+--312-- إزاي تعمل populate لعلاقات multiple في Mongoose؟ ✅
+--313-- إزاي تفصل بين الـ schemas و الـ DTOs في مشروع NestJS؟ ✅
+--314-- إزاي تعمل soft delete بفلترة البيانات الحقيقية؟ ✅
+--315-- إزاي تدير النسخ الاحتياطي والـ seeding لبيانات Mongo؟ ✅
+تخزين بيانات ضخمة داخل document واحد ❌
+
+استخدام $or و $in بكثافة بدون تفكير ❌
+
+تجاهل الـ indexing ❌
+
+الاعتماد على populate بدل تصميم schema نظيف ❌
+
+استخدام Mongo في relational systems ❌
+
+✅ Database Design & Optimization
+--316-- ما الفرق بين OLTP و OLAP؟ وإمتى تستخدم كل واحد؟ ✅
+--317-- ما الفرق بين Normalization و Denormalization؟ ✅
+--318-- اشرح قواعد Normal Forms: 1NF, 2NF, 3NF, BCNF ✅
+--319-- إمتى تستخدم denormalization رغم عيوبه؟ ✅
+--320-- كيف تصمم علاقة many-to-many صحيحة؟ ✅
+--321-- كيف تصمم قاعدة تحتوي على أنواع متعددة من المستخدمين؟ ✅
+--322-- ما الفرق بين surrogate key و natural key؟ ✅
+--323-- كيف تصمم ERD لمشروع ضخم؟ ✅
+--324-- كيف تبني Audit Log System؟ ✅
+--325-- إزاي تمثل Hierarchy داخل DB؟ (Adjacency List vs Closure Table) ✅
+--326-- ما أنواع الـ Indexes؟ ومتى تستخدم كل نوع؟ ✅
+--327-- الفرق بين clustered و non-clustered index؟ ✅
+--328-- كيف تقيس وتحسن أداء الاستعلامات؟ ✅
+--329-- ما معنى Cardinality؟ وكيف يؤثر على الفهرسة؟ ✅
+--330-- ما هو Query Plan؟ وكيف تقرأه؟ ✅
+--331-- ما أسباب وجود full table scan؟ وكيف تعالجها؟ ✅
+--332-- كيف تتعامل مع ملايين السجلات؟ ✅
+--333-- الفرق بين read-heavy و write-heavy DB؟ ✅
+--334-- الفرق بين vertical و horizontal scaling؟ ✅
+--335-- الفرق بين sharding و partitioning؟ ✅
+--336-- ما هي خصائص ACID؟ ✅
+--337-- ما مستويات العزل Isolation Levels؟ ✅
+--338-- ما هو deadlock؟ وكيف تمنعه؟ ✅
+--339-- كيف تعمل Locking Strategy فعالة؟ ✅
+--340-- الفرق بين optimistic و pessimistic locking؟ ✅
+--341-- كيف تمنع SQL Injection من جهة DB؟ ✅
+--342-- كيف تحمي البيانات الحساسة (passwords/payment)? ✅
+--343-- كيف تدير صلاحيات المستخدمين؟ ✅
+--344-- كيف تنفذ auditing داخل DB؟ ✅
+--345-- كيف تدير الـ migrations؟ ✅
+--346-- كيف تعمل version control للـ schema؟ ✅
+--347-- كيف تعمل seeding آمن؟ ✅
+--348-- كيف تتعامل مع rollbacks أثناء deployment؟ ✅
+--349-- كيف تختار بين SQL و NoSQL؟ ✅
+--350-- كيف توثق تصميم قاعدة البيانات؟ ✅
+--351-- كيف تكتب test data فعالة؟ ✅
+--352-- كيف تقرر إذا كان الحقل nullable أم لا؟ ✅
+--353-- كيف تتعامل مع قوانين مثل GDPR؟ ✅
+--354-- كيف تنفذ عمليات حذف ضخمة بدون ضرر على الأداء؟ ✅
+--355-- ما استراتيجيات backup و restore المناسبة؟ ✅
+SELECT * في Queries ❌
+
+تخزين كلمات السر بدون Hash ❌
+
+تخزين أكثر من قيمة داخل عمود (comma-separated) ❌
+
+تجاهل NULLs ❌
+
+تجاهل indexing في WHERE/JOIN ❌
+
+تجاهل Query Plan ❌
+
+الاعتماد المفرط على ORMs ❌
+
+تخزين ملفات داخل DB ❌
+
+اختيار نوع بيانات غير مناسب ❌
+
+✅ System Design & Architecture
+--356-- ما الفرق بين الـ synchronous و asynchronous؟ ✅
+--357-- ما الفرق بين thread و process؟ ✅
+--358-- اشرح مفهوم الـ event loop (في Node.js مثلًا). ✅
+--359-- ما الفرق بين REST و GraphQL؟ وإمتى تختار كل واحد؟ ✅
+--360-- ما الفرق بين monolithic و microservices؟ ✅
+--361-- ما هو الـ API Gateway؟ وما دوره في نظام Microservices؟ ✅
+--362-- ما الفرق بين stateless و stateful APIs؟ ✅
+--363-- ما المقصود بـ idempotent requests؟ ✅
+--364-- ما الفرق بين PUT و PATCH؟ ✅
+--365-- إزاي تتعامل مع rate limiting؟ ✅
+--366-- إزاي تقلل الـ response time؟ ✅
+--367-- إزاي تعمل caching في الباك إند؟ وإيه الفرق بين in-memory cache و distributed cache؟ ✅
+--368-- ما الفرق بين LRU و LFU؟ وأين يستخدمان؟ ✅
+--369-- ما الفرق بين synchronous jobs و background jobs؟ ✅
+--370-- إزاي تتعامل مع high-concurrency (عدد كبير من الطلبات المتزامنة)؟ ✅
+--371-- إزاي تحل مشاكل N+1 Query؟ ✅
+--372-- إزاي تختار بين queue system زي Bull أو RabbitMQ؟ ✅
+--373-- ما هو الـ SOLID principles؟ ✅
+--374-- ما هو الـ Domain-Driven Design (DDD)؟ ✅
+--375-- ما الفرق بين Service Layer و Repository Layer؟ ✅
+--376-- إزاي تصمم API modular وقابل للتوسيع؟ ✅
+--377-- ما الفرق بين CQRS و CRUD؟ ✅
+--378-- ما هو الـ Event Sourcing؟ ✅
+--379-- اشرح Pub/Sub Model. ✅
+--380-- إزاي تعمل multi-tenant application؟ ✅
+--381-- ما الفرق بين JWT و Session？ ✅
+--382-- إزاي تعمل 2FA؟ ✅
+--383-- ما هو CSRF؟ وإزاي تمنعه؟ ✅
+--384-- ما هو CORS؟ وإزاي تسيطر عليه؟ ✅
+--385-- ما هو الـ OAuth2؟ ✅
+--386-- إزاي تحمي الـ APIs بتاعتك من brute-force؟ ✅
+--387-- إزاي تطبق Role-Based Access Control؟ ✅
+--388-- ما الفرق بين Encryption و Hashing و Encoding？ ✅
+--389-- إزاي تختار بين SQL و NoSQL？ ✅
+--390-- إزاي تكتب query performant？ ✅
+--391-- إزاي تعمل transactions داخل الكود？ ✅
+--392-- إزاي تتعامل مع migration tools (زي TypeORM أو Prisma أو Sequelize)？ ✅
+--393-- إزاي تصمم schema مرن لتطبيق قابل للنمو？ ✅
+--394-- إزاي تعمل soft delete بطريقة فعالة？ ✅
+--395-- إزاي تتعامل مع large datasets？ ✅
+--396-- ما الفرق بين unit test و integration test و e2e test？ ✅
+--397-- إزاي تعمل mock للـ DB أو external APIs？ ✅
+--398-- ما الفرق بين TDD و BDD？ ✅
+--399-- إزاي تكتب test cases تضمن عدم حدوث regressions？ ✅
+--400-- إزاي تدمج CI/CD pipelines مع testing？ ✅
+--401-- ما هي code smells الشائعة في الباك إند؟ ✅
+--402-- ما الفرق بين Docker و VM？ ✅
+--403-- إزاي تكتب Dockerfile جيد？ ✅
+--404-- ما الفرق بين build و release？ ✅
+--405-- إزاي تستخدم GitHub Actions أو GitLab CI？ ✅
+--406-- ما المقصود بـ blue/green deployment？ ✅
+--407-- إزاي تراقب السيرفرات والخدمات؟ (Monitoring & Alerting) ✅
+--408-- ما الفرق بين horizontal و vertical scaling？ ✅
+كتابة logic في controllers بدل service layer ❌
+
+استخدام الكاش بدون invalidation واضح ❌
+
+التعامل مع الأخطاء بطريقة عامة جدًا (catch (e) {} بس) ❌
+
+عدم استخدام timeouts للـ HTTP/DB requests ❌
+
+إرسال بيانات حساسة في responses ❌
+
+تجاهل structure الكود وفصل المسؤوليات ❌
+
+كتابة استعلامات ضخمة جدًا وغير قابلة للإدارة ❌
+
+✅ Full Stack Senior Questions
+--409-- ما الفرق بين الـ Monolith و Microservices و Modular Monolith؟ ✅
+--410-- كيف تصمم System قابل للتوسع (Scalable System)؟ ✅
+--411-- كيف تتعامل مع high availability؟ ✅
+--412-- ما الفرق بين horizontal و vertical scaling؟ ✅
+--413-- كيف تصمم API Gateway يدير microservices مختلفة؟ ✅
+--414-- ما الفرق بين WebSockets و REST و GraphQL؟ ✅
+--415-- كيف تبني CI/CD pipeline متكاملة؟ ✅
+--416-- كيف تقرر بين SPA و MPA و SSR و SSG؟ ✅
+--417-- ما هو الـ BFF (Backend for Frontend)؟ ومتى تحتاجه؟ ✅
+--418-- كيف تتعامل مع multi-language apps (i18n) بشكل كامل (front + back)？ ✅
+--419-- كيف تعمل code-splitting و lazy loading في React؟ ✅
+--420-- كيف تحل مشكلة hydration mismatch في Next.js؟ ✅
+--421-- كيف تتعامل مع SEO في SSR apps؟ ✅
+--422-- كيف تحسّن من الأداء العام لتطبيق الويب؟ (LCP, FID, CLS...) ✅
+--423-- ما الفرق بين controlled و uncontrolled components؟ ✅
+--424-- كيف تدير global state في React app كبير؟ ✅
+--425-- متى تستخدم useMemo و useCallback؟ ✅
+--426-- كيف تبني dynamic forms في React/Next.js؟ ✅
+--427-- كيف تضمن أن الـ UI متوافق مع جميع الشاشات؟ ✅
+--428-- كيف تتعامل مع حماية المسارات (route guards) في الـ frontend؟ ✅
+--429-- ما الفرق بين Middleware و Interceptor و Guard في NestJS؟ ✅
+--430-- كيف تدير background jobs داخل التطبيق؟ ✅
+--431-- كيف تتعامل مع rate limiting في NestJS؟ ✅
+--432-- ما هي CQRS؟ وهل استخدمتها؟ ✅
+--433-- كيف تطبق SOLID principles في تصميم الباك إند؟ ✅
+--434-- كيف تصمم خدمة إرسال إشعارات قابلة للتوسيع (SMS, Email, Push)？ ✅
+--435-- كيف تربط NestJS مع Redis؟ وإمتى تستخدمه؟ ✅
+--436-- ما هي أفضل ممارسات الـ DTOs في NestJS؟ ✅
+--437-- كيف تصمم ACL أو Role-based access؟ ✅
+--438-- كيف تتعامل مع الـ versioning في REST APIs؟ ✅
+--439-- كيف تصمم جدول يحتوي على سجلّات متعددة اللغات؟ ✅
+--440-- ما الفرق بين Eager و Lazy loading في ORM؟ ✅
+--441-- كيف تطبق full-text search في PostgreSQL؟ ✅
+--442-- كيف تدير العلاقات بين الكيانات في MongoDB؟ ✅
+--443-- متى تستخدم aggregation pipeline في Mongo؟ ✅
+--444-- كيف تتعامل مع Migrations وإعادة الهيكلة بدون فقد بيانات؟ ✅
+--445-- ما الفرق بين soft delete و hard delete؟ ومتى تستخدم كل نوع؟ ✅
+--446-- ما هو الـ database sharding؟ ✅
+--447-- كيف تعمل indexing فعال في Mongo و SQL؟ ✅
+--448-- كيف تدير نسخة staging و dev من نفس قاعدة البيانات؟ ✅
+--449-- كيف تبني system login متكامل (JWT + Refresh Tokens + Front protection)？ ✅
+--450-- كيف تعمل file upload (مثلاً صور المستخدم)？ ✅
+--451-- كيف تتعامل مع CORS؟ ✅
+--452-- كيف تبني realtime chat (REST + Socket + DB + Front)？ ✅
+--453-- كيف تعمل error handling موحّدة بين الفرونت والباك؟ ✅
+--454-- كيف ترسل إشعارات إلى المستخدمين في الوقت الحقيقي؟ ✅
+--455-- كيف تتابع الأحداث المهمة باستخدام logs و monitoring？ ✅
+--456-- كيف تعمل throttling على APIs المستهلكة في الـ frontend？ ✅
+--457-- كيف تبني dashboard إحصائي حيّ باستخدام WebSockets？ ✅
+--458-- كيف تكتب integration tests تغطي full flow من front ل back？ ✅
+--459-- كيف تؤمّن التطبيق من XSS, CSRF, SQL Injection？ ✅
+--460-- كيف تدير صلاحيات متعددة على مستوى UI و DB？ ✅
+--461-- كيف تكتب tests تغطي business logic المعقّد؟ ✅
+--462-- كيف تعمل logging ذكي على الباك إند؟ ✅
+--463-- ما هي أفضل طرق التوثيق (Swagger، Postman، Storybook)？ ✅
+--464-- كيف تقيس التغطية الاختبارية (Code Coverage)？ ✅
+--465-- كيف تستخدم feature flags داخل المشاريع؟ ✅
+--466-- كيف تبني نظام rollback سريع في حالة فشل النشر؟ ✅
+--467-- كيف تدير secret keys بأمان (env، vault، إلخ)？ ✅
+--468-- كيف تكتب reusable components أو services على مستوى المشروع؟ ✅
+✅ Additional Critical Topics
+--469-- ما الفرق بين Docker و Docker Compose؟ ✅
+--470-- ما فائدة Dockerfile و .dockerignore؟ ✅
+--471-- ما معنى Container vs Image؟ ✅
+--472-- ما الفرق بين Volume و Bind Mount في Docker؟ ✅
+--473-- ما الفرق بين Nginx و Apache؟ ✅
+--474-- كيف تهيئ HTTPS على موقعك باستخدام Nginx و Let's Encrypt؟ ✅
+--475-- ما هو الـ Reverse Proxy؟ ✅
+--476-- ما الفرق بين Jenkins و GitHub Actions؟ ✅
+--477-- ما هو مفهوم Blue-Green Deployment؟ ✅
+--478-- ما الفرق بين PM2 و systemd لتشغيل تطبيقات Node.js في الإنتاج؟ ✅
+--479-- كيف يعمل البروتوكول HTTP من حيث: Request/Response؟ ✅
+--480-- ما الفرق بين HTTP/1.1 و HTTP/2 و HTTP/3؟ ✅
+--481-- ما الفرق بين PUT و PATCH؟ ✅
+--482-- ما معنى Caching headers مثل: ETag, Cache-Control, Last-Modified؟ ✅
+--483-- ما معنى preflight request؟ ✅
+--484-- ما هو HSTS؟ ✅
+--485-- ما هو Content Security Policy (CSP)؟ ✅
+--486-- ما هي SameSite cookies؟ ✅
+--487-- ما الفرق بين Session و JWT؟ ✅
+--488-- ما هو MIME type؟ ✅
+--489-- ما هو Webhook؟ ومتى تستخدمه؟ ✅
+--490-- ما الفرق بين REST و gRPC؟ ✅
+--491-- ما هو OpenAPI و Swagger؟ ✅
+--492-- كيف تصمم WebSocket protocol خاص بك؟ ✅
+--493-- ما الفرق بين Polling و Long Polling و WebSockets؟ ✅
+--494-- ما هو OAuth 2.0؟ ✅
+--495-- ما الفرق بين OAuth و OpenID Connect؟ ✅
+--496-- ما الفرق بين Token-based و Cookie-based authentication؟ ✅
+--497-- كيف تطبق MFA (Multi-Factor Authentication)؟ ✅
+--498-- ما هو RBAC مقابل ABAC؟ ✅
+--499-- ما الفرق بين Unit و Integration و E2E Testing؟ ✅
+--500-- ما الفرق بين Mock و Stub و Spy؟ ✅
+--501-- ما هو Test Pyramid؟ ✅
+--502-- ما هو Snapshot Testing في React؟ ✅
+--503-- كيف تكتب test يغطي GraphQL أو WebSocket؟ ✅
+--504-- ما هو الفرق بين Query و Mutation؟ ✅
+--505-- كيف تعمل Subscriptions في GraphQL؟ ✅
+--506-- ما هي Resolvers؟ ✅
+--507-- كيف تبني schema متقدمة بـ TypeGraphQL أو Apollo؟ ✅
+--508-- ما هي مشاكل n+1 في GraphQL؟ ✅
+--509-- ما الفرق بين SSR و CSR و ISR و SSG؟ ✅
+--510-- كيف تستخدم lazy loading للصور والـ components؟ ✅
+--511-- ما معنى Critical Rendering Path؟ ✅
+--512-- ما الفرق بين TBT و TTI و FID؟ ✅
+--513-- كيف تستخدم Lighthouse لتحليل موقعك؟ ✅
+--514-- ما هو Rate Limiting و Brute Force Protection؟ ✅
+--515-- ما معنى JWT replay attack؟ ✅
+--516-- ما الفرق بين hashing و encryption؟ ✅
+--517-- ما هو CORS Misconfiguration؟ ✅
+--518-- ما الفرق بين bcrypt و argon2؟ ✅
+--519-- ما هو ESLint و Prettier؟ وكيف يستخدموا سويًا؟ ✅
+--520-- ما الفرق بين npm و yarn و pnpm؟ ✅
+--521-- ما الفرق بين .env.local و .env.production؟ ✅
+--522-- ما فائدة Husky و lint-staged؟ ✅
+--523-- ما هو Vite.js؟ ولماذا أسرع من Webpack؟ ✅
+--524-- ما هو git rebase مقابل git merge؟ ✅
+--525-- ما الفرق بين git reset --hard و git revert؟ ✅
+--526-- ما معنى Git Flow؟ ✅
+--527-- ما هو الـ squash merge؟ ✅
+--528-- كيف تستخدم git hooks؟ ✅
+--529-- ما هو الـ Factory Pattern؟ ✅
+--530-- ما الفرق بين Singleton و Service Locator؟ ✅
+--531-- ما هو Anti-Corruption Layer؟ ✅
+--532-- ما هو Dependency Injection؟ ✅
+--533-- ما الفرق بين Separation of Concerns و Single Responsibility؟ ✅
+--534-- ما الفرق بين SSR hydration و client hydration؟ ✅
+--535-- ما هو الـ Web Worker؟ ✅
+--536-- ما الفرق بين ISO date و Unix timestamp؟ ✅
+--537-- ما معنى Debouncing و Throttling؟ ✅
+--538-- ما هو الـ Event Loop في JavaScript؟ ✅
+⚠️ Common Pitfalls
+الـ backend يرسل أكتر من اللازم → frontend بطيء ❌
+
+تكرار الـ logic بين الواجهة والخلفية ❌
+
+تجاهل الأمن في النماذج والـ APIs ❌
+
+استعلامات بدون index على جداول ضخمة ❌
+
+تجاهل structure المجلدات مع كبر المشروع ❌
+
+hardcoded values بدل config ❌
+
+الاعتماد الكلي على ORMs بدون فهم SQL ❌
+
+✅ System Design (Advanced)
+--539-- كيف تصمم نظام شبيه بـ Instagram من حيث الصور والتفاعل؟ ✅
+--540-- كيف تصمم chat app يتحمل آلاف المستخدمين؟ ✅
+--541-- كيف تتعامل مع scaling لقاعدة بيانات Postgres أو Mongo؟ ✅
+--542-- ما الفرق بين vertical scaling و horizontal scaling؟ ✅
+--543-- كيف تصمم rate limiter على مستوى IP/user؟ ✅
+--544-- ما الفرق بين monolith و microservices و modular monolith؟ ✅
+--545-- كيف تصمم خدمة تعمل على event-driven architecture؟ ✅
+--546-- متى تستخدم CDN وكيف يساعد في تقليل الـ latency؟ ✅
+--547-- كيف تبني queue system للتعامل مع المهام الثقيلة؟ ✅
+--548-- ما هي CAP Theorem؟ (Consistency, Availability, Partition tolerance) ✅
+--549-- ما هو Domain Driven Design (DDD)؟ ✅
+--550-- ما هو Hexagonal Architecture؟ ✅
+--551-- متى تستخدم CQRS و Event Sourcing؟ ✅
+--552-- ما الفرق بين SOLID و KISS و DRY؟ ✅
+--553-- ما هو الـ Service Oriented Architecture؟ ✅
+--554-- كيف تعمل Layered Architecture لتطبيقاتك؟ ✅
+--555-- كيف تصمم Public API قابلة للتوسّع؟ ✅
+--556-- ما الفرق بين Repository Pattern و DAO؟ ✅
+--557-- ما هو الـ Circuit Breaker؟ ومتى تستخدمه؟ ✅
+--558-- كيف تصمم system resilient ضد الـ failure؟ ✅
+--559-- كيف تبني real-time notification system؟ ✅
+--560-- كيف تتعامل مع presence (online/offline users)؟ ✅
+--561-- كيف تمنع فقدان الرسائل في WebSocket communication؟ ✅
+--562-- ما الفرق بين socket.io و native WebSocket؟ ✅
+--563-- متى تستخدم pub/sub systems زي Redis أو Kafka؟ ✅
+--564-- كيف تعمل load balancing بين أكثر من سيرفر؟ ✅
+--565-- ما هو sticky sessions؟ ✅
+--566-- كيف تراقب الـ performance باستخدام APM tools؟ ✅
+--567-- ما الفرق بين cold start و warm start؟ ✅
+--568-- كيف تستخدم cache layer بين API و DB؟ ✅
+--569-- ما هو الـ Observability؟ ✅
+--570-- ما هو الفرق بين logging و tracing؟ ✅
+--571-- ما هو distributed tracing؟ ✅
+--572-- كيف تستخدم أدوات مثل Sentry أو LogRocket؟ ✅
+--573-- كيف تراقب APIs أو DB performance من خلال Grafana أو Prometheus؟ ✅
+--574-- كيف تختبر load/performance لتطبيقك؟ ✅
+--575-- ما الفرق بين TDD و BDD؟ ✅
+--576-- كيف تكتب automated tests لتطبيق يعمل بـ microservices؟ ✅
+--577-- ما معنى contract testing؟ ✅
+--578-- ما هو chaos engineering؟ ✅
+--579-- كيف تستخدم Storybook لتوثيق الـ UI components؟ ✅
+--580-- ما هو الـ Monorepo؟ ومتى تفضله؟ ✅
+--581-- كيف تستخدم NX أو TurboRepo؟ ✅
+--582-- كيف تبني design system وتستخدمه عبر فرق متعددة؟ ✅
+--583-- كيف تهيئ GitHub Actions لعمل CI/CD باحترافية؟ ✅
+--584-- كيف تمنع SQL injection أو NoSQL injection؟ ✅
+--585-- كيف تؤمن Uploading الصور أو الملفات؟ ✅
+--586-- كيف تطبق Rate Limiting بطريقة آمنة؟ ✅
+--587-- ما معنى Security Headers؟ ✅
+--588-- ما هو X-XSS-Protection و X-Frame-Options؟ ✅
+✅ Self-Evaluation Questions
+--589-- هل يمكن لأي مطور بعدي قراءة الكود وفهمه؟ ✅
+--590-- هل النظام بتاعي يقدر يتحمل 100x user growth؟ ✅
+--591-- هل في Single Point of Failure في نظامي؟ ✅
+--592-- هل أقدر أغير ميزة أساسية بدون ما أعدل 30 ملف؟ ✅
+--593-- هل عندي tests كفاية للتحديثات المستقبلية؟ ✅
+📚 Key Terms
+--594-- Zero downtime deployment ✅
+--595-- WebAssembly ✅
+--596-- Edge functions (Cloudflare Workers, Vercel Edge) ✅
+--597-- Service mesh (Istio, Linkerd) ✅
+--598-- BFF (Backend for Frontend) ✅
+--599-- Multi-tenant architecture ✅
+--600-- JSON:API, HAL ✅
+--601-- OAuth PKCE flow ✅
+--602-- GraphQL Federation ✅
+--603-- Distributed systems ✅
+--604-- Database sharding ✅
+--605-- Immutable infrastructure ✅
+--606-- Infrastructure as Code (Terraform) ✅
+--607-- Eventual consistency ✅
+--608-- Async/Await pitfalls ✅
+--609-- Singleton vs static in JS ✅
+--610-- The "Zod" schema validation (مع tRPC) ✅
+--611-- Request Collapsing / Deduplication ✅
+--612-- Cold/Warm/Hot cache 
+
+
+
+
+
+
+
+
+Technical Leadership & Architecture
+✅ كيف تقسم مشروع كبير إلى microservices أو modules؟ وما المعايير اللي تستخدمها؟
+✅ إزاي توازن بين السرعة وجودة الكود عند ضغط الوقت؟
+✅ إزاي تتعامل مع legacy codebase سيء وتعمل refactoring بدون تعطيل النظام؟
+✅ ما هي استراتيجياتك لـ knowledge sharing داخل الفريق؟
+✅ كيف تختار بين بناء feature داخلي vs استخدام第三方 library؟
+🔥 Advanced Full Stack Scenarios
+✅ كيف تصمم real-time collaborative features (مثل Google Docs)؟
+✅ إزاي تتعامل مع eventual consistency بين الـ frontend والـ backend؟
+✅ كيف تنفذ feature flags لـ A/B testing أو rollout تدريجي؟
+✅ ما هو أفضل طريقة لتحسين Time to Interactive (TTI) في تطبيق معقد؟
+✅ كيف تدير secrets (API keys, credentials) في CI/CD pipelines؟
+🛠 DevOps & Observability
+✅ كيف تراقب performance issues في production؟ (أدوات + خطوات)
+✅ ما هي استراتيجياتك لـ zero-downtime deployments؟
+✅ كيف تتعامل مع sudden traffic spikes (مثل flash sale)؟
+✅ كيف تصمم alerting system للفريق عند حدوث أخطاء حرجة؟
+💡 Team & Process
+✅ كيف تقيس productivity الفريق بدون micro-management؟
+✅ إزاي تتعامل مع مطور بطئ أو مقاوم للتغيير؟
+✅ ما هي أفضل طريقة لتنظيم sprint reviews مع non-tech stakeholders؟
+✅ كيف تتعامل مع تضارب الأولويات بين الـ business والـ technical debt؟
+✅ ما هي خطواتك لبناء ثقافة ownership داخل الفريق؟
+✅ كيف تتعامل مع فشل إطلاق feature (post-mortem process)؟

@@ -1,5 +1,5 @@
 {
-     "EmployeeMonitoring": {
+  "EmployeeMonitoring": {
     "title": "Employee Monitoring & Virtual Workplace System",
     "UserManagement": {
       "title": "User Management",
@@ -243,184 +243,253 @@
     "hoursUntil": "hours until",
     "repeatsEvery": "Repeats every"
   },
-    "KnowledgeBase": {
-        "title": "Personal Knowledge Base",
-        "filters": {
-            "all": "All",
-            "read": "Read",
-            "unread": "Unread",
-            "tags": "Tags",
-            "clearFilters": "Clear filters"
-        },
-        "recap": {
-            "title": "Quick Recap"
-        },
-
-        "categories": {
-            "all": "All",
-            "javascript": "JavaScript",
-            "css": "CSS",
-            "html": "HTML",
-            "problemSolving": "Problem Solving",
-            "others": "Others"
-        },
-        "editQuestion": {
-            "title": "Edit Question",
-            "questionLabel": "Question",
-            "answerLabel": "Answer",
-            "recapLabel": "Quick Recap",
-            "tagsLabel": "Tags",
-            "categoryLabel": "Category",
-            "saveButton": "Save Changes"
-        },
-
-        "tags": {
-            "edit": "Edit Tags",
-            "important": "Important",
-            "needReview": "Need Review"
-        },
-        "actions": {
-            "edit": "Edit",
-            "save": "Save",
-            "lightMode": "Light Mode",
-            "darkMode": "Dark Mode",
-            "addQuestion": "Add Question",
-            "cancel": "Cancel",
-            "randomQuestion": "Random Question",
-            "reviewMode": "Review Mode",
-            "exitReview": "Exit Review",
-            "export": "Export",
-            "import": "Import",
-            "confirmImport": "Confirm Import",
-            "delete": "Delete",
-            "previous": "Previous",
-            "next": "Next",
-            "showAnswer": "Show Answer",
-            "hideAnswer": "Hide Answer"
-        },
-        "addQuestion": {
-            "title": "Add New Question",
-            "questionLabel": "Question Title",
-            "questionPlaceholder": "Enter your question...",
-            "categoryLabel": "Category",
-            "answerLabel": "Answer (HTML supported)",
-            "answerPlaceholder": "Enter your answer (you can use HTML tags like <b>, <code>, etc.)",
-            "tagsLabel": "Tags",
-            "saveButton": "Save Question",
-            "recapLabel": "Quick Recap",
-            "recapPlaceholder": "Enter a brief summary or key points..."
-        },
-        "reviewMode": {
-            "title": "Review Mode ({current}/{total})",
-            "previous": "Previous",
-            "next": "Next",
-            "showAnswer": "Show Answer",
-            "hideAnswer": "Hide Answer"
-        },
-        "search": {
-            "placeholder": "Search questions..."
-        },
-        "emptyState": {
-            "default": "No questions found. Try adding a new question.",
-            "filtered": "No questions found in {category}. Try changing the category or adding a new question."
-        },
-        "question": {
-            "addedOn": "Added: {date}"
-        },
-        "alerts": {
-            "importSuccess": "Data imported successfully!",
-            "invalidFormat": "Invalid data format. Expected an array of questions.",
-            "importError": "Failed to parse JSON",
-            "editSuccess": "Question updated successfully!",
-            "editError": "Error updating question:"
-        }
+  "TechnicalCMS": {
+    "title": "Technical Content Management System",
+    "faqTab": "Knowledge/FAQ",
+    "problemsTab": "Coding Problems",
+    "searchPlaceholder": "Search...",
+    "allCategories": "All Categories",
+    "allDifficulties": "All Difficulties",
+    "allStatuses": "All Statuses",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "read": "Read",
+    "unread": "Unread",
+    "faqList": "Questions List",
+    "noFaqsFound": "No Questions found",
+    "problemList": "Problem List",
+    "noProblemsFound": "No problems found",
+    "deleteConfirm": "Are you sure you want to delete this item?",
+    "markRead": "Mark as read",
+    "markUnread": "Mark as unread",
+    "edit": "Edit",
+    "delete": "Delete",
+    "editItem": "Edit",
+    "addNewItem": "Add New",
+    "faq": "Questions",
+    "problem": "Problem",
+    "question": "Question",
+    "answer": "Answer",
+    "supportsRichText": "Supports rich text formatting",
+    "category": "Category",
+    "markAsRead": "Mark as read",
+    "importJson": "Import JSON",
+    "cancel": "Cancel",
+    "update": "Update",
+    "save": "Save",
+    "description": "Description",
+    "solution": "Solution",
+    "code": "Code",
+    "codePlaceholder": "Paste your code here...",
+    "difficulty": "Difficulty",
+    "tags": "Tags",
+    "addTagPlaceholder": "New tag",
+    "add": "Add",
+    "import" : "Import" ,
+    "readStatus" : "Status" ,
+    "addFaq" : "Add Question",
+    "addProblem" : "Add Problem" , 
+    "tryAdjustingYourFilters" : "Try adjusting your filters or search criteria."
+  },
+  "KnowledgeBase": {
+    "title": "Knowledge Base",
+    "problems": {
+      "title": "Coding Problems",
+      "addProblem": "Add Problem",
+      "searchPlaceholder": "Search problems...",
+      "difficultyLabel": "Difficulty",
+      "difficultyEasy": "Easy",
+      "difficultyMedium": "Medium",
+      "difficultyHard": "Hard",
+      "titleLabel": "Problem Title",
+      "titlePlaceholder": "Enter problem title",
+      "solutionLabel": "Solution",
+      "categoryLabel": "Category",
+      "newCategory": "New category name"
     },
-    "BoardSettings": {
-        "board_title": "Board Title",
-        "visibility": "Visibility",
-        "public_label": "Public",
-        "public_desc": "Anyone can see this board",
-        "team_label": "Team",
-        "team_desc": "Only team members can see this board",
-        "private_label": "Private",
-        "private_desc": "Only you can see this board",
-        "members": "Members",
-        "invite_by_email": "Invite by email",
-        "invite": "Invite",
-        "remove": "Remove",
-        "danger_zone": "Danger Zone",
-        "delete_title": "Delete this board",
-        "delete_warning": "Once you delete a board, there is no going back. Please be certain.",
-        "delete_confirm": "Are you sure you want to delete this board? All data will be permanently lost.",
-        "delete_board": "Delete Board",
-        "user_not_found": "User not found",
-        "user_already_member": "User is already a member",
-        "added_to_board": "You've been added to board \"{board}\""
+    "filters": {
+      "all": "All",
+      "read": "Read",
+      "unread": "Unread",
+      "tags": "Tags",
+      "clearFilters": "Clear filters"
     },
-    "AI": {
-        "help_title": "What I can help with:",
-        "help_risks": "Identifying risks and problems",
-        "help_delays": "Predicting task delays",
-        "help_time": "Time tracking and reporting",
-        "help_boards": "Board overview",
-        "help_example": "Example: \"Show me time spent vs estimated\"",
-
-        "suggest_risks": "Which cards are at risk?",
-        "suggest_time": "Show me time spent vs estimated",
-        "suggest_delays": "Are any tasks delayed?",
-        "suggest_boards": "List all boards",
-
-        "input_placeholder": "Ask me anything about your board...",
-        "ask_button": "Ask",
-
-        "risks_found": "There are {count} potential risks:",
-        "delays_found": "Of {total} cards with due dates, {delayed} may be delayed:",
-        "time_report": "Total estimated: {estimated}h\nTotal spent: {spent}h\nCompletion: {completion}%",
-        "boards_found": "You have {count} boards:",
-        "help_response": "I can help you with:\n- Identifying risks\n- Predicting delays\n- Time tracking\n- Board analytics"
+    "alerts": {
+      "importSuccess": "Data imported successfully!",
+      "importError": "Import failed",
+      "invalidFormat": "Invalid JSON format",
+      "editSuccess": "Question updated successfully!",
+      "editError": "Error updating question:"
     },
-    "there-no-data": "No results",
-    "search": "Search...",
-    "Dashboard": {
-        "recentFolders": "Recent Folders",
-        "createFolder": "Create Folder",
-        "uploadFolder": "Upload Folder",
-        "recentFiles": "Recent Files",
-        "uploadFile": "Upload File"
+    "tabs": {
+      "knowledge": "Knowledge Base",
+      "problems": "Problem Solving"
     },
-    "Sidebar": {
-        "main": "Main",
-        "filesAndFolders": "Files & Folders",
-        "sections": "Sections",
-        "aiChat": "Ai Chat",
-        "people": "People",
-        "history": "History",
-        "messages": "History",
-        "account": "My account",
-        "new-chat": "New chat"
+    "recap": {
+      "title": "Quick Recap"
     },
 
-    "auth": {
-        "signin": {
-            "email_valid": "Enter a valid email",
-            "email_required": "Email is required",
-            "password_required": "Password is required"
-        },
-        "signup": {
-            "name_required": "First name is required",
-            "name_min": "First name must be at least 2 characters",
-            "phone_required": "Phone number is required",
-            "email_valid": "Enter a valid email",
-            "email_required": "Email is required",
-            "password_min": "Password must be at least 6 characters",
-            "password_required": "Password is required",
-            "role": "Please select your role.",
-            "department": "Please select a department.",
-            "avatar": "Please upload a profile picture."
-        },
-        "forgot": {
-            "email_valid": "Enter a valid email",
-            "email_required": "Email is required"
-        }
+    "categories": {
+      "all": "All Categories",
+      "javascript": "JavaScript",
+      "css": "CSS",
+      "html": "HTML",
+      "problemSolving": "Problem Solving",
+      "others": "Others"
+    },
+    "editQuestion": {
+      "title": "Edit Question",
+      "questionLabel": "Question",
+      "answerLabel": "Answer",
+      "recapLabel": "Quick Recap",
+      "tagsLabel": "Tags",
+      "categoryLabel": "Category",
+      "saveButton": "Save Changes"
+    },
+
+    "tags": {
+      "edit": "Edit Tags",
+      "important": "Important",
+      "needReview": "Need Review"
+    },
+    "actions": {
+      "edit": "Edit",
+      "save": "Save",
+      "lightMode": "Light Mode",
+      "darkMode": "Dark Mode",
+      "addQuestion": "Add Question",
+      "cancel": "Cancel",
+      "randomQuestion": "Random Question",
+      "reviewMode": "Review Mode",
+      "exitReview": "Exit Review",
+      "export": "Export",
+      "import": "Import",
+      "confirmImport": "Confirm Import",
+      "delete": "Delete",
+      "previous": "Previous",
+      "next": "Next",
+      "showAnswer": "Show Answer",
+      "hideAnswer": "Hide Answer",
+      "add": "Add"
+    },
+    "addQuestion": {
+      "title": "Add New Question",
+      "questionLabel": "Question Title",
+      "questionPlaceholder": "Enter your question...",
+      "categoryLabel": "Category",
+      "answerLabel": "Answer (HTML supported)",
+      "answerPlaceholder": "Enter your answer (you can use HTML tags like <b>, <code>, etc.)",
+      "tagsLabel": "Tags",
+      "saveButton": "Save Question",
+      "recapLabel": "Quick Recap",
+      "recapPlaceholder": "Enter a brief summary or key points...",
+      "newCategory": "New category name"
+    },
+    "reviewMode": {
+      "title": "Review Mode ({current}/{total})",
+      "previous": "Previous",
+      "next": "Next",
+      "showAnswer": "Show Answer",
+      "hideAnswer": "Hide Answer"
+    },
+    "search": {
+      "placeholder": "Search questions..."
+    },
+    "emptyState": {
+      "default": "No questions found. Try adding a new question.",
+      "filtered": "No questions found in {category}. Try changing the category or adding a new question."
+    },
+    "question": {
+      "addedOn": "Added: {date}"
     }
+  },
+  "BoardSettings": {
+    "board_title": "Board Title",
+    "visibility": "Visibility",
+    "public_label": "Public",
+    "public_desc": "Anyone can see this board",
+    "team_label": "Team",
+    "team_desc": "Only team members can see this board",
+    "private_label": "Private",
+    "private_desc": "Only you can see this board",
+    "members": "Members",
+    "invite_by_email": "Invite by email",
+    "invite": "Invite",
+    "remove": "Remove",
+    "danger_zone": "Danger Zone",
+    "delete_title": "Delete this board",
+    "delete_warning": "Once you delete a board, there is no going back. Please be certain.",
+    "delete_confirm": "Are you sure you want to delete this board? All data will be permanently lost.",
+    "delete_board": "Delete Board",
+    "user_not_found": "User not found",
+    "user_already_member": "User is already a member",
+    "added_to_board": "You've been added to board \"{board}\""
+  },
+  "AI": {
+    "help_title": "What I can help with:",
+    "help_risks": "Identifying risks and problems",
+    "help_delays": "Predicting task delays",
+    "help_time": "Time tracking and reporting",
+    "help_boards": "Board overview",
+    "help_example": "Example: \"Show me time spent vs estimated\"",
+
+    "suggest_risks": "Which cards are at risk?",
+    "suggest_time": "Show me time spent vs estimated",
+    "suggest_delays": "Are any tasks delayed?",
+    "suggest_boards": "List all boards",
+
+    "input_placeholder": "Ask me anything about your board...",
+    "ask_button": "Ask",
+
+    "risks_found": "There are {count} potential risks:",
+    "delays_found": "Of {total} cards with due dates, {delayed} may be delayed:",
+    "time_report": "Total estimated: {estimated}h\nTotal spent: {spent}h\nCompletion: {completion}%",
+    "boards_found": "You have {count} boards:",
+    "help_response": "I can help you with:\n- Identifying risks\n- Predicting delays\n- Time tracking\n- Board analytics"
+  },
+  "there-no-data": "No results",
+  "search": "Search...",
+  "Dashboard": {
+    "recentFolders": "Recent Folders",
+    "createFolder": "Create Folder",
+    "uploadFolder": "Upload Folder",
+    "recentFiles": "Recent Files",
+    "uploadFile": "Upload File"
+  },
+  "Sidebar": {
+    "main": "Main",
+    "filesAndFolders": "Files & Folders",
+    "sections": "Sections",
+    "aiChat": "Ai Chat",
+    "people": "People",
+    "history": "History",
+    "messages": "History",
+    "account": "My account",
+    "new-chat": "New chat"
+  },
+
+  "auth": {
+    "signin": {
+      "email_valid": "Enter a valid email",
+      "email_required": "Email is required",
+      "password_required": "Password is required"
+    },
+    "signup": {
+      "name_required": "First name is required",
+      "name_min": "First name must be at least 2 characters",
+      "phone_required": "Phone number is required",
+      "email_valid": "Enter a valid email",
+      "email_required": "Email is required",
+      "password_min": "Password must be at least 6 characters",
+      "password_required": "Password is required",
+      "role": "Please select your role.",
+      "department": "Please select a department.",
+      "avatar": "Please upload a profile picture."
+    },
+    "forgot": {
+      "email_valid": "Enter a valid email",
+      "email_required": "Email is required"
+    }
+  }
 }

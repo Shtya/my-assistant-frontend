@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Cairo:200,300,regular,500,600,700,800,900');
-@import url(https://fonts.googleapis.com/css?family=Tajawal:200,300,regular,500,700,800,900);
-@import url(https://fonts.googleapis.com/css?family=Amiri+Quran:regular);
+@import url('https://fonts.googleapis.com/css?family=Tajawal:200,300,regular,500,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Amiri+Quran:regular');
 
 
 @tailwind base;
@@ -60,7 +60,11 @@ body {
     margin: 0;
 }
 
-
+/* إذا كان العنصر يحتوي على ابن فيه الكلاس .se-tooltip-inner */
+.se-btn-module:has(button:hover) {
+  z-index: 10000;
+  position: relative;
+}
 
 
 
