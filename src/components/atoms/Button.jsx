@@ -3,7 +3,7 @@ import { Loader2 } from 'lucide-react';
 
 export default function Button({ title="" , infoTooltip , label, onClick, color = 'primary', Icon, cn = '', loading = false }) {
     const colorVariants = {
-        primary: 'btn-blue gradient',
+        primary: 'btn-blue  ',
         white: ' !bg-transparent btn-white ',
         black: 'btn-black',
         red: 'btn-red bg-gradient-to-t from-error to-red-400',

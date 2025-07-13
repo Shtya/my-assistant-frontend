@@ -244,6 +244,18 @@
     "repeatsEvery": "Repeats every"
   },
   "TechnicalCMS": {
+    
+    "favorites": "Favorites",
+    
+    "noFavorites": "No favorites yet",
+    "addFavoritesMessage": "Click the heart icon to add items to favorites",
+    "addFavorite": "Add to favorites",
+    "removeFavorite": "Remove from favorites",
+
+
+
+    "addFaq" : "Add Question",
+    "addProblem" : "Add problem",
     "title": "Technical Content Management System",
     "faqTab": "Knowledge/FAQ",
     "problemsTab": "Coding Problems",
@@ -286,123 +298,18 @@
     "tags": "Tags",
     "addTagPlaceholder": "New tag",
     "add": "Add",
-    "import" : "Import" ,
-    "readStatus" : "Status" ,
-    "addFaq" : "Add Question",
-    "addProblem" : "Add Problem" , 
-    "tryAdjustingYourFilters" : "Try adjusting your filters or search criteria."
-  },
-  "KnowledgeBase": {
-    "title": "Knowledge Base",
-    "problems": {
-      "title": "Coding Problems",
-      "addProblem": "Add Problem",
-      "searchPlaceholder": "Search problems...",
-      "difficultyLabel": "Difficulty",
-      "difficultyEasy": "Easy",
-      "difficultyMedium": "Medium",
-      "difficultyHard": "Hard",
-      "titleLabel": "Problem Title",
-      "titlePlaceholder": "Enter problem title",
-      "solutionLabel": "Solution",
-      "categoryLabel": "Category",
-      "newCategory": "New category name"
-    },
-    "filters": {
-      "all": "All",
-      "read": "Read",
-      "unread": "Unread",
-      "tags": "Tags",
-      "clearFilters": "Clear filters"
-    },
-    "alerts": {
-      "importSuccess": "Data imported successfully!",
-      "importError": "Import failed",
-      "invalidFormat": "Invalid JSON format",
-      "editSuccess": "Question updated successfully!",
-      "editError": "Error updating question:"
-    },
-    "tabs": {
-      "knowledge": "Knowledge Base",
-      "problems": "Problem Solving"
-    },
-    "recap": {
-      "title": "Quick Recap"
-    },
-
-    "categories": {
-      "all": "All Categories",
-      "javascript": "JavaScript",
-      "css": "CSS",
-      "html": "HTML",
-      "problemSolving": "Problem Solving",
-      "others": "Others"
-    },
-    "editQuestion": {
-      "title": "Edit Question",
-      "questionLabel": "Question",
-      "answerLabel": "Answer",
-      "recapLabel": "Quick Recap",
-      "tagsLabel": "Tags",
-      "categoryLabel": "Category",
-      "saveButton": "Save Changes"
-    },
-
-    "tags": {
-      "edit": "Edit Tags",
-      "important": "Important",
-      "needReview": "Need Review"
-    },
-    "actions": {
-      "edit": "Edit",
-      "save": "Save",
-      "lightMode": "Light Mode",
-      "darkMode": "Dark Mode",
-      "addQuestion": "Add Question",
-      "cancel": "Cancel",
-      "randomQuestion": "Random Question",
-      "reviewMode": "Review Mode",
-      "exitReview": "Exit Review",
-      "export": "Export",
-      "import": "Import",
-      "confirmImport": "Confirm Import",
-      "delete": "Delete",
-      "previous": "Previous",
-      "next": "Next",
-      "showAnswer": "Show Answer",
-      "hideAnswer": "Hide Answer",
-      "add": "Add"
-    },
-    "addQuestion": {
-      "title": "Add New Question",
-      "questionLabel": "Question Title",
-      "questionPlaceholder": "Enter your question...",
-      "categoryLabel": "Category",
-      "answerLabel": "Answer (HTML supported)",
-      "answerPlaceholder": "Enter your answer (you can use HTML tags like <b>, <code>, etc.)",
-      "tagsLabel": "Tags",
-      "saveButton": "Save Question",
-      "recapLabel": "Quick Recap",
-      "recapPlaceholder": "Enter a brief summary or key points...",
-      "newCategory": "New category name"
-    },
-    "reviewMode": {
-      "title": "Review Mode ({current}/{total})",
-      "previous": "Previous",
-      "next": "Next",
-      "showAnswer": "Show Answer",
-      "hideAnswer": "Hide Answer"
-    },
-    "search": {
-      "placeholder": "Search questions..."
-    },
-    "emptyState": {
-      "default": "No questions found. Try adding a new question.",
-      "filtered": "No questions found in {category}. Try changing the category or adding a new question."
-    },
-    "question": {
-      "addedOn": "Added: {date}"
-    }
+    "import": "Import",
+    "readStatus": "Status",
+    "selectTag": "Select Tag",
+    "newTag": "New Tag",
+    "tryAdjustingYourFilters": "Try adjusting your filters or search differently",
+    "filters": "Filters",
+    "status": "Status",
+    "all": "All",
+    "clearAllFilters": "Clear All Filters",
+    "importing": "Importing...",
+    "saving": "Saving...",
+    "invalidJsonFormat": "Invalid JSON format"
   },
   "BoardSettings": {
     "board_title": "Board Title",

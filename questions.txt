@@ -1,71 +1,50 @@
-✅ JavaScript Fundamentals
---1-- الفرق بين var و let و const ✅
---2-- ما هو الـ Hoisting؟ ✅
---3-- أنواع الـ Scope في JavaScript ✅
---4-- ما هو الـ Closure واستخداماته ✅
---5-- الفرق بين == و === ✅
---6-- الفرق بين pass by value و pass by reference ✅
---7-- ما معنى Mutable و Immutable؟ ✅
---8-- أنواع البيانات: Primitive vs Non-Primitive ✅
---9-- الفرق بين null و undefined ✅
---10-- التعامل مع NaN في JavaScript ✅
-🔄 Async & Execution
---11-- ما هو الـ Event Loop؟ ✅
---12-- الفرق بين synchronous و asynchronous ✅
---13-- كيف تعمل setTimeout و setInterval من الداخل؟ ✅
---14-- الفرق بين Call Stack و Callback Queue و Microtask Queue ✅
---15-- الفرق بين Callback و Promise ✅
---16-- كيفية كتابة Promise من الصفر ✅
---17-- التعامل مع async/await ✅
---18-- إدارة الأخطاء في الكود غير المتزامن ✅
---19-- الفرق بين parallel و sequential execution ✅
-🧠 Functions
---20-- ما هي Higher Order Functions؟ ✅
---21-- الفرق بين Function Declaration و Function Expression ✅
---22-- ما هي Arrow Functions ومتى تستخدمها؟ ✅
---23-- كيف يعمل this في سياقات مختلفة؟ ✅
---24-- طرق التعامل مع مشكلة this (bind, call, apply) ✅
---25-- ما هو currying؟ ✅
---26-- ما الفرق بين Debounce و Throttle؟ ✅
-🧱 OOP vs FP
---27-- ما هو Prototypal Inheritance؟ ✅
---28-- ما هي الـ Prototype Chain؟ ✅
---29-- الفرق بين class و constructor function ✅
---30-- كيف تنفذ Inheritance باستخدام classes ✅
---31-- كيفية كتابة كود functional أكثر ✅
---32-- الفرق بين map, filter, reduce ✅
---33-- ما معنى composition للفنكشنز؟ ✅
-🧪 Advanced JS
---34-- كيفية كتابة كود Modular باستخدام ES Modules ✅
---35-- كيف تعمل الـ Garbage Collection؟ ✅
---36-- كيفية منع Memory Leaks ✅
---37-- ما الفرق بين WeakMap و WeakSet؟ ✅
---38-- كيفية كتابة Custom Iterator ✅
---39-- ما هي Generator Functions؟ ✅
---40-- ما هو Proxy و Reflect API؟ ✅
---41-- ما معنى Event Delegation؟ ✅
---42-- كيفية كتابة Observer Pattern ✅
---43-- الفرق بين Shallow Copy و Deep Copy ✅
-⚠️ Common Mistakes
-استخدام var بدل let أو const ❌
+return this as arrya of object JSON (  as pretty deisgn with tags html and don't put \n out the <pre> <code></code> </pre> put on the code only to handle it as shown )
+and this is a pattern to follow as an example of how you will give me the json and if you put "" inside the "" try to scape it with special chracter
+[
+  {
+    "question": "اكتب السؤال هنا بشكل واضح ومباشر",
+    "answer": "<h3>🧠 الشرح (بالعربية):</h3> <p> ✨ قدم شرحًا مبسطًا ومنسقًا باللغة العربية يوضح المفهوم بشكل جميل وسلس،  مثلاً: ما هي المشكلة التي يحلها؟ ولماذا نستخدمه؟ وأي حالات يُنصح باستخدامه فيها؟ </p>  <h3>🔍 مثال:</h3><pre><code> \n// اكتب هنا المثال التطبيقي \nfunction example() {\nreturn true;\n}\nconsole.log(example());</code></pre><h3>📘 معلومات إضافية:</h3><ul><li>اكتب أي تفاصيل مفيدة، أو مقارنة بين مفاهيم مشابهة.</li><li>هل هناك بدائل أو استخدامات أخرى؟</li></ul><h3>🔗 مواضيع ذات صلة:</h3><ul><li>يمكن وضع روابط أو كلمات مفتاحية مرتبطة بالمفهوم هنا.</li></ul>",
+    "category": "اسم اللغة أو المجال (مثل: JavaScript, HTML, Git, CSS, Laravel)",
+    "tag": "الموضوع الدقيق داخل المجال (مثل: functions, loops, DOM, validation)"
+  }
+]
+  
+  and genrate for this questions and return the all question dont' skipt question (
 
-تعديل متغيرات معرفة بـ const ❌
+  )
 
---44-- تجاهل إدارة الأخطاء في async code ✅
---45-- الاعتماد الكامل على Callbacks ✅
---46-- تكرار الكود بدل كتابة reusable functions ✅
-نسيان return في arrow functions ❌
+/**
+ * من فضلك حوّل كل مشكلة برمجية من الكود الذي سأرسله لك إلى كائن داخل مصفوفة JSON بالشكل التالي:
+ * [
+ *   {
+ *     title: "اسم المشكلة بشكل واضح وبسيط",
+ *     solution: `
+ *       💡 التوضيح:
+ *       شرح مبسط لما تفعله هذه المشكلة أو الهدف منها، ولماذا تُستخدم (مثلًا: تحويل الأرقام، البحث عن عنصر...).
+ *
+ *       ❓ المطلوب:
+ *       ماذا يُطلب من المبرمج أن ينجزه بالضبط؟
+ *
+ *       🧠 فكرة الحل:
+ *       كيف يعمل الحل؟ اشرح الخطوات المنطقية والفكرية التي يقوم بها الكود للوصول إلى النتيجة.
+ *
+ *       🧪 اختبار:
+ *       console.log(اسم_الدالة(معاملات_الاختبار)) // اكتب مثالًا واقعيًا للاختبار
+ *     `,
+ *     difficulty: "easy" | "medium" | "hard", // اختر مستوى الصعوبة حسب فهمك
+ *     category: "مثلاً: arrays, math, strings, recursion, etc.",
+ *     tags: ["مواضيع فرعية مثل: loops", "conditions", "scope", "greedy", "parsing"]
+ *   }
+ * ]
+ */
 
-استخدام == بدل === ❌
 
---47-- سوء استخدام this ✅
---48-- تعديل الكائنات الأصلية بدون نسخ ✅
---49-- استخدام forEach مع async logic ✅
---50-- كتابة كود imperative بدل declarative ✅
---51-- استخدام خاطئ لـ setTimeout ✅
---52-- تجاهل أدوات linting مثل ESLint ✅
---53-- استخدام متغيرات Global بشكل مفرط ✅
-نسيان استخدام break في switch ❌
+
+
+//! OOP
+//! DATA Structure
+
+
 
 ✅ TypeScript
 --54-- إيه الفرق بين Type و Interface في TypeScript؟ وإمتى تستخدم كل واحد؟ ✅
@@ -108,232 +87,216 @@
 --91-- كتابة الكود بنفس طريقة JavaScript وعدم الاستفادة من ميزات TypeScript ✅
 --92-- إهمال توثيق الأنواع للمطورين الآخرين ✅
 --93-- عدم كتابة return types للدوال المهمة (خصوصًا في الـ services و الـ handlers) ✅
-✅ React
---94-- الفرق بين Functional Components و Class Components؟ ✅
---95-- كيف يعمل React تحت الغطاء (Virtual DOM & Reconciliation)؟ ✅
---96-- كيف يعمل الـ JSX؟ وما أصله؟ ✅
---97-- الفرق بين Controlled و Uncontrolled components؟ ✅
---98-- كيف تعمل conditional rendering؟ ✅
---99-- ما المقصود بـ lifting state up؟ ✅
---100-- كيف يتعامل React مع الـ keys في المصفوفات؟ ولماذا هي مهمة؟ ✅
---101-- الفرق بين props و state؟ ومتى نستخدم كلًا منهما؟ ✅
---102-- الفرق بين one-way binding و two-way binding؟ ✅
---103-- متى يتم إعادة ريندر للكومبوننت؟ وكيف تمنع الـ re-renders الغير ضرورية؟ ✅
---104-- ما هو useState؟ وكيف نستخدمه؟ ✅
---105-- الفرق بين useEffect و useLayoutEffect؟ ✅
---106-- كيف تكتب custom hook؟ وما فائدته؟ ✅
---107-- استخدام useRef والفرق بينه وبين useState؟ ✅
---108-- استخدام useMemo و useCallback لتحسين الأداء ✅
---109-- متى تستخدم useReducer بدلاً من useState؟ ✅
---110-- كيف يتم cleanup داخل useEffect؟ ومتى يحدث؟ ✅
---111-- لماذا يجب استخدام dependency array داخل useEffect؟ وما المشاكل عند نسيانها؟ ✅
---112-- كيف تكتب كود performant في React؟ (memoization, virtualization) ✅
---113-- استخدام Context API؟ ومتى تستخدمه بدلاً من state lifting؟ ✅
---114-- ما المشاكل الناتجة عن الإفراط في استخدام Context؟ ✅
---115-- كيف تنشئ Error Boundaries؟ ✅
---116-- كيف يعمل React في السيرفر؟ (SSR مع Next.js مثلاً) ✅
---117-- استخدام Suspense و lazy loading ✅
---118-- كتابة Forms باستخدام Formik أو React Hook Form؟ والفرق بينهما ✅
---119-- كيف يتعامل React مع synthetic events؟ ✅
---120-- كيفية بناء reusable components بشكل سليم؟ ✅
---121-- إضافة animation باستخدام framer-motion أو react-spring ✅
---122-- تنظيم ملفات مشروع React كبير (Structure, Patterns) ✅
---123-- كتابة اختبارات لوحدات React باستخدام Testing Library أو Jest ✅
---124-- استخدام state في أماكن غلط يؤدي لإعادة ريندر كثيرة ✅
---125-- نسيان key عند عمل map ✅
---126-- كتابة useEffect بدون dependency array ✅
---127-- استخدام props/state مباشرة داخل setState ✅
---128-- استخدام async داخل useEffect بشكل خاطئ ✅
---129-- تكرار logic بدلاً من كتابته داخل custom hook ✅
---130-- التعامل المباشر مع DOM بدل useRef ✅
---131-- تجميع كل شيء في كومبوننت واحد (انعدام التنظيم) ✅
---132-- تجاهل الأداء وعدم استخدام React.memo/useMemo/useCallback ✅
---133-- نسيان cleanup للـ subscriptions أو التايمرز داخل useEffect ✅
---134-- الإفراط في استخدام Context API ✅
---135-- نسيان تهيئة القيم الافتراضية للـ state/props ✅
---136-- تكرار الكود بدلاً من عمل إعادة استخدام components ✅
---137-- كتابة event handlers مباشرة داخل JSX بدون useCallback ✅
+
+
+// ✅ React
+// --94-- الفرق بين Functional Components و Class Components؟ ✅
+// --95-- كيف يعمل React تحت الغطاء (Virtual DOM & Reconciliation)؟ ✅
+// --96-- كيف يعمل الـ JSX؟ وما أصله؟ ✅
+// --97-- الفرق بين Controlled و Uncontrolled components؟ ✅
+// --98-- كيف تعمل conditional rendering؟ ✅
+// --99-- ما المقصود بـ lifting state up؟ ✅
+// --100-- كيف يتعامل React مع الـ keys في المصفوفات؟ ولماذا هي مهمة؟ ✅
+// --101-- الفرق بين props و state؟ ومتى نستخدم كلًا منهما؟ ✅
+// --102-- الفرق بين one-way binding و two-way binding؟ ✅
+// --103-- متى يتم إعادة ريندر للكومبوننت؟ وكيف تمنع الـ re-renders الغير ضرورية؟ ✅
+// --104-- ما هو useState؟ وكيف نستخدمه؟ ✅
+// --105-- الفرق بين useEffect و useLayoutEffect؟ ✅
+// --106-- كيف تكتب custom hook؟ وما فائدته؟ ✅
+// --107-- استخدام useRef والفرق بينه وبين useState؟ ✅
+// --108-- استخدام useMemo و useCallback لتحسين الأداء ✅
+// --109-- متى تستخدم useReducer بدلاً من useState؟ ✅
+// --110-- كيف يتم cleanup داخل useEffect؟ ومتى يحدث؟ ✅
+// --111-- لماذا يجب استخدام dependency array داخل useEffect؟ وما المشاكل عند نسيانها؟ ✅
+// --112-- كيف تكتب كود performant في React؟ (memoization, virtualization) ✅
+// --113-- استخدام Context API؟ ومتى تستخدمه بدلاً من state lifting؟ ✅
+// --114-- ما المشاكل الناتجة عن الإفراط في استخدام Context؟ ✅
+// --115-- كيف تنشئ Error Boundaries؟ ✅
+// --116-- كيف يعمل React في السيرفر؟ (SSR مع Next.js مثلاً) ✅
+// --117-- استخدام Suspense و lazy loading ✅
+// --118-- كتابة Forms باستخدام Formik أو React Hook Form؟ والفرق بينهما ✅
+// --119-- كيف يتعامل React مع synthetic events؟ ✅
+// --120-- كيفية بناء reusable components بشكل سليم؟ ✅
+// --121-- إضافة animation باستخدام framer-motion أو react-spring ✅
+// --122-- تنظيم ملفات مشروع React كبير (Structure, Patterns) ✅
+// --123-- كتابة اختبارات لوحدات React باستخدام Testing Library أو Jest ✅
+// --124-- استخدام state في أماكن غلط يؤدي لإعادة ريندر كثيرة ✅
+// --125-- نسيان key عند عمل map ✅
+// --126-- كتابة useEffect بدون dependency array ✅
+// --127-- استخدام props/state مباشرة داخل setState ✅
+// --128-- استخدام async داخل useEffect بشكل خاطئ ✅
+// --129-- تكرار logic بدلاً من كتابته داخل custom hook ✅
+// --130-- التعامل المباشر مع DOM بدل useRef ✅
+// --131-- تجميع كل شيء في كومبوننت واحد (انعدام التنظيم) ✅
+// --132-- تجاهل الأداء وعدم استخدام React.memo/useMemo/useCallback ✅
+// --133-- نسيان cleanup للـ subscriptions أو التايمرز داخل useEffect ✅
+// --134-- الإفراط في استخدام Context API ✅
+// --135-- نسيان تهيئة القيم الافتراضية للـ state/props ✅
+// --136-- تكرار الكود بدلاً من عمل إعادة استخدام components ✅
+// --137-- كتابة event handlers مباشرة داخل JSX بدون useCallback ✅
 ✅ Next.js
---138-- الفرق بين Next.js و React؟ ✅
---139-- الفرق بين SSR (Server-Side Rendering) و SSG (Static Site Generation)؟ ✅
---140-- متى تستخدم getServerSideProps؟ وما عيوبه؟ ✅
---141-- متى تستخدم getStaticProps و getStaticPaths؟ ✅
---142-- كيف تهيكل صفحات المشروع باستخدام File-based Routing؟ ✅
---143-- الفرق بين pages و app directory في Next.js 13+ ✅
---144-- كيف تعمل Dynamic Routes؟ ✅
---145-- كيفية إنشاء API Routes ومتى تستخدمها؟ ✅
---146-- كيفية عمل redirect أو rewrite؟ ✅
---147-- كيفية تهيئة Metadata باستخدام next/head أو metadata API الجديد؟ ✅
---148-- كيف يساعدك Next.js في تحسين SEO مقارنةً بـ React؟ ✅
---149-- استخدام Image component بالشكل الصحيح لتحسين الأداء ✅
---150-- كيفية preload بيانات أو ملفات لتحسين سرعة الصفحة ✅
---151-- كيف يعمل Automatic Code Splitting؟ ✅
---152-- كيفية عمل lazy load للـ components أو الصور ✅
---153-- الفرق بين Layout.js, Page.js, و Template.js؟ ✅
---154-- كيفية كتابة Server Component؟ ومتى تستخدمها؟ ✅
---155-- دمج Client Component داخل Server Component والعكس ✅
---156-- كتابة loading.tsx, error.tsx, و not-found.tsx ✅
---157-- كتابة generateStaticParams و generateMetadata ✅
---158-- إدارة Authentication باستخدام NextAuth.js ✅
---159-- التعامل مع Middlewares ✅
---160-- إنشاء Layouts متداخلة (Nested Layouts) ✅
---161-- عمل Caching باستخدام Next.js caching layers ✅
---162-- استخدام Streaming مع Suspense ✅
---163-- استخدام TypeScript في Next.js بشكل صحيح ✅
---164-- دمج Tailwind CSS في المشروع ✅
---165-- نشر المشروع على Vercel أو بدائل ✅
---166-- كتابة API handler وتمرير context ✅
---167-- عمل Localization / i18n (بما فيها App Router) ✅
---168-- استخدام getServerSideProps بدون داعي ✅
---169-- الإفراط في تحميل البيانات من client ✅
---170-- وضع مكونات ثقيلة في Server Components بدون caching ✅
---171-- نسيان استخدام <Image /> للصور ✅
---172-- استخدام API Routes كبديل للـ backend المستقل ✅
---173-- إهمال SEO metadata ✅
---174-- عدم استخدام dynamic imports و lazy loading ✅
---175-- دمج client/server components بشكل غير منظم ✅
---176-- استخدام useEffect لتحميل البيانات بدل get*Props ✅
---177-- نسيان error boundaries للصفحات المهمة ✅
+// --138-- الفرق بين Next.js و React؟ ✅
+// --139-- الفرق بين SSR (Server-Side Rendering) و SSG (Static Site Generation)؟ ✅
+// --140-- متى تستخدم getServerSideProps؟ وما عيوبه؟ ✅
+// --141-- متى تستخدم getStaticProps و getStaticPaths؟ ✅
+// --142-- كيف تهيكل صفحات المشروع باستخدام File-based Routing؟ ✅
+// --143-- الفرق بين pages و app directory في Next.js 13+ ✅
+// --144-- كيف تعمل Dynamic Routes؟ ✅
+// --145-- كيفية إنشاء API Routes ومتى تستخدمها؟ ✅
+// --146-- كيفية عمل redirect أو rewrite؟ ✅
+// --147-- كيفية تهيئة Metadata باستخدام next/head أو metadata API الجديد؟ ✅
+// --148-- كيف يساعدك Next.js في تحسين SEO مقارنةً بـ React؟ ✅
+// --149-- استخدام Image component بالشكل الصحيح لتحسين الأداء ✅
+// --150-- كيفية preload بيانات أو ملفات لتحسين سرعة الصفحة ✅
+// --151-- كيف يعمل Automatic Code Splitting؟ ✅
+// --152-- كيفية عمل lazy load للـ components أو الصور ✅
+// --153-- الفرق بين Layout.js, Page.js, و Template.js؟ ✅
+// --154-- كيفية كتابة Server Component؟ ومتى تستخدمها؟ ✅
+// --155-- دمج Client Component داخل Server Component والعكس ✅
+// --156-- كتابة loading.tsx, error.tsx, و not-found.tsx ✅
+// --157-- كتابة generateStaticParams و generateMetadata ✅
+// --158-- إدارة Authentication باستخدام NextAuth.js ✅
+// --159-- التعامل مع Middlewares ✅
+// --160-- إنشاء Layouts متداخلة (Nested Layouts) ✅
+// --161-- عمل Caching باستخدام Next.js caching layers ✅
+// --162-- استخدام Streaming مع Suspense ✅
+// --163-- استخدام TypeScript في Next.js بشكل صحيح ✅
+// --164-- دمج Tailwind CSS في المشروع ✅
+// --165-- نشر المشروع على Vercel أو بدائل ✅
+// --166-- كتابة API handler وتمرير context ✅
+// --167-- عمل Localization / i18n (بما فيها App Router) ✅
+// --168-- استخدام getServerSideProps بدون داعي ✅
+// --169-- الإفراط في تحميل البيانات من client ✅
+// --170-- وضع مكونات ثقيلة في Server Components بدون caching ✅
+// --171-- نسيان استخدام <Image /> للصور ✅
+// --172-- استخدام API Routes كبديل للـ backend المستقل ✅
+// --173-- إهمال SEO metadata ✅
+// --174-- عدم استخدام dynamic imports و lazy loading ✅
+// --175-- دمج client/server components بشكل غير منظم ✅
+// --176-- استخدام useEffect لتحميل البيانات بدل get*Props ✅
+// --177-- نسيان error boundaries للصفحات المهمة ✅
 ✅ Senior Frontend
---178-- إزاي بتحسن أداء تطبيق SPA كبير؟ ✅
---179-- إزاي تكتشف وتقيس الـ performance bottlenecks في متصفح المستخدم؟ ✅
---180-- إزاي تستخدم أدوات مثل Lighthouse وWeb Vitals وChrome DevTools لتحديد مشاكل الأداء؟ ✅
---181-- إيه الفرق بين Debounce و Throttle؟ وإمتى تستخدم كل واحد؟ ✅
---182-- إزاي تنفذ lazy loading وcode splitting بشكل فعال في مشروع React أو Next.js؟ ✅
---183-- إزاي تتعامل مع التطبيقات الكبيرة من حيث scalability وإعادة استخدام الـ components؟ ✅
---184-- إزاي تنظم structure المشروع (folders, modules, layers) في تطبيق كبير؟ ✅
---185-- إزاي تختار بين Server Rendering و Client Rendering في حالات حقيقية؟ ✅
---186-- إزاي تتعامل مع long lists أو heavy DOM rendering؟ (مثلاً virtualization) ✅
---187-- إزاي تحمي تطبيقك من XSS وCSRF؟ ✅
---188-- إزاي تتأكد إن أي بيانات من الـ API ما تكونش مصدر خطر على واجهتك؟ ✅
---189-- إزاي تتعامل مع الـ tokens والتخزين الآمن (localStorage vs cookies)؟ ✅
---190-- إزاي تمنع أو تتعامل مع session hijacking؟ ✅
---191-- إمتى تستخدم state management library زي Redux أو Zustand؟ ✅
---192-- إزاي تنظم الـ state بين local state, lifted state, و global state؟ ✅
---193-- إزاي تتعامل مع التطبيقات اللي فيها تعقيد في الـ UI flow؟ ✅
---194-- إزاي تنفذ architecture زي MVVM أو Presenter Pattern في React؟ ✅
---195-- إزاي تطبق مفهوم الـ separation of concerns في React؟ ✅
---196-- إزاي تطبق تصميم متجاوب (responsive) بكفاءة عالية؟ ✅
---197-- إزاي تتعامل مع accessibility (A11y)؟ وإيه الأدوات اللي بتستخدمها؟ ✅
---198-- إزاي تقيس وتحسن الـ Core Web Vitals؟ ✅
---199-- إزاي توازن بين جمالية التصميم وفاعلية الأداء؟ ✅
---200-- إزاي تطبق dark mode / RTL / localization بشكل نظيف؟ ✅
---201-- إزاي تبني Design System خاص بشركتك أو مشروعك؟ ✅
---202-- إزاي تدمج Figma tokens أو Storybook في الـ workflow؟ ✅
---203-- إزاي تكتب reusable components قابلة للثيمات والتخصيص؟ ✅
---204-- إزاي تحافظ على consistency بين الـ UI والـ UX في الفريق كله؟ ✅
---205-- إزاي تحدد إيه اللي يتعمله Unit test وIntegration test؟ ✅
---206-- إزاي تكتب tests للكومبوننتس؟ ✅
---207-- إزاي تقيس الـ coverage وإزاي تتعامل مع flaky tests؟ ✅
---208-- إزاي تبني test pipeline (CI) لأي Pull Request؟ ✅
---209-- إزاي تراجع PRs بشكل احترافي؟ ✅
---210-- إزاي تكتب كود نظيف وسهل القراءة والصيانة؟ ✅
---211-- إزاي تعلم وتوجه junior developers في الفريق؟ ✅
---212-- إزاي تعمل planning sprint لواجهة جديدة؟ ✅
---213-- إزاي تتعامل مع نزاعات أو آراء تقنية متضاربة داخل الفريق؟ ✅
---214-- إزاي تبني وDocument واجهات الـ APIs بين الـ frontend والـ backend؟ ✅
---215-- إزاي تشرح اختياراتك التقنية لناس غير تقنيين (مثل مدير منتج أو ديزاينر)؟ ✅
---216-- ما هو تعريفك لـ "كود ناجح"؟ ✅
---217-- إيه أصعب مشكلة واجهتك كـ Frontend Developer؟ إزاي حليتها؟ ✅
---218-- لو استلمت مشروع مكتوب بطريقة سيئة، إزاي تبدأ في refactoring؟ ✅
---219-- إزاي تبني ثقافة تقنية قوية جوه الفريق؟ ✅
---220-- إزاي تختار tech stack لمشروع جديد؟ ✅
+// --178-- إزاي بتحسن أداء تطبيق SPA كبير؟ ✅
+// --179-- إزاي تكتشف وتقيس الـ performance bottlenecks في متصفح المستخدم؟ ✅
+// --180-- إزاي تستخدم أدوات مثل Lighthouse وWeb Vitals وChrome DevTools لتحديد مشاكل الأداء؟ ✅
+// --181-- إيه الفرق بين Debounce و Throttle؟ وإمتى تستخدم كل واحد؟ ✅
+// --182-- إزاي تنفذ lazy loading وcode splitting بشكل فعال في مشروع React أو Next.js؟ ✅
+// --183-- إزاي تتعامل مع التطبيقات الكبيرة من حيث scalability وإعادة استخدام الـ components؟ ✅
+// --184-- إزاي تنظم structure المشروع (folders, modules, layers) في تطبيق كبير؟ ✅
+// --185-- إزاي تختار بين Server Rendering و Client Rendering في حالات حقيقية؟ ✅
+// --186-- إزاي تتعامل مع long lists أو heavy DOM rendering؟ (مثلاً virtualization) ✅
+// --187-- إزاي تحمي تطبيقك من XSS وCSRF؟ ✅
+// --188-- إزاي تتأكد إن أي بيانات من الـ API ما تكونش مصدر خطر على واجهتك؟ ✅
+// --189-- إزاي تتعامل مع الـ tokens والتخزين الآمن (localStorage vs cookies)؟ ✅
+// --190-- إزاي تمنع أو تتعامل مع session hijacking؟ ✅
+// --191-- إمتى تستخدم state management library زي Redux أو Zustand؟ ✅
+// --192-- إزاي تنظم الـ state بين local state, lifted state, و global state؟ ✅
+// --193-- إزاي تتعامل مع التطبيقات اللي فيها تعقيد في الـ UI flow؟ ✅
+// --194-- إزاي تنفذ architecture زي MVVM أو Presenter Pattern في React؟ ✅
+// --195-- إزاي تطبق مفهوم الـ separation of concerns في React؟ ✅
+// --196-- إزاي تطبق تصميم متجاوب (responsive) بكفاءة عالية؟ ✅
+// --197-- إزاي تتعامل مع accessibility (A11y)؟ وإيه الأدوات اللي بتستخدمها؟ ✅
+// --198-- إزاي تقيس وتحسن الـ Core Web Vitals؟ ✅
+// --199-- إزاي توازن بين جمالية التصميم وفاعلية الأداء؟ ✅
+// --200-- إزاي تطبق dark mode / RTL / localization بشكل نظيف؟ ✅
+// --201-- إزاي تبني Design System خاص بشركتك أو مشروعك؟ ✅
+// --202-- إزاي تدمج Figma tokens أو Storybook في الـ workflow؟ ✅
+// --203-- إزاي تكتب reusable components قابلة للثيمات والتخصيص؟ ✅
+// --204-- إزاي تحافظ على consistency بين الـ UI والـ UX في الفريق كله؟ ✅
+// --205-- إزاي تحدد إيه اللي يتعمله Unit test وIntegration test؟ ✅
+// --206-- إزاي تكتب tests للكومبوننتس؟ ✅
+// --207-- إزاي تقيس الـ coverage وإزاي تتعامل مع flaky tests؟ ✅
+// --208-- إزاي تبني test pipeline (CI) لأي Pull Request؟ ✅
+// --209-- إزاي تراجع PRs بشكل احترافي؟ ✅
+// --210-- إزاي تكتب كود نظيف وسهل القراءة والصيانة؟ ✅
+// --211-- إزاي تعلم وتوجه junior developers في الفريق؟ ✅
+// --212-- إزاي تعمل planning sprint لواجهة جديدة؟ ✅
+// --213-- إزاي تتعامل مع نزاعات أو آراء تقنية متضاربة داخل الفريق؟ ✅
+// --214-- إزاي تبني وDocument واجهات الـ APIs بين الـ frontend والـ backend؟ ✅
+// --215-- إزاي تشرح اختياراتك التقنية لناس غير تقنيين (مثل مدير منتج أو ديزاينر)؟ ✅
+// --216-- ما هو تعريفك لـ "كود ناجح"؟ ✅
+// --217-- إيه أصعب مشكلة واجهتك كـ Frontend Developer؟ إزاي حليتها؟ ✅
+// --218-- لو استلمت مشروع مكتوب بطريقة سيئة، إزاي تبدأ في refactoring؟ ✅
+// --219-- إزاي تبني ثقافة تقنية قوية جوه الفريق؟ ✅
+// --220-- إزاي تختار tech stack لمشروع جديد؟ ✅
+
+
 ✅ Senior Backend (NestJS)
---221-- إيه الفرق بين monolithic و modular architecture في NestJS؟ ✅
---222-- إمتى تستخدم Feature Modules وShared Modules؟ ✅
---223-- إزاي تطبق CQRS pattern في NestJS؟ ✅
---224-- إزاي تطبق Hexagonal Architecture باستخدام NestJS؟ ✅
---225-- إزاي تنفذ DDD (Domain-Driven Design) داخل NestJS project؟ ✅
---226-- إزاي تعمل decoupling بين الـ services والـ controllers؟ ✅
---227-- إزاي تفصل بين application layer و domain layer و infrastructure layer؟ ✅
---228-- إزاي تبني multi-tenant architecture باستخدام NestJS؟ ✅
---229-- إزاي تـ optimize queries باستخدام TypeORM أو Prisma داخل NestJS؟ ✅
---230-- إزاي تطبق caching باستخدام @CacheInterceptor و Redis؟ ✅
---231-- إزاي تدير background jobs باستخدام Bull Queue وWorkers؟ ✅
---232-- إزاي تتعامل مع الـ rate limiting داخل APIs؟ ✅
---233-- إزاي تستخدم Interceptors لقياس وقت تنفيذ request؟ ✅
---234-- إزاي تعمل throttling على مستوى global أو route؟ ✅
---235-- إزاي تتعامل مع request/response streaming (مثل file uploads)؟ ✅
---236-- إزاي تطبق RBAC (Role-Based Access Control)؟ ✅
---237-- إزاي تستخدم Guards + Custom decorators لفلترة الوصول؟ ✅
---238-- إزاي تطبق authentication باستخدام JWT + Refresh Tokens؟ ✅
---239-- إزاي تحمي API من هجمات XSS و CSRF و Brute Force؟ ✅
---240-- إزاي تستخدم Middleware للحماية من دخول غير مصرح؟ ✅
---241-- إزاي تطبق 2FA أو OTP داخل NestJS؟ ✅
---242-- إزاي تكتب Unit Tests باستخدام Jest لخدمة فيها Dependency Injection؟ ✅
---243-- إزاي تعمل Mock للـ Repositories أو External Services في NestJS؟ ✅
---244-- إزاي تكتب Integration Tests للـ Endpoints كاملة؟ ✅
---245-- إزاي تعمل Test للـ Guards وInterceptors؟ ✅
---246-- إزاي تبني CI pipeline للـ testing + linting + coverage؟ ✅
---247-- إزاي تتعامل مع flaky tests في بيئة حقيقية؟ ✅
---248-- إزاي تتعامل مع الـ WebSockets (مثلاً باستخدام @WebSocketGateway)؟ ✅
---249-- إزاي تبني Microservices باستخدام Transport layers (مثل Redis / Kafka / gRPC)؟ ✅
---250-- إزاي تعمل Event-Driven Architecture داخل NestJS؟ ✅
---251-- إزاي تتعامل مع External APIs وتعيد هيكلة responses؟ ✅
---252-- إزاي تنفذ versioning للـ API؟ (v1, v2, ...) ✅
---253-- إزاي تتعامل مع GraphQL APIs في NestJS؟ ✅
---254-- إزاي تطبق file upload + validation + security في NestJS؟ ✅
---255-- إزاي تنظم مشروع كبير يحتوي على عشرات الوحدات؟ ✅
---256-- إزاي تكتب Documentation للـ APIs باستخدام Swagger؟ ✅
---257-- إزاي تحافظ على separation بين DTOs, Entities, و Domain Models؟ ✅
---258-- إزاي تتعامل مع طلبات معقدة تحتوي على فلترة، ترتيب، Pagination؟ ✅
---259-- إزاي تبني dynamic query builder للـ reports أو search؟ ✅
---260-- إيه أصعب مشكلة قابلتك في NestJS؟ إزاي حليتها؟ ✅
---261-- إزاي تعمل Migration من مشروع Express قديم إلى NestJS؟ ✅
---262-- إزاي تراجع كود كبير في PR كتب باستخدام NestJS؟ ✅
---263-- إزاي توازن بين سرعة التطوير والـ Best Practices في ضغط الوقت؟ ✅
---264-- إمتى تبني حلك كموديلات مستقلة، وإمتى تدمجها؟ ✅
---265-- إزاي تختار بين Prisma و TypeORM و Sequelize في مشروع NestJS؟ ✅
-دمج business logic داخل controllers ❌
+// --221-- إيه الفرق بين monolithic و modular architecture في NestJS؟ ✅
+// --222-- إمتى تستخدم Feature Modules وShared Modules؟ ✅
+// --223-- إزاي تطبق CQRS pattern في NestJS؟ ✅
+// --224-- إزاي تطبق Hexagonal Architecture باستخدام NestJS؟ ✅
+// --225-- إزاي تنفذ DDD (Domain-Driven Design) داخل NestJS project؟ ✅
+// --226-- إزاي تعمل decoupling بين الـ services والـ controllers؟ ✅
+// --227-- إزاي تفصل بين application layer و domain layer و infrastructure layer؟ ✅
+// --228-- إزاي تبني multi-tenant architecture باستخدام NestJS؟ ✅
+// --229-- إزاي تـ optimize queries باستخدام TypeORM أو Prisma داخل NestJS؟ ✅
+// --230-- إزاي تطبق caching باستخدام @CacheInterceptor و Redis؟ ✅
+// --231-- إزاي تدير background jobs باستخدام Bull Queue وWorkers؟ ✅
+// --232-- إزاي تتعامل مع الـ rate limiting داخل APIs؟ ✅
+// --233-- إزاي تستخدم Interceptors لقياس وقت تنفيذ request؟ ✅
+// --234-- إزاي تعمل throttling على مستوى global أو route؟ ✅
+// --235-- إزاي تتعامل مع request/response streaming (مثل file uploads)؟ ✅
+// --236-- إزاي تطبق RBAC (Role-Based Access Control)؟ ✅
+// --237-- إزاي تستخدم Guards + Custom decorators لفلترة الوصول؟ ✅
+// --238-- إزاي تطبق authentication باستخدام JWT + Refresh Tokens؟ ✅
+// --239-- إزاي تحمي API من هجمات XSS و CSRF و Brute Force؟ ✅
+// --240-- إزاي تستخدم Middleware للحماية من دخول غير مصرح؟ ✅
+// --241-- إزاي تطبق 2FA أو OTP داخل NestJS؟ ✅
+// --242-- إزاي تكتب Unit Tests باستخدام Jest لخدمة فيها Dependency Injection؟ ✅
+// --243-- إزاي تعمل Mock للـ Repositories أو External Services في NestJS؟ ✅
+// --244-- إزاي تكتب Integration Tests للـ Endpoints كاملة؟ ✅
+// --245-- إزاي تعمل Test للـ Guards وInterceptors؟ ✅
+// --246-- إزاي تبني CI pipeline للـ testing + linting + coverage؟ ✅
+// --247-- إزاي تتعامل مع flaky tests في بيئة حقيقية؟ ✅
+// --248-- إزاي تتعامل مع الـ WebSockets (مثلاً باستخدام @WebSocketGateway)؟ ✅
+// --249-- إزاي تبني Microservices باستخدام Transport layers (مثل Redis / Kafka / gRPC)؟ ✅
+// --250-- إزاي تعمل Event-Driven Architecture داخل NestJS؟ ✅
+// --251-- إزاي تتعامل مع External APIs وتعيد هيكلة responses؟ ✅
+// --252-- إزاي تنفذ versioning للـ API؟ (v1, v2, ...) ✅
+// --253-- إزاي تتعامل مع GraphQL APIs في NestJS؟ ✅
+// --254-- إزاي تطبق file upload + validation + security في NestJS؟ ✅
+// --255-- إزاي تنظم مشروع كبير يحتوي على عشرات الوحدات؟ ✅
+// --256-- إزاي تكتب Documentation للـ APIs باستخدام Swagger؟ ✅
+// --257-- إزاي تحافظ على separation بين DTOs, Entities, و Domain Models؟ ✅
+// --258-- إزاي تتعامل مع طلبات معقدة تحتوي على فلترة، ترتيب، Pagination؟ ✅
+// --259-- إزاي تبني dynamic query builder للـ reports أو search؟ ✅
+// --260-- إيه أصعب مشكلة قابلتك في NestJS؟ إزاي حليتها؟ ✅
+// --261-- إزاي تعمل Migration من مشروع Express قديم إلى NestJS؟ ✅
+// --262-- إزاي تراجع كود كبير في PR كتب باستخدام NestJS؟ ✅
+// --263-- إزاي توازن بين سرعة التطوير والـ Best Practices في ضغط الوقت؟ ✅
+// --264-- إمتى تبني حلك كموديلات مستقلة، وإمتى تدمجها؟ ✅
+// --265-- إزاي تختار بين Prisma و TypeORM و Sequelize في مشروع NestJS؟ ✅
 
-استخدام DTOs كـ entities أو العكس ❌
-
-إهمال modular structure → مشروع كله داخل ملفين ❌
-
-استخدام any في TypeScript بدل التايب الدقيق ❌
-
-تجاهل الأخطاء داخل الخدمات وعدم استخدام try/catch ❌
-
-الاعتماد على console.log بدل structured logging ❌
-
-كتابة كثير من الـ logic داخل pipes أو interceptors غلط ❌
 
 ✅ PostgreSQL
---266-- إزاي تكتب Query يحتوي على JOIN + GROUP BY + HAVING؟ ✅
---267-- إمتى تستخدم LEFT JOIN بدل INNER JOIN؟ ✅
---268-- إزاي تعمل recursive query باستخدام WITH RECURSIVE؟ ✅
---269-- إزاي تحسب الـ running total أو moving average باستخدام WINDOW FUNCTIONS؟ ✅
---270-- إزاي تستخدم CASE داخل SELECT أو WHERE؟ ✅
---271-- إزاي تعمل dynamic filter باستخدام ILIKE, IN, و COALESCE؟ ✅
---272-- إزاي تعمل search نصي سريع؟ وإيه الفرق بين LIKE و GIN index و tsvector؟ ✅
---273-- إزاي تقرأ وتفهم خطة تنفيذ EXPLAIN ANALYZE؟ ✅
---274-- إمتى تضيف Index؟ وإمتى بيكون عبء على الأداء؟ ✅
---275-- إزاي تختار بين B-Tree و GIN و Hash Index؟ ✅
---276-- إزاي تتعامل مع Slow Queries في تطبيق production؟ ✅
---277-- إزاي تستخدم Materialized Views لتحسين الأداء؟ ✅
---278-- إزاي تتعامل مع Deadlocks؟ ✅
---279-- إزاي تنفذ partitioning لجدول ضخم؟ ✅
---280-- إزاي تكتب Transaction فيها أكثر من عملية CRUD؟ ✅
---281-- إيه الفرق بين SERIALIZABLE و READ COMMITTED؟ ✅
---282-- إزاي تعمل Trigger؟ وإمتى تستخدمه بدل logic من NestJS؟ ✅
---283-- إزاي تعمل وظيفة داخل PostgreSQL باستخدام PL/pgSQL؟ ✅
---284-- إزاي تتعامل مع JSONB columns؟ ✅
---285-- إزاي تبحث داخل JSONB field؟ وإزاي تـ index الحقول دي؟ ✅
---286-- إزاي تعمل تصميم قاعدة بيانات normalized؟ ✅
---287-- إمتى تفك ارتباط جدولين (denormalization) لتحسين الأداء؟ ✅
---288-- إزاي تتعامل مع العلاقات many-to-many بكفاءة؟ ✅
---289-- إزاي تدير علاقة polymorphic داخل PostgreSQL؟ ✅
---290-- إزاي تبني ERD وتطابقه مع الـ schema الموجود؟ ✅
---291-- إزاي تدير الـ migrations والـ seed data بطريقة آمنة؟ ✅
-استخدام SELECT * في production ❌
-
-تجاهل الـ indexing على الجداول الكبيرة ❌
-
-الاعتماد على DB بدل منطق التطبيق ❌
-
-تخزين JSON بدل العلاقات ❌
-
-Queries غير محمية من SQL Injection ❌
+// --266-- إزاي تكتب Query يحتوي على JOIN + GROUP BY + HAVING؟ ✅
+// --267-- إمتى تستخدم LEFT JOIN بدل INNER JOIN؟ ✅
+// --268-- إزاي تعمل recursive query باستخدام WITH RECURSIVE؟ ✅
+// --269-- إزاي تحسب الـ running total أو moving average باستخدام WINDOW FUNCTIONS؟ ✅
+// --270-- إزاي تستخدم CASE داخل SELECT أو WHERE؟ ✅
+// --271-- إزاي تعمل dynamic filter باستخدام ILIKE, IN, و COALESCE؟ ✅
+// --272-- إزاي تعمل search نصي سريع؟ وإيه الفرق بين LIKE و GIN index و tsvector؟ ✅
+// --273-- إزاي تقرأ وتفهم خطة تنفيذ EXPLAIN ANALYZE؟ ✅
+// --274-- إمتى تضيف Index؟ وإمتى بيكون عبء على الأداء؟ ✅
+// --275-- إزاي تختار بين B-Tree و GIN و Hash Index؟ ✅
+// --276-- إزاي تتعامل مع Slow Queries في تطبيق production؟ ✅
+// --277-- إزاي تستخدم Materialized Views لتحسين الأداء؟ ✅
+// --278-- إزاي تتعامل مع Deadlocks؟ ✅
+// --279-- إزاي تنفذ partitioning لجدول ضخم؟ ✅
+// --280-- إزاي تكتب Transaction فيها أكثر من عملية CRUD؟ ✅
+// --281-- إيه الفرق بين SERIALIZABLE و READ COMMITTED؟ ✅
+// --282-- إزاي تعمل Trigger؟ وإمتى تستخدمه بدل logic من NestJS؟ ✅
+// --283-- إزاي تعمل وظيفة داخل PostgreSQL باستخدام PL/pgSQL؟ ✅
+// --284-- إزاي تتعامل مع JSONB columns؟ ✅
+// --285-- إزاي تبحث داخل JSONB field؟ وإزاي تـ index الحقول دي؟ ✅
+// --286-- إزاي تعمل تصميم قاعدة بيانات normalized؟ ✅
+// --287-- إمتى تفك ارتباط جدولين (denormalization) لتحسين الأداء؟ ✅
+// --288-- إزاي تتعامل مع العلاقات many-to-many بكفاءة؟ ✅
+// --289-- إزاي تدير علاقة polymorphic داخل PostgreSQL؟ ✅
+// --290-- إزاي تبني ERD وتطابقه مع الـ schema الموجود؟ ✅
+// --291-- إزاي تدير الـ migrations والـ seed data بطريقة آمنة؟ ✅
+ 
 
 ✅ MongoDB
 --292-- إزاي تختار بين Embed vs Reference؟ ✅
@@ -360,15 +323,7 @@ Queries غير محمية من SQL Injection ❌
 --313-- إزاي تفصل بين الـ schemas و الـ DTOs في مشروع NestJS؟ ✅
 --314-- إزاي تعمل soft delete بفلترة البيانات الحقيقية؟ ✅
 --315-- إزاي تدير النسخ الاحتياطي والـ seeding لبيانات Mongo؟ ✅
-تخزين بيانات ضخمة داخل document واحد ❌
-
-استخدام $or و $in بكثافة بدون تفكير ❌
-
-تجاهل الـ indexing ❌
-
-الاعتماد على populate بدل تصميم schema نظيف ❌
-
-استخدام Mongo في relational systems ❌
+ 
 
 ✅ Database Design & Optimization
 --316-- ما الفرق بين OLTP و OLAP؟ وإمتى تستخدم كل واحد؟ ✅
@@ -411,316 +366,277 @@ Queries غير محمية من SQL Injection ❌
 --353-- كيف تتعامل مع قوانين مثل GDPR؟ ✅
 --354-- كيف تنفذ عمليات حذف ضخمة بدون ضرر على الأداء؟ ✅
 --355-- ما استراتيجيات backup و restore المناسبة؟ ✅
-SELECT * في Queries ❌
+ 
 
-تخزين كلمات السر بدون Hash ❌
+// ✅ System Design & Architecture
+// --356-- ما الفرق بين الـ synchronous و asynchronous؟ ✅
+// --357-- ما الفرق بين thread و process؟ ✅
+// --358-- اشرح مفهوم الـ event loop (في Node.js مثلًا). ✅
+// --359-- ما الفرق بين REST و GraphQL؟ وإمتى تختار كل واحد؟ ✅
+// --360-- ما الفرق بين monolithic و microservices؟ ✅
+// --361-- ما هو الـ API Gateway؟ وما دوره في نظام Microservices؟ ✅
+// --362-- ما الفرق بين stateless و stateful APIs؟ ✅
+// --363-- ما المقصود بـ idempotent requests؟ ✅
+// --364-- ما الفرق بين PUT و PATCH؟ ✅
+// --365-- إزاي تتعامل مع rate limiting؟ ✅
+// --366-- إزاي تقلل الـ response time؟ ✅
+// --367-- إزاي تعمل caching في الباك إند؟ وإيه الفرق بين in-memory cache و distributed cache؟ ✅
+// --368-- ما الفرق بين LRU و LFU؟ وأين يستخدمان؟ ✅
+// --369-- ما الفرق بين synchronous jobs و background jobs؟ ✅
+// --370-- إزاي تتعامل مع high-concurrency (عدد كبير من الطلبات المتزامنة)؟ ✅
+// --371-- إزاي تحل مشاكل N+1 Query؟ ✅
+// --372-- إزاي تختار بين queue system زي Bull أو RabbitMQ؟ ✅
+// --373-- ما هو الـ SOLID principles؟ ✅
+// --374-- ما هو الـ Domain-Driven Design (DDD)؟ ✅
+// --375-- ما الفرق بين Service Layer و Repository Layer؟ ✅
+// --376-- إزاي تصمم API modular وقابل للتوسيع؟ ✅
+// --377-- ما الفرق بين CQRS و CRUD؟ ✅
+// --378-- ما هو الـ Event Sourcing؟ ✅
+// --379-- اشرح Pub/Sub Model. ✅
+// --380-- إزاي تعمل multi-tenant application؟ ✅
+// --381-- ما الفرق بين JWT و Session？ ✅
+// --382-- إزاي تعمل 2FA؟ ✅
+// --383-- ما هو CSRF؟ وإزاي تمنعه؟ ✅
+// --384-- ما هو CORS؟ وإزاي تسيطر عليه؟ ✅
+// --385-- ما هو الـ OAuth2؟ ✅
+// --386-- إزاي تحمي الـ APIs بتاعتك من brute-force؟ ✅
+// --387-- إزاي تطبق Role-Based Access Control؟ ✅
+// --388-- ما الفرق بين Encryption و Hashing و Encoding？ ✅
+// --389-- إزاي تختار بين SQL و NoSQL？ ✅
+// --390-- إزاي تكتب query performant？ ✅
+// --391-- إزاي تعمل transactions داخل الكود？ ✅
+// --392-- إزاي تتعامل مع migration tools (زي TypeORM أو Prisma أو Sequelize)？ ✅
+// --393-- إزاي تصمم schema مرن لتطبيق قابل للنمو？ ✅
+// --394-- إزاي تعمل soft delete بطريقة فعالة？ ✅
+// --395-- إزاي تتعامل مع large datasets？ ✅
+// --396-- ما الفرق بين unit test و integration test و e2e test？ ✅
+// --397-- إزاي تعمل mock للـ DB أو external APIs？ ✅
+// --398-- ما الفرق بين TDD و BDD？ ✅
+// --399-- إزاي تكتب test cases تضمن عدم حدوث regressions？ ✅
+// --400-- إزاي تدمج CI/CD pipelines مع testing？ ✅
+// --401-- ما هي code smells الشائعة في الباك إند؟ ✅
+// --402-- ما الفرق بين Docker و VM？ ✅
+// --403-- إزاي تكتب Dockerfile جيد？ ✅
+// --404-- ما الفرق بين build و release？ ✅
+// --405-- إزاي تستخدم GitHub Actions أو GitLab CI？ ✅
+// --406-- ما المقصود بـ blue/green deployment？ ✅
+// --407-- إزاي تراقب السيرفرات والخدمات؟ (Monitoring & Alerting) ✅
+// --408-- ما الفرق بين horizontal و vertical scaling？ ✅
 
-تخزين أكثر من قيمة داخل عمود (comma-separated) ❌
 
-تجاهل NULLs ❌
+// ✅ Full Stack Senior Questions
+// --409-- ما الفرق بين الـ Monolith و Microservices و Modular Monolith؟ ✅
+// --410-- كيف تصمم System قابل للتوسع (Scalable System)؟ ✅
+// --411-- كيف تتعامل مع high availability؟ ✅
+// --412-- ما الفرق بين horizontal و vertical scaling؟ ✅
+// --413-- كيف تصمم API Gateway يدير microservices مختلفة؟ ✅
+// --414-- ما الفرق بين WebSockets و REST و GraphQL؟ ✅
+// --415-- كيف تبني CI/CD pipeline متكاملة؟ ✅
+// --416-- كيف تقرر بين SPA و MPA و SSR و SSG؟ ✅
+// --417-- ما هو الـ BFF (Backend for Frontend)؟ ومتى تحتاجه؟ ✅
+// --418-- كيف تتعامل مع multi-language apps (i18n) بشكل كامل (front + back)？ ✅
+// --419-- كيف تعمل code-splitting و lazy loading في React؟ ✅
+// --420-- كيف تحل مشكلة hydration mismatch في Next.js؟ ✅
+// --421-- كيف تتعامل مع SEO في SSR apps؟ ✅
+// --422-- كيف تحسّن من الأداء العام لتطبيق الويب؟ (LCP, FID, CLS...) ✅
+// --423-- ما الفرق بين controlled و uncontrolled components؟ ✅
+// --424-- كيف تدير global state في React app كبير؟ ✅
+// --425-- متى تستخدم useMemo و useCallback؟ ✅
+// --426-- كيف تبني dynamic forms في React/Next.js؟ ✅
+// --427-- كيف تضمن أن الـ UI متوافق مع جميع الشاشات؟ ✅
+// --428-- كيف تتعامل مع حماية المسارات (route guards) في الـ frontend؟ ✅
+// --429-- ما الفرق بين Middleware و Interceptor و Guard في NestJS؟ ✅
+// --430-- كيف تدير background jobs داخل التطبيق؟ ✅
+// --431-- كيف تتعامل مع rate limiting في NestJS؟ ✅
+// --432-- ما هي CQRS؟ وهل استخدمتها؟ ✅
+// --433-- كيف تطبق SOLID principles في تصميم الباك إند؟ ✅
+// --434-- كيف تصمم خدمة إرسال إشعارات قابلة للتوسيع (SMS, Email, Push)？ ✅
+// --435-- كيف تربط NestJS مع Redis؟ وإمتى تستخدمه؟ ✅
+// --436-- ما هي أفضل ممارسات الـ DTOs في NestJS؟ ✅
+// --437-- كيف تصمم ACL أو Role-based access؟ ✅
+// --438-- كيف تتعامل مع الـ versioning في REST APIs؟ ✅
+// --439-- كيف تصمم جدول يحتوي على سجلّات متعددة اللغات؟ ✅
+// --440-- ما الفرق بين Eager و Lazy loading في ORM؟ ✅
+// --441-- كيف تطبق full-text search في PostgreSQL؟ ✅
+// --442-- كيف تدير العلاقات بين الكيانات في MongoDB؟ ✅
+// --443-- متى تستخدم aggregation pipeline في Mongo؟ ✅
+// --444-- كيف تتعامل مع Migrations وإعادة الهيكلة بدون فقد بيانات؟ ✅
+// --445-- ما الفرق بين soft delete و hard delete؟ ومتى تستخدم كل نوع؟ ✅
+// --446-- ما هو الـ database sharding؟ ✅
+// --447-- كيف تعمل indexing فعال في Mongo و SQL؟ ✅
+// --448-- كيف تدير نسخة staging و dev من نفس قاعدة البيانات؟ ✅
+// --449-- كيف تبني system login متكامل (JWT + Refresh Tokens + Front protection)？ ✅
+// --450-- كيف تعمل file upload (مثلاً صور المستخدم)？ ✅
+// --451-- كيف تتعامل مع CORS؟ ✅
+// --452-- كيف تبني realtime chat (REST + Socket + DB + Front)？ ✅
+// --453-- كيف تعمل error handling موحّدة بين الفرونت والباك؟ ✅
+// --454-- كيف ترسل إشعارات إلى المستخدمين في الوقت الحقيقي؟ ✅
+// --455-- كيف تتابع الأحداث المهمة باستخدام logs و monitoring？ ✅
+// --456-- كيف تعمل throttling على APIs المستهلكة في الـ frontend？ ✅
+// --457-- كيف تبني dashboard إحصائي حيّ باستخدام WebSockets？ ✅
+// --458-- كيف تكتب integration tests تغطي full flow من front ل back？ ✅
+// --459-- كيف تؤمّن التطبيق من XSS, CSRF, SQL Injection？ ✅
+// --460-- كيف تدير صلاحيات متعددة على مستوى UI و DB？ ✅
+// --461-- كيف تكتب tests تغطي business logic المعقّد؟ ✅
+// --462-- كيف تعمل logging ذكي على الباك إند؟ ✅
+// --463-- ما هي أفضل طرق التوثيق (Swagger، Postman، Storybook)？ ✅
+// --464-- كيف تقيس التغطية الاختبارية (Code Coverage)？ ✅
+// --465-- كيف تستخدم feature flags داخل المشاريع؟ ✅
+// --466-- كيف تبني نظام rollback سريع في حالة فشل النشر؟ ✅
+// --467-- كيف تدير secret keys بأمان (env، vault، إلخ)？ ✅
+// --468-- كيف تكتب reusable components أو services على مستوى المشروع؟ ✅
+// ✅ Additional Critical Topics
+// --469-- ما الفرق بين Docker و Docker Compose؟ ✅
+// --470-- ما فائدة Dockerfile و .dockerignore؟ ✅
+// --471-- ما معنى Container vs Image؟ ✅
+// --472-- ما الفرق بين Volume و Bind Mount في Docker؟ ✅
+// --473-- ما الفرق بين Nginx و Apache؟ ✅
+// --474-- كيف تهيئ HTTPS على موقعك باستخدام Nginx و Let's Encrypt؟ ✅
+// --475-- ما هو الـ Reverse Proxy؟ ✅
+// --476-- ما الفرق بين Jenkins و GitHub Actions؟ ✅
+// --477-- ما هو مفهوم Blue-Green Deployment؟ ✅
+// --478-- ما الفرق بين PM2 و systemd لتشغيل تطبيقات Node.js في الإنتاج؟ ✅
+// --479-- كيف يعمل البروتوكول HTTP من حيث: Request/Response؟ ✅
+// --480-- ما الفرق بين HTTP/1.1 و HTTP/2 و HTTP/3؟ ✅
+// --481-- ما الفرق بين PUT و PATCH؟ ✅
+// --482-- ما معنى Caching headers مثل: ETag, Cache-Control, Last-Modified؟ ✅
+// --483-- ما معنى preflight request؟ ✅
+// --484-- ما هو HSTS؟ ✅
+// --485-- ما هو Content Security Policy (CSP)؟ ✅
+// --486-- ما هي SameSite cookies؟ ✅
+// --487-- ما الفرق بين Session و JWT؟ ✅
+// --488-- ما هو MIME type؟ ✅
+// --489-- ما هو Webhook؟ ومتى تستخدمه؟ ✅
+// --490-- ما الفرق بين REST و gRPC؟ ✅
+// --491-- ما هو OpenAPI و Swagger؟ ✅
+// --492-- كيف تصمم WebSocket protocol خاص بك؟ ✅
+// --493-- ما الفرق بين Polling و Long Polling و WebSockets؟ ✅
+// --494-- ما هو OAuth 2.0؟ ✅
+// --495-- ما الفرق بين OAuth و OpenID Connect؟ ✅
+// --496-- ما الفرق بين Token-based و Cookie-based authentication؟ ✅
+// --497-- كيف تطبق MFA (Multi-Factor Authentication)؟ ✅
+// --498-- ما هو RBAC مقابل ABAC؟ ✅
+// --499-- ما الفرق بين Unit و Integration و E2E Testing؟ ✅
+// --500-- ما الفرق بين Mock و Stub و Spy؟ ✅
+// --501-- ما هو Test Pyramid؟ ✅
+// --502-- ما هو Snapshot Testing في React؟ ✅
+// --503-- كيف تكتب test يغطي GraphQL أو WebSocket؟ ✅
+// --504-- ما هو الفرق بين Query و Mutation؟ ✅
+// --505-- كيف تعمل Subscriptions في GraphQL؟ ✅
+// --506-- ما هي Resolvers؟ ✅
+// --507-- كيف تبني schema متقدمة بـ TypeGraphQL أو Apollo؟ ✅
+// --508-- ما هي مشاكل n+1 في GraphQL؟ ✅
+// --509-- ما الفرق بين SSR و CSR و ISR و SSG؟ ✅
+// --510-- كيف تستخدم lazy loading للصور والـ components؟ ✅
+// --511-- ما معنى Critical Rendering Path؟ ✅
+// --512-- ما الفرق بين TBT و TTI و FID؟ ✅
+// --513-- كيف تستخدم Lighthouse لتحليل موقعك؟ ✅
+// --514-- ما هو Rate Limiting و Brute Force Protection؟ ✅
+// --515-- ما معنى JWT replay attack؟ ✅
+// --516-- ما الفرق بين hashing و encryption؟ ✅
+// --517-- ما هو CORS Misconfiguration؟ ✅
+// --518-- ما الفرق بين bcrypt و argon2؟ ✅
+// --519-- ما هو ESLint و Prettier؟ وكيف يستخدموا سويًا؟ ✅
+// --520-- ما الفرق بين npm و yarn و pnpm؟ ✅
+// --521-- ما الفرق بين .env.local و .env.production؟ ✅
+// --522-- ما فائدة Husky و lint-staged؟ ✅
+// --523-- ما هو Vite.js؟ ولماذا أسرع من Webpack؟ ✅
+// --524-- ما هو git rebase مقابل git merge؟ ✅
+// --525-- ما الفرق بين git reset --hard و git revert؟ ✅
+// --526-- ما معنى Git Flow؟ ✅
+// --527-- ما هو الـ squash merge؟ ✅
+// --528-- كيف تستخدم git hooks؟ ✅
+// --529-- ما هو الـ Factory Pattern؟ ✅
+// --530-- ما الفرق بين Singleton و Service Locator؟ ✅
+// --531-- ما هو Anti-Corruption Layer؟ ✅
+// --532-- ما هو Dependency Injection؟ ✅
+// --533-- ما الفرق بين Separation of Concerns و Single Responsibility؟ ✅
+// --534-- ما الفرق بين SSR hydration و client hydration؟ ✅
+// --535-- ما هو الـ Web Worker؟ ✅
+// --536-- ما الفرق بين ISO date و Unix timestamp؟ ✅
+// --537-- ما معنى Debouncing و Throttling؟ ✅
+// --538-- ما هو الـ Event Loop في JavaScript؟ ✅
 
-تجاهل indexing في WHERE/JOIN ❌
 
-تجاهل Query Plan ❌
 
-الاعتماد المفرط على ORMs ❌
-
-تخزين ملفات داخل DB ❌
-
-اختيار نوع بيانات غير مناسب ❌
-
-✅ System Design & Architecture
---356-- ما الفرق بين الـ synchronous و asynchronous؟ ✅
---357-- ما الفرق بين thread و process؟ ✅
---358-- اشرح مفهوم الـ event loop (في Node.js مثلًا). ✅
---359-- ما الفرق بين REST و GraphQL؟ وإمتى تختار كل واحد؟ ✅
---360-- ما الفرق بين monolithic و microservices؟ ✅
---361-- ما هو الـ API Gateway؟ وما دوره في نظام Microservices؟ ✅
---362-- ما الفرق بين stateless و stateful APIs؟ ✅
---363-- ما المقصود بـ idempotent requests؟ ✅
---364-- ما الفرق بين PUT و PATCH؟ ✅
---365-- إزاي تتعامل مع rate limiting؟ ✅
---366-- إزاي تقلل الـ response time؟ ✅
---367-- إزاي تعمل caching في الباك إند؟ وإيه الفرق بين in-memory cache و distributed cache؟ ✅
---368-- ما الفرق بين LRU و LFU؟ وأين يستخدمان؟ ✅
---369-- ما الفرق بين synchronous jobs و background jobs؟ ✅
---370-- إزاي تتعامل مع high-concurrency (عدد كبير من الطلبات المتزامنة)؟ ✅
---371-- إزاي تحل مشاكل N+1 Query؟ ✅
---372-- إزاي تختار بين queue system زي Bull أو RabbitMQ؟ ✅
---373-- ما هو الـ SOLID principles؟ ✅
---374-- ما هو الـ Domain-Driven Design (DDD)؟ ✅
---375-- ما الفرق بين Service Layer و Repository Layer؟ ✅
---376-- إزاي تصمم API modular وقابل للتوسيع؟ ✅
---377-- ما الفرق بين CQRS و CRUD؟ ✅
---378-- ما هو الـ Event Sourcing؟ ✅
---379-- اشرح Pub/Sub Model. ✅
---380-- إزاي تعمل multi-tenant application؟ ✅
---381-- ما الفرق بين JWT و Session？ ✅
---382-- إزاي تعمل 2FA؟ ✅
---383-- ما هو CSRF؟ وإزاي تمنعه؟ ✅
---384-- ما هو CORS؟ وإزاي تسيطر عليه؟ ✅
---385-- ما هو الـ OAuth2؟ ✅
---386-- إزاي تحمي الـ APIs بتاعتك من brute-force؟ ✅
---387-- إزاي تطبق Role-Based Access Control؟ ✅
---388-- ما الفرق بين Encryption و Hashing و Encoding？ ✅
---389-- إزاي تختار بين SQL و NoSQL？ ✅
---390-- إزاي تكتب query performant？ ✅
---391-- إزاي تعمل transactions داخل الكود？ ✅
---392-- إزاي تتعامل مع migration tools (زي TypeORM أو Prisma أو Sequelize)？ ✅
---393-- إزاي تصمم schema مرن لتطبيق قابل للنمو？ ✅
---394-- إزاي تعمل soft delete بطريقة فعالة？ ✅
---395-- إزاي تتعامل مع large datasets？ ✅
---396-- ما الفرق بين unit test و integration test و e2e test？ ✅
---397-- إزاي تعمل mock للـ DB أو external APIs？ ✅
---398-- ما الفرق بين TDD و BDD？ ✅
---399-- إزاي تكتب test cases تضمن عدم حدوث regressions？ ✅
---400-- إزاي تدمج CI/CD pipelines مع testing？ ✅
---401-- ما هي code smells الشائعة في الباك إند؟ ✅
---402-- ما الفرق بين Docker و VM？ ✅
---403-- إزاي تكتب Dockerfile جيد？ ✅
---404-- ما الفرق بين build و release？ ✅
---405-- إزاي تستخدم GitHub Actions أو GitLab CI？ ✅
---406-- ما المقصود بـ blue/green deployment？ ✅
---407-- إزاي تراقب السيرفرات والخدمات؟ (Monitoring & Alerting) ✅
---408-- ما الفرق بين horizontal و vertical scaling？ ✅
-كتابة logic في controllers بدل service layer ❌
-
-استخدام الكاش بدون invalidation واضح ❌
-
-التعامل مع الأخطاء بطريقة عامة جدًا (catch (e) {} بس) ❌
-
-عدم استخدام timeouts للـ HTTP/DB requests ❌
-
-إرسال بيانات حساسة في responses ❌
-
-تجاهل structure الكود وفصل المسؤوليات ❌
-
-كتابة استعلامات ضخمة جدًا وغير قابلة للإدارة ❌
-
-✅ Full Stack Senior Questions
---409-- ما الفرق بين الـ Monolith و Microservices و Modular Monolith؟ ✅
---410-- كيف تصمم System قابل للتوسع (Scalable System)؟ ✅
---411-- كيف تتعامل مع high availability؟ ✅
---412-- ما الفرق بين horizontal و vertical scaling؟ ✅
---413-- كيف تصمم API Gateway يدير microservices مختلفة؟ ✅
---414-- ما الفرق بين WebSockets و REST و GraphQL؟ ✅
---415-- كيف تبني CI/CD pipeline متكاملة؟ ✅
---416-- كيف تقرر بين SPA و MPA و SSR و SSG؟ ✅
---417-- ما هو الـ BFF (Backend for Frontend)؟ ومتى تحتاجه؟ ✅
---418-- كيف تتعامل مع multi-language apps (i18n) بشكل كامل (front + back)？ ✅
---419-- كيف تعمل code-splitting و lazy loading في React؟ ✅
---420-- كيف تحل مشكلة hydration mismatch في Next.js؟ ✅
---421-- كيف تتعامل مع SEO في SSR apps؟ ✅
---422-- كيف تحسّن من الأداء العام لتطبيق الويب؟ (LCP, FID, CLS...) ✅
---423-- ما الفرق بين controlled و uncontrolled components؟ ✅
---424-- كيف تدير global state في React app كبير؟ ✅
---425-- متى تستخدم useMemo و useCallback؟ ✅
---426-- كيف تبني dynamic forms في React/Next.js؟ ✅
---427-- كيف تضمن أن الـ UI متوافق مع جميع الشاشات؟ ✅
---428-- كيف تتعامل مع حماية المسارات (route guards) في الـ frontend؟ ✅
---429-- ما الفرق بين Middleware و Interceptor و Guard في NestJS؟ ✅
---430-- كيف تدير background jobs داخل التطبيق؟ ✅
---431-- كيف تتعامل مع rate limiting في NestJS؟ ✅
---432-- ما هي CQRS؟ وهل استخدمتها؟ ✅
---433-- كيف تطبق SOLID principles في تصميم الباك إند؟ ✅
---434-- كيف تصمم خدمة إرسال إشعارات قابلة للتوسيع (SMS, Email, Push)？ ✅
---435-- كيف تربط NestJS مع Redis؟ وإمتى تستخدمه؟ ✅
---436-- ما هي أفضل ممارسات الـ DTOs في NestJS؟ ✅
---437-- كيف تصمم ACL أو Role-based access؟ ✅
---438-- كيف تتعامل مع الـ versioning في REST APIs؟ ✅
---439-- كيف تصمم جدول يحتوي على سجلّات متعددة اللغات؟ ✅
---440-- ما الفرق بين Eager و Lazy loading في ORM؟ ✅
---441-- كيف تطبق full-text search في PostgreSQL؟ ✅
---442-- كيف تدير العلاقات بين الكيانات في MongoDB؟ ✅
---443-- متى تستخدم aggregation pipeline في Mongo؟ ✅
---444-- كيف تتعامل مع Migrations وإعادة الهيكلة بدون فقد بيانات؟ ✅
---445-- ما الفرق بين soft delete و hard delete؟ ومتى تستخدم كل نوع؟ ✅
---446-- ما هو الـ database sharding؟ ✅
---447-- كيف تعمل indexing فعال في Mongo و SQL؟ ✅
---448-- كيف تدير نسخة staging و dev من نفس قاعدة البيانات؟ ✅
---449-- كيف تبني system login متكامل (JWT + Refresh Tokens + Front protection)？ ✅
---450-- كيف تعمل file upload (مثلاً صور المستخدم)？ ✅
---451-- كيف تتعامل مع CORS؟ ✅
---452-- كيف تبني realtime chat (REST + Socket + DB + Front)？ ✅
---453-- كيف تعمل error handling موحّدة بين الفرونت والباك؟ ✅
---454-- كيف ترسل إشعارات إلى المستخدمين في الوقت الحقيقي؟ ✅
---455-- كيف تتابع الأحداث المهمة باستخدام logs و monitoring？ ✅
---456-- كيف تعمل throttling على APIs المستهلكة في الـ frontend？ ✅
---457-- كيف تبني dashboard إحصائي حيّ باستخدام WebSockets？ ✅
---458-- كيف تكتب integration tests تغطي full flow من front ل back？ ✅
---459-- كيف تؤمّن التطبيق من XSS, CSRF, SQL Injection？ ✅
---460-- كيف تدير صلاحيات متعددة على مستوى UI و DB？ ✅
---461-- كيف تكتب tests تغطي business logic المعقّد؟ ✅
---462-- كيف تعمل logging ذكي على الباك إند؟ ✅
---463-- ما هي أفضل طرق التوثيق (Swagger، Postman، Storybook)？ ✅
---464-- كيف تقيس التغطية الاختبارية (Code Coverage)？ ✅
---465-- كيف تستخدم feature flags داخل المشاريع؟ ✅
---466-- كيف تبني نظام rollback سريع في حالة فشل النشر؟ ✅
---467-- كيف تدير secret keys بأمان (env، vault، إلخ)？ ✅
---468-- كيف تكتب reusable components أو services على مستوى المشروع؟ ✅
-✅ Additional Critical Topics
---469-- ما الفرق بين Docker و Docker Compose؟ ✅
---470-- ما فائدة Dockerfile و .dockerignore؟ ✅
---471-- ما معنى Container vs Image؟ ✅
---472-- ما الفرق بين Volume و Bind Mount في Docker؟ ✅
---473-- ما الفرق بين Nginx و Apache؟ ✅
---474-- كيف تهيئ HTTPS على موقعك باستخدام Nginx و Let's Encrypt؟ ✅
---475-- ما هو الـ Reverse Proxy؟ ✅
---476-- ما الفرق بين Jenkins و GitHub Actions؟ ✅
---477-- ما هو مفهوم Blue-Green Deployment؟ ✅
---478-- ما الفرق بين PM2 و systemd لتشغيل تطبيقات Node.js في الإنتاج؟ ✅
---479-- كيف يعمل البروتوكول HTTP من حيث: Request/Response؟ ✅
---480-- ما الفرق بين HTTP/1.1 و HTTP/2 و HTTP/3؟ ✅
---481-- ما الفرق بين PUT و PATCH؟ ✅
---482-- ما معنى Caching headers مثل: ETag, Cache-Control, Last-Modified؟ ✅
---483-- ما معنى preflight request؟ ✅
---484-- ما هو HSTS؟ ✅
---485-- ما هو Content Security Policy (CSP)؟ ✅
---486-- ما هي SameSite cookies؟ ✅
---487-- ما الفرق بين Session و JWT؟ ✅
---488-- ما هو MIME type؟ ✅
---489-- ما هو Webhook؟ ومتى تستخدمه؟ ✅
---490-- ما الفرق بين REST و gRPC؟ ✅
---491-- ما هو OpenAPI و Swagger؟ ✅
---492-- كيف تصمم WebSocket protocol خاص بك؟ ✅
---493-- ما الفرق بين Polling و Long Polling و WebSockets؟ ✅
---494-- ما هو OAuth 2.0؟ ✅
---495-- ما الفرق بين OAuth و OpenID Connect؟ ✅
---496-- ما الفرق بين Token-based و Cookie-based authentication؟ ✅
---497-- كيف تطبق MFA (Multi-Factor Authentication)؟ ✅
---498-- ما هو RBAC مقابل ABAC؟ ✅
---499-- ما الفرق بين Unit و Integration و E2E Testing؟ ✅
---500-- ما الفرق بين Mock و Stub و Spy؟ ✅
---501-- ما هو Test Pyramid؟ ✅
---502-- ما هو Snapshot Testing في React؟ ✅
---503-- كيف تكتب test يغطي GraphQL أو WebSocket؟ ✅
---504-- ما هو الفرق بين Query و Mutation؟ ✅
---505-- كيف تعمل Subscriptions في GraphQL؟ ✅
---506-- ما هي Resolvers؟ ✅
---507-- كيف تبني schema متقدمة بـ TypeGraphQL أو Apollo؟ ✅
---508-- ما هي مشاكل n+1 في GraphQL؟ ✅
---509-- ما الفرق بين SSR و CSR و ISR و SSG؟ ✅
---510-- كيف تستخدم lazy loading للصور والـ components؟ ✅
---511-- ما معنى Critical Rendering Path؟ ✅
---512-- ما الفرق بين TBT و TTI و FID؟ ✅
---513-- كيف تستخدم Lighthouse لتحليل موقعك؟ ✅
---514-- ما هو Rate Limiting و Brute Force Protection؟ ✅
---515-- ما معنى JWT replay attack؟ ✅
---516-- ما الفرق بين hashing و encryption؟ ✅
---517-- ما هو CORS Misconfiguration؟ ✅
---518-- ما الفرق بين bcrypt و argon2؟ ✅
---519-- ما هو ESLint و Prettier؟ وكيف يستخدموا سويًا؟ ✅
---520-- ما الفرق بين npm و yarn و pnpm؟ ✅
---521-- ما الفرق بين .env.local و .env.production؟ ✅
---522-- ما فائدة Husky و lint-staged؟ ✅
---523-- ما هو Vite.js؟ ولماذا أسرع من Webpack؟ ✅
---524-- ما هو git rebase مقابل git merge؟ ✅
---525-- ما الفرق بين git reset --hard و git revert؟ ✅
---526-- ما معنى Git Flow؟ ✅
---527-- ما هو الـ squash merge؟ ✅
---528-- كيف تستخدم git hooks؟ ✅
---529-- ما هو الـ Factory Pattern؟ ✅
---530-- ما الفرق بين Singleton و Service Locator؟ ✅
---531-- ما هو Anti-Corruption Layer؟ ✅
---532-- ما هو Dependency Injection؟ ✅
---533-- ما الفرق بين Separation of Concerns و Single Responsibility؟ ✅
---534-- ما الفرق بين SSR hydration و client hydration؟ ✅
---535-- ما هو الـ Web Worker؟ ✅
---536-- ما الفرق بين ISO date و Unix timestamp؟ ✅
---537-- ما معنى Debouncing و Throttling؟ ✅
---538-- ما هو الـ Event Loop في JavaScript؟ ✅
-⚠️ Common Pitfalls
-الـ backend يرسل أكتر من اللازم → frontend بطيء ❌
-
-تكرار الـ logic بين الواجهة والخلفية ❌
-
-تجاهل الأمن في النماذج والـ APIs ❌
-
-استعلامات بدون index على جداول ضخمة ❌
-
-تجاهل structure المجلدات مع كبر المشروع ❌
-
-hardcoded values بدل config ❌
-
-الاعتماد الكلي على ORMs بدون فهم SQL ❌
 
 ✅ System Design (Advanced)
---539-- كيف تصمم نظام شبيه بـ Instagram من حيث الصور والتفاعل؟ ✅
---540-- كيف تصمم chat app يتحمل آلاف المستخدمين؟ ✅
---541-- كيف تتعامل مع scaling لقاعدة بيانات Postgres أو Mongo؟ ✅
---542-- ما الفرق بين vertical scaling و horizontal scaling؟ ✅
---543-- كيف تصمم rate limiter على مستوى IP/user؟ ✅
---544-- ما الفرق بين monolith و microservices و modular monolith؟ ✅
---545-- كيف تصمم خدمة تعمل على event-driven architecture؟ ✅
---546-- متى تستخدم CDN وكيف يساعد في تقليل الـ latency؟ ✅
---547-- كيف تبني queue system للتعامل مع المهام الثقيلة؟ ✅
---548-- ما هي CAP Theorem؟ (Consistency, Availability, Partition tolerance) ✅
---549-- ما هو Domain Driven Design (DDD)؟ ✅
---550-- ما هو Hexagonal Architecture؟ ✅
---551-- متى تستخدم CQRS و Event Sourcing؟ ✅
---552-- ما الفرق بين SOLID و KISS و DRY؟ ✅
---553-- ما هو الـ Service Oriented Architecture؟ ✅
---554-- كيف تعمل Layered Architecture لتطبيقاتك؟ ✅
---555-- كيف تصمم Public API قابلة للتوسّع؟ ✅
---556-- ما الفرق بين Repository Pattern و DAO؟ ✅
---557-- ما هو الـ Circuit Breaker؟ ومتى تستخدمه؟ ✅
---558-- كيف تصمم system resilient ضد الـ failure؟ ✅
---559-- كيف تبني real-time notification system؟ ✅
---560-- كيف تتعامل مع presence (online/offline users)؟ ✅
---561-- كيف تمنع فقدان الرسائل في WebSocket communication؟ ✅
---562-- ما الفرق بين socket.io و native WebSocket؟ ✅
---563-- متى تستخدم pub/sub systems زي Redis أو Kafka؟ ✅
---564-- كيف تعمل load balancing بين أكثر من سيرفر؟ ✅
---565-- ما هو sticky sessions؟ ✅
---566-- كيف تراقب الـ performance باستخدام APM tools؟ ✅
---567-- ما الفرق بين cold start و warm start؟ ✅
---568-- كيف تستخدم cache layer بين API و DB؟ ✅
---569-- ما هو الـ Observability؟ ✅
---570-- ما هو الفرق بين logging و tracing؟ ✅
---571-- ما هو distributed tracing؟ ✅
---572-- كيف تستخدم أدوات مثل Sentry أو LogRocket؟ ✅
---573-- كيف تراقب APIs أو DB performance من خلال Grafana أو Prometheus؟ ✅
---574-- كيف تختبر load/performance لتطبيقك؟ ✅
---575-- ما الفرق بين TDD و BDD؟ ✅
---576-- كيف تكتب automated tests لتطبيق يعمل بـ microservices؟ ✅
---577-- ما معنى contract testing؟ ✅
---578-- ما هو chaos engineering؟ ✅
---579-- كيف تستخدم Storybook لتوثيق الـ UI components؟ ✅
---580-- ما هو الـ Monorepo؟ ومتى تفضله؟ ✅
---581-- كيف تستخدم NX أو TurboRepo؟ ✅
---582-- كيف تبني design system وتستخدمه عبر فرق متعددة؟ ✅
---583-- كيف تهيئ GitHub Actions لعمل CI/CD باحترافية؟ ✅
---584-- كيف تمنع SQL injection أو NoSQL injection؟ ✅
---585-- كيف تؤمن Uploading الصور أو الملفات؟ ✅
---586-- كيف تطبق Rate Limiting بطريقة آمنة؟ ✅
---587-- ما معنى Security Headers؟ ✅
---588-- ما هو X-XSS-Protection و X-Frame-Options؟ ✅
-✅ Self-Evaluation Questions
---589-- هل يمكن لأي مطور بعدي قراءة الكود وفهمه؟ ✅
---590-- هل النظام بتاعي يقدر يتحمل 100x user growth؟ ✅
---591-- هل في Single Point of Failure في نظامي؟ ✅
---592-- هل أقدر أغير ميزة أساسية بدون ما أعدل 30 ملف؟ ✅
---593-- هل عندي tests كفاية للتحديثات المستقبلية؟ ✅
-📚 Key Terms
---594-- Zero downtime deployment ✅
---595-- WebAssembly ✅
---596-- Edge functions (Cloudflare Workers, Vercel Edge) ✅
---597-- Service mesh (Istio, Linkerd) ✅
---598-- BFF (Backend for Frontend) ✅
---599-- Multi-tenant architecture ✅
---600-- JSON:API, HAL ✅
---601-- OAuth PKCE flow ✅
---602-- GraphQL Federation ✅
---603-- Distributed systems ✅
---604-- Database sharding ✅
---605-- Immutable infrastructure ✅
---606-- Infrastructure as Code (Terraform) ✅
---607-- Eventual consistency ✅
---608-- Async/Await pitfalls ✅
---609-- Singleton vs static in JS ✅
---610-- The "Zod" schema validation (مع tRPC) ✅
---611-- Request Collapsing / Deduplication ✅
---612-- Cold/Warm/Hot cache 
+// --539-- كيف تصمم نظام شبيه بـ Instagram من حيث الصور والتفاعل؟ ✅
+// --540-- كيف تصمم chat app يتحمل آلاف المستخدمين؟ ✅
+// --541-- كيف تتعامل مع scaling لقاعدة بيانات Postgres أو Mongo؟ ✅
+// --542-- ما الفرق بين vertical scaling و horizontal scaling؟ ✅
+// --543-- كيف تصمم rate limiter على مستوى IP/user؟ ✅
+// --544-- ما الفرق بين monolith و microservices و modular monolith؟ ✅
+// --545-- كيف تصمم خدمة تعمل على event-driven architecture؟ ✅
+// --546-- متى تستخدم CDN وكيف يساعد في تقليل الـ latency؟ ✅
+// --547-- كيف تبني queue system للتعامل مع المهام الثقيلة؟ ✅
+// --548-- ما هي CAP Theorem؟ (Consistency, Availability, Partition tolerance) ✅
+// --549-- ما هو Domain Driven Design (DDD)؟ ✅
+// --550-- ما هو Hexagonal Architecture؟ ✅
+// --551-- متى تستخدم CQRS و Event Sourcing؟ ✅
+// --552-- ما الفرق بين SOLID و KISS و DRY؟ ✅
+// --553-- ما هو الـ Service Oriented Architecture؟ ✅
+// --554-- كيف تعمل Layered Architecture لتطبيقاتك؟ ✅
+// --555-- كيف تصمم Public API قابلة للتوسّع؟ ✅
+// --556-- ما الفرق بين Repository Pattern و DAO؟ ✅
+// --557-- ما هو الـ Circuit Breaker؟ ومتى تستخدمه؟ ✅
+// --558-- كيف تصمم system resilient ضد الـ failure؟ ✅
+// --559-- كيف تبني real-time notification system؟ ✅
+// --560-- كيف تتعامل مع presence (online/offline users)؟ ✅
+// --561-- كيف تمنع فقدان الرسائل في WebSocket communication؟ ✅
+// --562-- ما الفرق بين socket.io و native WebSocket؟ ✅
+// --563-- متى تستخدم pub/sub systems زي Redis أو Kafka؟ ✅
+// --564-- كيف تعمل load balancing بين أكثر من سيرفر؟ ✅
+// --565-- ما هو sticky sessions؟ ✅
+// --566-- كيف تراقب الـ performance باستخدام APM tools؟ ✅
+// --567-- ما الفرق بين cold start و warm start؟ ✅
+// --568-- كيف تستخدم cache layer بين API و DB؟ ✅
+// --569-- ما هو الـ Observability؟ ✅
+// --570-- ما هو الفرق بين logging و tracing؟ ✅
+// --571-- ما هو distributed tracing؟ ✅
+// --572-- كيف تستخدم أدوات مثل Sentry أو LogRocket؟ ✅
+// --573-- كيف تراقب APIs أو DB performance من خلال Grafana أو Prometheus؟ ✅
+// --574-- كيف تختبر load/performance لتطبيقك؟ ✅
+// --575-- ما الفرق بين TDD و BDD؟ ✅
+// --576-- كيف تكتب automated tests لتطبيق يعمل بـ microservices؟ ✅
+// --577-- ما معنى contract testing؟ ✅
+// --578-- ما هو chaos engineering؟ ✅
+// --579-- كيف تستخدم Storybook لتوثيق الـ UI components؟ ✅
+// --580-- ما هو الـ Monorepo؟ ومتى تفضله؟ ✅
+// --581-- كيف تستخدم NX أو TurboRepo؟ ✅
+// --582-- كيف تبني design system وتستخدمه عبر فرق متعددة؟ ✅
+// --583-- كيف تهيئ GitHub Actions لعمل CI/CD باحترافية؟ ✅
+// --584-- كيف تمنع SQL injection أو NoSQL injection؟ ✅
+// --585-- كيف تؤمن Uploading الصور أو الملفات؟ ✅
+// --586-- كيف تطبق Rate Limiting بطريقة آمنة؟ ✅
+// --587-- ما معنى Security Headers؟ ✅
+// --588-- ما هو X-XSS-Protection و X-Frame-Options؟ ✅
+// ✅ Self-Evaluation Questions
+// --589-- هل يمكن لأي مطور بعدي قراءة الكود وفهمه؟ ✅
+// --590-- هل النظام بتاعي يقدر يتحمل 100x user growth؟ ✅
+// --591-- هل في Single Point of Failure في نظامي؟ ✅
+// --592-- هل أقدر أغير ميزة أساسية بدون ما أعدل 30 ملف؟ ✅
+// --593-- هل عندي tests كفاية للتحديثات المستقبلية؟ ✅
+// 📚 Key Terms
+// --594-- Zero downtime deployment ✅
+// --595-- WebAssembly ✅
+// --596-- Edge functions (Cloudflare Workers, Vercel Edge) ✅
+// --597-- Service mesh (Istio, Linkerd) ✅
+// --598-- BFF (Backend for Frontend) ✅
+// --599-- Multi-tenant architecture ✅
+// --600-- JSON:API, HAL ✅
+// --601-- OAuth PKCE flow ✅
+// --602-- GraphQL Federation ✅
+// --603-- Distributed systems ✅
+// --604-- Database sharding ✅
+// --605-- Immutable infrastructure ✅
+// --606-- Infrastructure as Code (Terraform) ✅
+// --607-- Eventual consistency ✅
+// --608-- Async/Await pitfalls ✅
+// --609-- Singleton vs static in JS ✅
+// --610-- The "Zod" schema validation (مع tRPC) ✅
+// --611-- Request Collapsing / Deduplication ✅
+// --612-- Cold/Warm/Hot cache 
 
 
 

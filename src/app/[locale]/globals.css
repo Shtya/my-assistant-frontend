@@ -50,6 +50,10 @@ body {
     font-family: var(--font-alexandria) !important;
 }
 
+.ar-font {
+    font-family: var(--font-tajawal) !important;
+}
+
 [dir='ltr'] body {
     font-family: var(--font-open-sans) !important;
 }

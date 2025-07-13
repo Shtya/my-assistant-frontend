@@ -1,12 +1,61 @@
+/**
+ * i need here show the length of every category and also when i select category show the all tags on it 
+ * the faqs ( [
+    {
+        "_id": "68701c2bea7db7f1d86d997b",
+        "question": "هل عندي tests كفاية للتحديثات المستقبلية؟",
+        "answer": "<h3>🧠 الشرح (بالعربية):</h3> <p>✨ الاختبارات الكافية تتميز بـ: 1) تغطية الحالات الأساسية والحدية، 2) سرعة التنفيذ، 3) استقلاليتها، 4) سهولة الصيانة. نحرص عليها لأنها تمنح ثقة عند التحديث. مؤشرات جودة الاختبارات: نسبة التغطية، وقت التنفيذ، وسهولة فهمها.</p><h3>🔍 مثال:</h3><pre><code>// مثال اختبار جيد (باستخدام Jest)\ndescribe('ShoppingCart', () => {\n  let cart;\n  \n  beforeEach(() => {\n    cart = new ShoppingCart(); // إعداد نظيف قبل كل اختبار\n  });\n  \n  test('should add items correctly', () => {\n    cart.addItem({ id: 1, price: 10 });\n    expect(cart.items.length).toBe(1);\n    expect(cart.total()).toBe(10);\n  });\n  \n  test('should apply discount correctly', () => {\n    cart.addItem({ id: 1, price: 100 });\n    cart.applyDiscount(0.1); // 10% discount\n    expect(cart.total()).toBe(90);\n  });\n  \n  test('should handle empty cart', () => {\n    expect(cart.total()).toBe(0);\n    expect(() => cart.applyDiscount(0.1))\n      .toThrow('Cannot apply discount to empty cart');\n  });\n});</code></pre><h3>📘 معلومات إضافية:</h3><ul><li>أدوات قياس التغطية: Istanbul, Jest --coverage</li><li>اختبارات End-to-End مهمة ولكنها مكلفة</li></ul><h3>🔗 مواضيع ذات صلة:</h3><ul><li>Test Coverage</li><li>Regression Testing</li></ul>",
+        "category": "Testing",
+        "isRead": false,
+        "tag": [
+            "Test Sufficiency"
+        ],
+        "createdAt": "2025-07-10T20:01:47.703Z",
+        "__v": 0
+    },
+    {
+        "_id": "68701c2bea7db7f1d86d997a",
+        "question": "هل أقدر أغير ميزة أساسية بدون ما أعدل 30 ملف؟",
+        "answer": "<h3>🧠 الشرح (بالعربية):</h3> <p>✨ لتقليل التعديلات عند تغيير الميزات: 1) استخدام تصميم معياري، 2) فصل الاهتمامات (Separation of Concerns)، 3) تقليل التكرار (DRY Principle)، 4) استخدام أنماط التصميم مثل Dependency Injection. نهدف لجعل التغييرات محصورة في مكان واحد.</p><h3>🔍 مثال:</h3><pre><code>// مثال سيء (تغيير يتطلب تعديل كل استخدام)\nfunction sendEmail(user, message) {\n  // تنفيذ مباشر\n}\n\n// مثال جيد (استخدام واجهة يمكن تغيير تنفيذها)\ninterface MessageSender {\n  send(user: User, message: string): Promise<void>;\n}\n\nclass EmailSender implements MessageSenderc\n\n// الاستخدام:\nconst sender: MessageSender = new EmailSender();\n// لاحقًا يمكن تغيير التنفيذ دون تعديل أماكن الاستخدام\nconst sender: MessageSender = new SmsSender();</code></pre><h3>📘 معلومات إضافية:</h3><ul><li>مبادئ SOLID تساعد في تحقيق هذا الهدف</li><li>الاختبارات الجيدة تضمن أن التغييرات لا تكسر وظائف موجودة</li></ul><h3>🔗 مواضيع ذات صلة:</h3><ul><li>Software Architecture</li><li>Design Patterns</li></ul>",
+        "category": "Software Development",
+        "isRead": false,
+        "tag": [
+            "Maintainability"
+        ],
+        "createdAt": "2025-07-10T20:01:47.703Z",
+        "__v": 0
+    },
+    {
+        "_id": "68701c2bea7db7f1d86d9979",
+        "question": "هل في Single Point of Failure في نظامي؟",
+        "answer": "<h3>🧠 الشرح (بالعربية):</h3> <p>✨ Single Point of Failure (SPOF) هو مكون إذا فشل يؤدي لفشل النظام كله. لاكتشافه: 1) تحليل البنية للعناصر غير الزائدة عن الحاجة، 2) اختبار سيناريوهات الفشل، 3) مراجعة التبعيات الخارجية. نتجنبه باستخدام: التكرار، التوزيع، وعزل المكونات.</p><h3>🔍 مثال:</h3><pre><code># أمثلة شائعة لـ SPOF:\n# - خادم قاعدة بيانات واحد\n# - خدمة خارجية بدون fallback\n# - Load Balancer واحد\n# - مسار شبكة واحد\n\n# استراتيجيات للقضاء على SPOF:\n# - تكرار الخوادم (Database Replication)\n# - استخدام Multi-AZ في السحابة\n# - تصميم أنماط مثل Circuit Breaker للخدمات الخارجية\n# - وجود خطة استعادة من الكوارث (Disaster Recovery)\n\n# أدوات مساعدة:\n# - AWS Multi-Region Deployment\n# - Kubernetes للتحكم في الحاويات\n# - Service Mesh مثل Istio</code></pre><h3>📘 معلومات إضافية:</h3><ul><li>اختبار Chaos Engineering يساعد في اكتشاف SPOF</li><li>بعض SPOFs مقبولة في مراحل مبكرة مع خطة للتحسين</li></ul><h3>🔗 مواضيع ذات صلة:</h3><ul><li>High Availability</li><li>Fault Tolerance</li></ul>",
+        "category": "System Design",
+        "isRead": false,
+        "tag": [
+            "Reliability"
+        ],
+        "createdAt": "2025-07-10T20:01:47.703Z",
+        "__v": 0
+    },])
+
+
+    and also i need select have the all tags to filter with it 
+
+    * and when i click outside the dropdown of any dropdown close it 
+    * and also i need add fav tab to add the fav question to it as important question like this 
+    * 
+    * and also when select a filters for seelct category or status or tags save it in the localestorage to get it when make refresh 
+
+ */
+
 'use client';
-import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, ChevronDown, Edit, Import, Pencil, Plus, Trash2, X, Filter, Star, Heart } from 'lucide-react';
+import { Check, ChevronDown, Edit, Import, Pencil, Plus, Trash2, X, Filter } from 'lucide-react';
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
 // Animation variants
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -43,7 +92,6 @@ const itemVariants = {
 
 export default function TechnicalCMS() {
   const t = useTranslations('TechnicalCMS');
-  
   // State for UI
   const [activeTab, setActiveTab] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -51,28 +99,13 @@ export default function TechnicalCMS() {
     }
     return 'faq';
   });
-  
   const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  
-  const [filter, setFilter] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const savedFilter = localStorage.getItem('filter');
-      return savedFilter
-        ? JSON.parse(savedFilter)
-        : {
-            category: '',
-            difficulty: '',
-            readStatus: '',
-            tags: [],
-          };
-    }
-    return {
-      category: '',
-      difficulty: '',
-      readStatus: '',
-      tags: [],
-    };
+  const [filter, setFilter] = useState({
+    category: '',
+    difficulty: '',
+    readStatus: '',
+    tags: [],
   });
 
   // State for data
@@ -80,13 +113,6 @@ export default function TechnicalCMS() {
   const [problems, setProblems] = useState([]);
   const [categories, setCategories] = useState([]);
   const [allTags, setAllTags] = useState([]);
-  
-  const [favorites, setFavorites] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return JSON.parse(localStorage.getItem('favorites')) || [];
-    }
-    return [];
-  });
 
   // Form states
   const [faqForm, setFaqForm] = useState({
@@ -96,7 +122,6 @@ export default function TechnicalCMS() {
     isRead: false,
     tags: [],
   });
-  
   const [problemForm, setProblemForm] = useState({
     title: '',
     solution: '',
@@ -105,7 +130,6 @@ export default function TechnicalCMS() {
     isRead: false,
     tags: [],
   });
-  
   const [isEditing, setIsEditing] = useState(false);
   const [currentId, setCurrentId] = useState(null);
 
@@ -125,12 +149,7 @@ export default function TechnicalCMS() {
     deleteItem: false,
     toggleRead: false,
     jsonImport: false,
-    toggleFavorite: false,
   });
-
-  // Refs for dropdowns
-  const categoryDropdownRef = useRef(null);
-  const filterDropdownRef = useRef(null);
 
   // Save active tab to localStorage when it changes
   useEffect(() => {
@@ -139,54 +158,21 @@ export default function TechnicalCMS() {
     }
   }, [activeTab]);
 
-  // Save filter to localStorage when it changes
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('filter', JSON.stringify(filter));
-    }
-  }, [filter]);
-
-  // Save favorites to localStorage when it changes
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('favorites', JSON.stringify(favorites));
-    }
-  }, [favorites]);
-
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = event => {
-      if (categoryDropdownRef.current && !categoryDropdownRef.current.contains(event.target)) {
-        document.getElementById('category-dropdown').classList.add('hidden');
-      }
-      if (filterDropdownRef.current && !filterDropdownRef.current.contains(event.target)) {
-        document.getElementById('filter-dropdown').classList.add('hidden');
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
   // Fetch data
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const [faqRes, problemRes] = await Promise.all([
-          fetch('/api/faqs').then(res => res.json()),
-          fetch('/api/problems').then(res => res.json())
-        ]);
+        const [faqRes, problemRes] = await Promise.all([fetch('/api/faqs'), fetch('/api/problems')]);
 
-        const allTagsFromData = [...new Set([
-          ...faqRes.flatMap(faq => faq.tag || []),
-          ...problemRes.flatMap(problem => problem.tag || [])
-        ])];
+        const faqData = await faqRes.json();
+        const problemData = await problemRes.json();
 
-        setFaqs(faqRes);
-        setProblems(problemRes);
+        // Extract all unique tags from both FAQs and Problems
+        const allTagsFromData = [...new Set([...faqData.flatMap(faq => faq.tags || []), ...problemData.flatMap(problem => problem.tags || [])])];
+
+        setFaqs(faqData);
+        setProblems(problemData);
         setAllTags(allTagsFromData);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -198,29 +184,14 @@ export default function TechnicalCMS() {
     fetchData();
   }, []);
 
-  // Update categories when activeTab, faqs or problems change
   useEffect(() => {
-    const relevantItems = activeTab === 'faq' ? faqs : problems;
+    let relevantItems = activeTab === 'faq' ? faqs : problems;
     const categoryList = [...new Set(relevantItems.map(item => item.category).filter(Boolean))];
     setCategories(categoryList);
   }, [activeTab, faqs, problems]);
 
-  // Memoized category counts
-  const categoryCounts = useMemo(() => {
-    const items = activeTab === 'faq' ? faqs : problems;
-    const counts = {};
-
-    items.forEach(item => {
-      if (item.category) {
-        counts[item.category] = (counts[item.category] || 0) + 1;
-      }
-    });
-
-    return counts;
-  }, [activeTab, faqs, problems]);
-
-  // Memoized tags for current category
-  const tagsForCurrentCategory = useMemo(() => {
+  // Get tags for current category
+  const getTagsForCurrentCategory = () => {
     if (!filter.category) return allTags;
 
     const items = activeTab === 'faq' ? faqs : problems;
@@ -228,101 +199,34 @@ export default function TechnicalCMS() {
     const categoryTags = new Set();
 
     categoryItems.forEach(item => {
-      if (item.tag) {
-        item.tag.forEach(tag => categoryTags.add(tag));
+      if (item.tags) {
+        item.tags.forEach(tag => categoryTags.add(tag));
       }
     });
 
     return Array.from(categoryTags);
-  }, [filter.category, activeTab, faqs, problems, allTags]);
+  };
 
-  // Memoized filtered data
-  const filteredFaqs = useMemo(() => {
-    return faqs.filter(faq => {
-      const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = !filter.category || faq.category === filter.category;
-      const matchesReadStatus = filter.readStatus === '' || 
-                              (filter.readStatus === 'read' && faq.isRead) || 
-                              (filter.readStatus === 'unread' && !faq.isRead);
-      const matchesTags = filter.tags.length === 0 || 
-                        (faq.tag && filter.tags.every(tag => faq.tag.includes(tag)));
-      return matchesSearch && matchesCategory && matchesReadStatus && matchesTags;
-    });
-  }, [faqs, searchTerm, filter]);
+  // Filtered data
+  const filteredFaqs = faqs.filter(faq => {
+    const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) || faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = !filter.category || faq.category === filter.category;
+    const matchesReadStatus = filter.readStatus === '' || (filter.readStatus === 'read' && faq.isRead) || (filter.readStatus === 'unread' && !faq.isRead);
+    const matchesTags = filter.tags.length === 0 || (faq.tags && filter.tags.every(tag => faq.tags.includes(tag)));
+    return matchesSearch && matchesCategory && matchesReadStatus && matchesTags;
+  });
 
-  const filteredProblems = useMemo(() => {
-    return problems.filter(problem => {
-      const matchesSearch = problem.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          problem.solution.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = !filter.category || problem.category === filter.category;
-      const matchesDifficulty = !filter.difficulty || problem.difficulty === filter.difficulty;
-      const matchesReadStatus = filter.readStatus === '' || 
-                              (filter.readStatus === 'read' && problem.isRead) || 
-                              (filter.readStatus === 'unread' && !problem.isRead);
-      const matchesTags = filter.tags.length === 0 || 
-                        (problem.tag && filter.tags.every(tag => problem.tag.includes(tag)));
-      return matchesSearch && matchesCategory && matchesDifficulty && matchesReadStatus && matchesTags;
-    });
-  }, [problems, searchTerm, filter]);
-
-  const filteredFavorites = useMemo(() => {
-    return favorites.filter(fav => {
-      const item = fav.type === 'faq' 
-        ? faqs.find(f => f._id === fav.id) 
-        : problems.find(p => p._id === fav.id);
-
-      if (!item) return false;
-
-      if (fav.type === 'faq') {
-        const matchesSearch = item.question.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                            item.answer.toLowerCase().includes(searchTerm.toLowerCase());
-        const matchesCategory = !filter.category || item.category === filter.category;
-        const matchesReadStatus = filter.readStatus === '' || 
-                                (filter.readStatus === 'read' && item.isRead) || 
-                                (filter.readStatus === 'unread' && !item.isRead);
-        const matchesTags = filter.tags.length === 0 || 
-                          (item.tag && filter.tags.every(tag => item.tag.includes(tag)));
-        return matchesSearch && matchesCategory && matchesReadStatus && matchesTags;
-      } else {
-        const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                            item.solution.toLowerCase().includes(searchTerm.toLowerCase());
-        const matchesCategory = !filter.category || item.category === filter.category;
-        const matchesDifficulty = !filter.difficulty || item.difficulty === filter.difficulty;
-        const matchesReadStatus = filter.readStatus === '' || 
-                                (filter.readStatus === 'read' && item.isRead) || 
-                                (filter.readStatus === 'unread' && !item.isRead);
-        const matchesTags = filter.tags.length === 0 || 
-                          (item.tag && filter.tags.every(tag => item.tag.includes(tag)));
-        return matchesSearch && matchesCategory && matchesDifficulty && matchesReadStatus && matchesTags;
-      }
-    });
-  }, [favorites, faqs, problems, searchTerm, filter]);
-
-  // Memoized favorite check
-  const isFavorite = useCallback((id, type) => {
-    return favorites.some(fav => fav.id === id && fav.type === type);
-  }, [favorites]);
-
-  // Toggle favorite status
-  const toggleFavorite = useCallback((id, type) => {
-    setLoadingStates(prev => ({ ...prev, toggleFavorite: true }));
-
-    const favIndex = favorites.findIndex(fav => fav.id === id && fav.type === type);
-
-    if (favIndex >= 0) {
-      setFavorites(favorites.filter((_, index) => index !== favIndex));
-    } else {
-      setFavorites([...favorites, { id, type }]);
-    }
-
-    setTimeout(() => {
-      setLoadingStates(prev => ({ ...prev, toggleFavorite: false }));
-    }, 300);
-  }, [favorites]);
+  const filteredProblems = problems.filter(problem => {
+    const matchesSearch = problem.title.toLowerCase().includes(searchTerm.toLowerCase()) || problem.solution.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = !filter.category || problem.category === filter.category;
+    const matchesDifficulty = !filter.difficulty || problem.difficulty === filter.difficulty;
+    const matchesReadStatus = filter.readStatus === '' || (filter.readStatus === 'read' && problem.isRead) || (filter.readStatus === 'unread' && !problem.isRead);
+    const matchesTags = filter.tags.length === 0 || (problem.tags && filter.tags.every(tag => problem.tags.includes(tag)));
+    return matchesSearch && matchesCategory && matchesDifficulty && matchesReadStatus && matchesTags;
+  });
 
   // Form handlers
-  const handleFaqSubmit = useCallback(async e => {
+  const handleFaqSubmit = async e => {
     e.preventDefault();
     setLoadingStates(prev => ({ ...prev, faqSubmit: true }));
     try {
@@ -352,9 +256,9 @@ export default function TechnicalCMS() {
     } finally {
       setLoadingStates(prev => ({ ...prev, faqSubmit: false }));
     }
-  }, [faqForm, isEditing, currentId, faqs]);
+  };
 
-  const handleProblemSubmit = useCallback(async e => {
+  const handleProblemSubmit = async e => {
     e.preventDefault();
     setLoadingStates(prev => ({ ...prev, problemSubmit: true }));
     try {
@@ -384,9 +288,9 @@ export default function TechnicalCMS() {
     } finally {
       setLoadingStates(prev => ({ ...prev, problemSubmit: false }));
     }
-  }, [problemForm, isEditing, currentId, problems]);
+  };
 
-  const resetFaqForm = useCallback(() => {
+  const resetFaqForm = () => {
     setFaqForm({
       question: '',
       answer: '',
@@ -396,9 +300,9 @@ export default function TechnicalCMS() {
     });
     setIsEditing(false);
     setCurrentId(null);
-  }, []);
+  };
 
-  const resetProblemForm = useCallback(() => {
+  const resetProblemForm = () => {
     setProblemForm({
       title: '',
       solution: '',
@@ -409,36 +313,36 @@ export default function TechnicalCMS() {
     });
     setIsEditing(false);
     setCurrentId(null);
-  }, []);
+  };
 
-  const editFaq = useCallback(faq => {
+  const editFaq = faq => {
     setFaqForm({
       question: faq.question,
       answer: faq.answer,
       category: faq.category,
       isRead: faq.isRead,
-      tags: faq.tag || [],
+      tags: faq.tags || [],
     });
     setIsEditing(true);
     setCurrentId(faq._id);
     setShowFaqForm(true);
-  }, []);
+  };
 
-  const editProblem = useCallback(problem => {
+  const editProblem = problem => {
     setProblemForm({
       title: problem.title,
       solution: problem.solution,
       difficulty: problem.difficulty,
       category: problem.category,
       isRead: problem.isRead,
-      tags: problem.tag || [],
+      tags: problem.tags || [],
     });
     setIsEditing(true);
     setCurrentId(problem._id);
     setShowProblemForm(true);
-  }, []);
+  };
 
-  const deleteItem = useCallback(async (id, type) => {
+  const deleteItem = async (id, type) => {
     if (window.confirm(t('deleteConfirm'))) {
       setLoadingStates(prev => ({ ...prev, deleteItem: true }));
       try {
@@ -449,10 +353,8 @@ export default function TechnicalCMS() {
         if (response.ok) {
           if (type === 'faqs') {
             setFaqs(faqs.filter(f => f._id !== id));
-            setFavorites(favorites.filter(fav => !(fav.id === id && fav.type === 'faq')));
           } else {
             setProblems(problems.filter(p => p._id !== id));
-            setFavorites(favorites.filter(fav => !(fav.id === id && fav.type === 'problem')));
           }
         }
       } catch (error) {
@@ -461,9 +363,9 @@ export default function TechnicalCMS() {
         setLoadingStates(prev => ({ ...prev, deleteItem: false }));
       }
     }
-  }, [faqs, problems, favorites]);
+  };
 
-  const toggleReadStatus = useCallback(async (id, type, currentStatus) => {
+  const toggleReadStatus = async (id, type, currentStatus) => {
     setLoadingStates(prev => ({ ...prev, toggleRead: true }));
     try {
       const response = await fetch(`/api/${type}?id=${id}`, {
@@ -486,9 +388,9 @@ export default function TechnicalCMS() {
     } finally {
       setLoadingStates(prev => ({ ...prev, toggleRead: false }));
     }
-  }, [faqs, problems]);
+  };
 
-  const handleJsonImport = useCallback(async type => {
+  const handleJsonImport = async type => {
     setLoadingStates(prev => ({ ...prev, jsonImport: true }));
     try {
       const data = JSON.parse(jsonInput);
@@ -516,10 +418,10 @@ export default function TechnicalCMS() {
     } finally {
       setLoadingStates(prev => ({ ...prev, jsonImport: false }));
     }
-  }, [jsonInput, faqs, problems]);
+  };
 
   // Tag handlers
-  const addTagToForm = useCallback((formType, tag) => {
+  const addTagToForm = (formType, tag) => {
     if (formType === 'faq') {
       if (!faqForm.tags.includes(tag)) {
         setFaqForm({ ...faqForm, tags: [...faqForm.tags, tag] });
@@ -529,71 +431,66 @@ export default function TechnicalCMS() {
         setProblemForm({ ...problemForm, tags: [...problemForm.tags, tag] });
       }
     }
-  }, [faqForm, problemForm]);
+  };
 
-  const removeTagFromForm = useCallback((formType, tag) => {
+  const removeTagFromForm = (formType, tag) => {
     if (formType === 'faq') {
       setFaqForm({ ...faqForm, tags: faqForm.tags.filter(t => t !== tag) });
     } else {
       setProblemForm({ ...problemForm, tags: problemForm.tags.filter(t => t !== tag) });
     }
-  }, [faqForm, problemForm]);
+  };
 
-  const createNewTag = useCallback(formType => {
+  const createNewTag = formType => {
     if (newTag.trim() && !allTags.includes(newTag.trim())) {
       setAllTags([...allTags, newTag.trim()]);
       addTagToForm(formType, newTag.trim());
       setNewTag('');
     }
-  }, [newTag, allTags, addTagToForm]);
+  };
 
-  const toggleTagFilter = useCallback(tag => {
+  const toggleTagFilter = tag => {
     setFilter(prev => ({
       ...prev,
       tags: prev.tags.includes(tag) ? prev.tags.filter(t => t !== tag) : [...prev.tags, tag],
     }));
-  }, []);
+  };
 
   // Clear all filters
-  const clearAllFilters = useCallback(() => {
+  const clearAllFilters = () => {
     setFilter({
       category: '',
       difficulty: '',
       readStatus: '',
       tags: [],
     });
-  }, []);
+  };
 
   // Form validation
-  const isFaqFormValid = useMemo(() => 
-    faqForm.question.trim() && faqForm.answer.trim() && faqForm.category.trim(),
-    [faqForm]
-  );
-
-  const isProblemFormValid = useMemo(() => 
-    problemForm.title.trim() && problemForm.solution.trim() && problemForm.category.trim(),
-    [problemForm]
-  );
+  console.log(faqForm);
+  const isFaqFormValid = faqForm.question.trim() && faqForm.answer.trim() && faqForm.category.trim();
+  const isProblemFormValid = problemForm.title.trim() && problemForm.solution.trim() && problemForm.category.trim();
 
   // Toggle expansion
-  const toggleFaqExpansion = useCallback(id => {
+  const toggleFaqExpansion = id => {
     setExpandedFaqId(expandedFaqId === id ? null : id);
-  }, [expandedFaqId]);
+  };
 
-  const toggleProblemExpansion = useCallback(id => {
+  const toggleProblemExpansion = id => {
     setExpandedProblemId(expandedProblemId === id ? null : id);
-  }, [expandedProblemId]);
+  };
 
-  // Memoized answer renderer
-  const renderAnswerWithHighlighting = useCallback((answer) => {
+  function renderAnswerWithHighlighting(answer) {
     if (!answer) return null;
 
+    // Create a parser function for HTML content
     const parseHtmlContent = html => {
       const container = document.createElement('div');
       container.innerHTML = html;
       return Array.from(container.childNodes);
     };
 
+    // Enhanced code block renderer
     const renderCodeBlock = (code, key, language = 'javascript') => (
       <SyntaxHighlighter
         key={key}
@@ -621,18 +518,23 @@ export default function TechnicalCMS() {
       </SyntaxHighlighter>
     );
 
+    // Handle both Markdown-style ``` and HTML <pre><code> blocks
     if (answer.includes('```') || answer.includes('<pre><code>')) {
+      // Unified split pattern for both Markdown and HTML code blocks
       const parts = answer.split(/(```[\s\S]*?```|<pre><code>[\s\S]*?<\/code><\/pre>)/g);
 
       return parts.map((part, i) => {
+        // Check for Markdown ``` code blocks
         if (part.startsWith('```') && part.endsWith('```')) {
           const codeContent = part.slice(3, -3).trim();
           return renderCodeBlock(codeContent, i);
         }
+        // Check for HTML <pre><code> blocks
         else if (part.startsWith('<pre><code>') && part.endsWith('</code></pre>')) {
           const codeContent = part.replace(/<pre><code>([\s\S]*?)<\/code><\/pre>/g, '$1').trim();
           return renderCodeBlock(codeContent, i);
         }
+        // Handle regular content
         else if (part.trim()) {
           const nodes = parseHtmlContent(part);
           return nodes.map((node, j) => {
@@ -658,6 +560,7 @@ export default function TechnicalCMS() {
       });
     }
 
+    // Fallback for pure HTML content without code blocks
     const nodes = parseHtmlContent(answer);
     return nodes.map((node, i) => {
       if (node.nodeName === 'CODE') {
@@ -676,7 +579,7 @@ export default function TechnicalCMS() {
         />
       );
     });
-  }, []);
+  }
 
   return (
     <div className='text-gray-900 px-4 py-4'>
@@ -686,16 +589,10 @@ export default function TechnicalCMS() {
       <div className='flex border-b mb-6 justify-between'>
         <div className='flex items-center gap-2'>
           <button className={`py-2 px-4 font-medium ${activeTab === 'faq' ? 'border-b-2 border-blue-500 text-blue-600' : 'text-gray-500'}`} onClick={() => setActiveTab('faq')}>
-            {t('faqTab')} ({faqs.length})
+            {t('faqTab')}
           </button>
           <button className={`py-2 px-4 font-medium ${activeTab === 'problems' ? 'border-b-2 border-blue-500 text-blue-600' : 'text-gray-500'}`} onClick={() => setActiveTab('problems')}>
-            {t('problemsTab')} ({problems.length})
-          </button>
-          <button className={`py-2 px-4 font-medium ${activeTab === 'favorites' ? 'border-b-2 border-blue-500 text-blue-600' : 'text-gray-500'}`} onClick={() => setActiveTab('favorites')}>
-            <span className='flex items-center gap-1'>
-              <Heart size={16} className={activeTab === 'favorites' ? 'fill-red-500 text-red-500' : 'text-gray-500'} />
-              {t('favorites')} ({favorites.length})
-            </span>
+            {t('problemsTab')}
           </button>
         </div>
 
@@ -714,22 +611,12 @@ export default function TechnicalCMS() {
 
       {/* Search and Filters */}
       <div className='mb-8 flex flex-col gap-4'>
-        {/* Search input */}
-        <div className='relative'>
-          <input type='text' placeholder={t('searchPlaceholder')} className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500' value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
-          {searchTerm && (
-            <button onClick={() => setSearchTerm('')} className='absolute right-3 top-2.5 text-gray-400 hover:text-gray-600'>
-              <X size={18} />
-            </button>
-          )}
-        </div>
-
         {/* Main filter row */}
         <div className='flex flex-wrap items-center gap-3'>
           {/* Category dropdown */}
-          <div className='relative' ref={categoryDropdownRef}>
+          <div className='relative'>
             <button className={`flex items-center gap-2 px-4 py-2 rounded-lg border ${filter.category ? 'bg-blue-100 text-blue-800 border-blue-300' : 'bg-white text-gray-700 border-gray-300'} hover:bg-gray-50 transition`} onClick={() => document.getElementById('category-dropdown').classList.toggle('hidden')}>
-              {filter.category ? `${filter.category} (${categoryCounts[filter.category] || 0})` : t('allCategories')}
+              {filter.category || t('allCategories')}
               <ChevronDown size={16} />
             </button>
             <div id='category-dropdown' className='hidden absolute max-h-[265px] overflow-auto z-10 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg'>
@@ -749,14 +636,14 @@ export default function TechnicalCMS() {
                     document.getElementById('category-dropdown').classList.add('hidden');
                   }}
                   className={`w-full text-left px-4 py-2 ${filter.category === category ? 'bg-blue-100 text-blue-800' : 'hover:bg-gray-100'}`}>
-                  {category} ({categoryCounts[category] || 0})
+                  {category}
                 </button>
               ))}
             </div>
           </div>
 
           {/* Combined filter dropdown */}
-          <div className='relative' ref={filterDropdownRef}>
+          <div className='relative'>
             <button className='flex items-center gap-2 px-4 py-2 bg-white text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition' onClick={() => document.getElementById('filter-dropdown').classList.toggle('hidden')}>
               <Filter size={16} />
               <span>{t('filters')}</span>
@@ -780,7 +667,7 @@ export default function TechnicalCMS() {
               </div>
 
               {/* Difficulty filter (only for problems) */}
-              {(activeTab === 'problems' || activeTab === 'favorites') && (
+              {activeTab === 'problems' && (
                 <div>
                   <label className='block text-sm font-medium text-gray-700 mb-1'>{t('difficulty')}</label>
                   <div className='flex gap-2'>
@@ -804,7 +691,7 @@ export default function TechnicalCMS() {
               <div>
                 <label className='block text-sm font-medium text-gray-700 mb-1'>{t('tags')}</label>
                 <div className='flex flex-wrap gap-2 max-h-40 overflow-y-auto p-1'>
-                  {tagsForCurrentCategory.map(tag => (
+                  {getTagsForCurrentCategory().map(tag => (
                     <motion.button key={tag} onClick={() => toggleTagFilter(tag)} className={`px-2 py-1 text-xs rounded-full ${filter.tags.includes(tag) ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`} variants={itemVariants}>
                       {tag}
                     </motion.button>
@@ -837,7 +724,7 @@ export default function TechnicalCMS() {
                 </button>
               </motion.span>
             )}
-            {(activeTab === 'problems' || activeTab === 'favorites') && filter.difficulty && (
+            {activeTab === 'problems' && filter.difficulty && (
               <motion.span className='inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800' initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} transition={{ duration: 0.2 }}>
                 {t(filter.difficulty)}
                 <button onClick={() => setFilter({ ...filter, difficulty: '' })} className='ml-1.5 inline-flex items-center justify-center w-4 h-4 text-blue-400 hover:text-blue-600 focus:outline-none'>
@@ -1125,26 +1012,9 @@ export default function TechnicalCMS() {
                           <div className='flex items-center space-x-2 mb-1'>
                             <h3 className={`font-semibold text-lg truncate ${faq.isRead ? 'text-gray-600' : 'text-gray-900'}`}>{faq.question}</h3>
                           </div>
-                          <div className='flex flex-wrap gap-1 mt-1'>
-                            {faq.tag?.map(tag => (
-                              <span key={tag} className='px-2 py-0.5 text-xs rounded-full bg-gray-100 text-gray-700'>
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
                         </div>
 
                         <div className='flex items-center gap-2 mr-4'>
-                          <button
-                            onClick={e => {
-                              e.stopPropagation();
-                              toggleFavorite(faq._id, 'faq');
-                            }}
-                            className={`w-[30px] h-[30px] flex items-center justify-center rounded-lg ${isFavorite(faq._id, 'faq') ? 'bg-red-100 text-red-500' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'} transition`}
-                            title={isFavorite(faq._id, 'faq') ? t('removeFavorite') : t('addFavorite')}>
-                            <Heart size={16} className={isFavorite(faq._id, 'faq') ? 'fill-red-500' : ''} />
-                          </button>
-
                           <label className='inline-flex items-center cursor-pointer' title={faq.isRead ? t('markUnread') : t('markRead')} onClick={e => e.stopPropagation()}>
                             <input type='checkbox' checked={faq.isRead} onChange={() => toggleReadStatus(faq._id, 'faqs', faq.isRead)} className='sr-only peer' disabled={loadingStates.toggleRead} />
                             <div className={`w-[20px] h-[20px] rounded border border-gray-300 flex items-center justify-center bg-white peer-checked:bg-green-500 peer-checked:border-green-500 transition ${loadingStates.toggleRead ? 'opacity-50' : ''}`}>{faq.isRead && <Check size={14} className='text-white' />}</div>
@@ -1184,7 +1054,7 @@ export default function TechnicalCMS() {
                       <AnimatePresence>
                         {expandedFaqId === faq._id && (
                           <motion.div initial='hidden' animate='visible' exit='exit' variants={expandVariants} className='overflow-hidden'>
-                            <div className='p-4 border-t rounded-b-xl'>
+                            <div className='p-4 border-t   ounded-b-xl'>
                               <div className='prose max-w-none prose-invert space-y-4'>{renderAnswerWithHighlighting(faq.answer)}</div>
                             </div>
                           </motion.div>
@@ -1196,7 +1066,7 @@ export default function TechnicalCMS() {
               </div>
             )}
           </div>
-        ) : activeTab === 'problems' ? (
+        ) : (
           <div>
             {filteredProblems.length === 0 ? (
               <div className='flex flex-col items-center justify-center text-center py-12'>
@@ -1216,26 +1086,9 @@ export default function TechnicalCMS() {
                       <div className='flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50' onClick={() => toggleProblemExpansion(problem._id)}>
                         <div className='flex-1 min-w-0'>
                           <h3 className={`font-semibold text-base truncate ${problem.isRead ? 'text-gray-500' : 'text-gray-900'}`}>{problem.title}</h3>
-                          <div className='flex flex-wrap gap-1 mt-1'>
-                            {problem.tag?.map(tag => (
-                              <span key={tag} className='px-2 py-0.5 text-xs rounded-full bg-gray-100 text-gray-700'>
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
                         </div>
 
                         <div className='flex items-center gap-2 mr-4'>
-                          <button
-                            onClick={e => {
-                              e.stopPropagation();
-                              toggleFavorite(problem._id, 'problem');
-                            }}
-                            className={`w-[30px] h-[30px] flex items-center justify-center rounded-lg ${isFavorite(problem._id, 'problem') ? 'bg-red-100 text-red-500' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'} transition`}
-                            title={isFavorite(problem._id, 'problem') ? t('removeFavorite') : t('addFavorite')}>
-                            <Heart size={16} className={isFavorite(problem._id, 'problem') ? 'fill-red-500' : ''} />
-                          </button>
-
                           <label className='inline-flex items-center cursor-pointer' title={problem.isRead ? t('markUnread') : t('markRead')} onClick={e => e.stopPropagation()}>
                             <input type='checkbox' checked={problem.isRead} onChange={() => toggleReadStatus(problem._id, 'problems', problem.isRead)} className='sr-only peer' disabled={loadingStates.toggleRead} />
                             <div className={`w-[20px] h-[20px] rounded border border-gray-300 flex items-center justify-center bg-white peer-checked:bg-green-500 peer-checked:border-green-500 transition ${loadingStates.toggleRead ? 'opacity-50' : ''}`}>{problem.isRead && <Check size={14} className='text-white' />}</div>
@@ -1276,7 +1129,7 @@ export default function TechnicalCMS() {
                       <AnimatePresence>
                         {expandedProblemId === problem._id && (
                           <motion.div initial='hidden' animate='visible' exit='exit' variants={expandVariants} className='overflow-hidden'>
-                            <div className='p-4 border-t rounded-b-xl'>
+                            <div className='p-4 border-t   rounded-b-xl'>
                               <div className='prose max-w-none prose-invert space-y-4'>{renderAnswerWithHighlighting(problem.solution)}</div>
                             </div>
                           </motion.div>
@@ -1288,171 +1141,13 @@ export default function TechnicalCMS() {
               </div>
             )}
           </div>
-        ) : (
-          // Favorites Tab
-          <div>
-            {filteredFavorites.length === 0 ? (
-              <div className='flex flex-col items-center justify-center text-center py-12'>
-                <Heart size={48} className='text-gray-400 mb-4' />
-                <h3 className='text-lg font-semibold text-gray-700 mb-1'>{t('noFavorites')}</h3>
-                <p className='text-sm text-gray-500'>{t('addFavoritesMessage')}</p>
-              </div>
-            ) : (
-              <div className='space-y-3'>
-                <AnimatePresence>
-                  {filteredFavorites.map(fav => {
-                    const item = fav.type === 'faq' ? faqs.find(f => f._id === fav.id) : problems.find(p => p._id === fav.id);
-
-                    if (!item) return null;
-
-                    if (fav.type === 'faq') {
-                      return (
-                        <motion.div key={`faq-${item._id}`} layout initial='hidden' animate='visible' exit='exit' variants={cardVariants} className='border rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow'>
-                          <div className='flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50' onClick={() => toggleFaqExpansion(item._id)}>
-                            <div className='flex-1 min-w-0'>
-                              <div className='flex items-center space-x-2 mb-1'>
-                                <h3 className={`font-semibold text-lg truncate ${item.isRead ? 'text-gray-600' : 'text-gray-900'}`}>{item.question}</h3>
-                              </div>
-                            </div>
-
-                            <div className='flex items-center gap-2 mr-4'>
-                              <button
-                                onClick={e => {
-                                  e.stopPropagation();
-                                  toggleFavorite(item._id, 'faq');
-                                }}
-                                className={`w-[30px] h-[30px] flex items-center justify-center rounded-lg bg-red-100 text-red-500 transition`}
-                                title={t('removeFavorite')}>
-                                <Heart size={16} className='fill-red-500' />
-                              </button>
-
-                              <label className='inline-flex items-center cursor-pointer' title={item.isRead ? t('markUnread') : t('markRead')} onClick={e => e.stopPropagation()}>
-                                <input type='checkbox' checked={item.isRead} onChange={() => toggleReadStatus(item._id, 'faqs', item.isRead)} className='sr-only peer' disabled={loadingStates.toggleRead} />
-                                <div className={`w-[20px] h-[20px] rounded border border-gray-300 flex items-center justify-center bg-white peer-checked:bg-green-500 peer-checked:border-green-500 transition ${loadingStates.toggleRead ? 'opacity-50' : ''}`}>{item.isRead && <Check size={14} className='text-white' />}</div>
-                              </label>
-
-                              <button
-                                onClick={e => {
-                                  e.stopPropagation();
-                                  editFaq(item);
-                                }}
-                                className='w-[30px] h-[30px] flex items-center justify-center rounded-lg bg-blue-100 text-blue-600 hover:bg-blue-200 transition'
-                                title={t('edit')}>
-                                <Edit size={16} />
-                              </button>
-
-                              <button
-                                onClick={e => {
-                                  e.stopPropagation();
-                                  deleteItem(item._id, 'faqs');
-                                }}
-                                className={`w-[30px] h-[30px] flex items-center justify-center rounded-lg bg-red-100 text-red-600 hover:bg-red-200 transition ${loadingStates.deleteItem ? 'opacity-50' : ''}`}
-                                title={t('delete')}
-                                disabled={loadingStates.deleteItem}>
-                                {loadingStates.deleteItem ? (
-                                  <svg className='animate-spin h-4 w-4 text-red-600' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'>
-                                    <circle className='opacity-25' cx='12' cy='12' r='10' stroke='currentColor' strokeWidth='4'></circle>
-                                    <path className='opacity-75' fill='currentColor' d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'></path>
-                                  </svg>
-                                ) : (
-                                  <Trash2 size={16} />
-                                )}
-                              </button>
-
-                              <ChevronDown size={20} className={`text-gray-500 transform transition-transform ${expandedFaqId === item._id ? 'rotate-180' : ''}`} />
-                            </div>
-                          </div>
-                          <AnimatePresence>
-                            {expandedFaqId === item._id && (
-                              <motion.div initial='hidden' animate='visible' exit='exit' variants={expandVariants} className='overflow-hidden'>
-                                <div className='p-4 border-t rounded-b-xl'>
-                                  <div className='prose max-w-none prose-invert space-y-4'>{renderAnswerWithHighlighting(item.answer)}</div>
-                                </div>
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
-                        </motion.div>
-                      );
-                    } else {
-                      return (
-                        <motion.div key={`problem-${item._id}`} layout initial='hidden' animate='visible' exit='exit' variants={cardVariants} className='border rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow'>
-                          <div className='flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50' onClick={() => toggleProblemExpansion(item._id)}>
-                            <div className='flex-1 min-w-0'>
-                              <h3 className={`font-semibold text-base truncate ${item.isRead ? 'text-gray-500' : 'text-gray-900'}`}>{item.title}</h3>
-                            </div>
-
-                            <div className='flex items-center gap-2 mr-4'>
-                              <button
-                                onClick={e => {
-                                  e.stopPropagation();
-                                  toggleFavorite(item._id, 'problem');
-                                }}
-                                className={`w-[30px] h-[30px] flex items-center justify-center rounded-lg bg-red-100 text-red-500 transition`}
-                                title={t('removeFavorite')}>
-                                <Heart size={16} className='fill-red-500' />
-                              </button>
-
-                              <label className='inline-flex items-center cursor-pointer' title={item.isRead ? t('markUnread') : t('markRead')} onClick={e => e.stopPropagation()}>
-                                <input type='checkbox' checked={item.isRead} onChange={() => toggleReadStatus(item._id, 'problems', item.isRead)} className='sr-only peer' disabled={loadingStates.toggleRead} />
-                                <div className={`w-[20px] h-[20px] rounded border border-gray-300 flex items-center justify-center bg-white peer-checked:bg-green-500 peer-checked:border-green-500 transition ${loadingStates.toggleRead ? 'opacity-50' : ''}`}>{item.isRead && <Check size={14} className='text-white' />}</div>
-                              </label>
-
-                              <button
-                                onClick={e => {
-                                  e.stopPropagation();
-                                  editProblem(item);
-                                }}
-                                className='w-[30px] h-[30px] flex items-center justify-center rounded-lg bg-blue-100 text-blue-600 hover:bg-blue-200 transition-colors'
-                                title={t('edit')}>
-                                <Pencil size={16} />
-                              </button>
-
-                              <button
-                                onClick={e => {
-                                  e.stopPropagation();
-                                  deleteItem(item._id, 'problems');
-                                }}
-                                className={`w-[30px] h-[30px] flex items-center justify-center rounded-lg bg-red-100 text-red-600 hover:bg-red-200 transition-colors ${loadingStates.deleteItem ? 'opacity-50' : ''}`}
-                                title={t('delete')}
-                                disabled={loadingStates.deleteItem}>
-                                {loadingStates.deleteItem ? (
-                                  <svg className='animate-spin h-4 w-4 text-red-600' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'>
-                                    <circle className='opacity-25' cx='12' cy='12' r='10' stroke='currentColor' strokeWidth='4'></circle>
-                                    <path className='opacity-75' fill='currentColor' d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'></path>
-                                  </svg>
-                                ) : (
-                                  <Trash2 size={16} />
-                                )}
-                              </button>
-
-                              <ChevronDown className={`w-5 h-5 text-gray-500 transform transition-transform ${expandedProblemId === item._id ? 'rotate-180' : ''}`} />
-                            </div>
-                          </div>
-
-                          <AnimatePresence>
-                            {expandedProblemId === item._id && (
-                              <motion.div initial='hidden' animate='visible' exit='exit' variants={expandVariants} className='overflow-hidden'>
-                                <div className='p-4 border-t rounded-b-xl'>
-                                  <div className='prose max-w-none prose-invert space-y-4'>{renderAnswerWithHighlighting(item.solution)}</div>
-                                </div>
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
-                        </motion.div>
-                      );
-                    }
-                  })}
-                </AnimatePresence>
-              </div>
-            )}
-          </div>
         )}
       </div>
     </div>
   );
 }
 
-const Modal = ({ show, onClose, children }) => {
+function Modal({ show, onClose, children }) {
   return (
     <AnimatePresence>
       {show && (
@@ -1464,4 +1159,4 @@ const Modal = ({ show, onClose, children }) => {
       )}
     </AnimatePresence>
   );
-};
+}
