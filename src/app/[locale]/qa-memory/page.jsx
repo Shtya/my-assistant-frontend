@@ -6,6 +6,7 @@ import { Check, ChevronDown, Edit, Import, Pencil, Plus, Trash2, X, Filter, Star
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import Modal from '@/components/molecules/Modal';
 
 // Animation variants
 const cardVariants = {
@@ -43,7 +44,7 @@ const itemVariants = {
 
 export default function TechnicalCMS() {
   const t = useTranslations('TechnicalCMS');
-  
+
   // State for UI
   const [activeTab, setActiveTab] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -51,10 +52,10 @@ export default function TechnicalCMS() {
     }
     return 'faq';
   });
-  
+
   const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  
+
   const [filter, setFilter] = useState(() => {
     if (typeof window !== 'undefined') {
       const savedFilter = localStorage.getItem('filter');
@@ -80,7 +81,7 @@ export default function TechnicalCMS() {
   const [problems, setProblems] = useState([]);
   const [categories, setCategories] = useState([]);
   const [allTags, setAllTags] = useState([]);
-  
+
   const [favorites, setFavorites] = useState(() => {
     if (typeof window !== 'undefined') {
       return JSON.parse(localStorage.getItem('favorites')) || [];
@@ -96,7 +97,7 @@ export default function TechnicalCMS() {
     isRead: false,
     tags: [],
   });
-  
+
   const [problemForm, setProblemForm] = useState({
     title: '',
     solution: '',
@@ -105,7 +106,7 @@ export default function TechnicalCMS() {
     isRead: false,
     tags: [],
   });
-  
+
   const [isEditing, setIsEditing] = useState(false);
   const [currentId, setCurrentId] = useState(null);
 
@@ -175,15 +176,9 @@ export default function TechnicalCMS() {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const [faqRes, problemRes] = await Promise.all([
-          fetch('/api/faqs').then(res => res.json()),
-          fetch('/api/problems').then(res => res.json())
-        ]);
+        const [faqRes, problemRes] = await Promise.all([fetch('/api/faqs').then(res => res.json()), fetch('/api/problems').then(res => res.json())]);
 
-        const allTagsFromData = [...new Set([
-          ...faqRes.flatMap(faq => faq.tag || []),
-          ...problemRes.flatMap(problem => problem.tag || [])
-        ])];
+        const allTagsFromData = [...new Set([...faqRes.flatMap(faq => faq.tag || []), ...problemRes.flatMap(problem => problem.tag || [])])];
 
         setFaqs(faqRes);
         setProblems(problemRes);
@@ -238,153 +233,148 @@ export default function TechnicalCMS() {
 
   // Memoized filtered data
   const filteredFaqs = useMemo(() => {
-    return faqs.filter(faq => {
-      const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
+    return faqs.sort((a, b) => new Date(a.updatedAt || a.createdAt) - new Date(b.updatedAt || b.createdAt)).filter(faq => {
+      const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) || faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = !filter.category || faq.category === filter.category;
-      const matchesReadStatus = filter.readStatus === '' || 
-                              (filter.readStatus === 'read' && faq.isRead) || 
-                              (filter.readStatus === 'unread' && !faq.isRead);
-      const matchesTags = filter.tags.length === 0 || 
-                        (faq.tag && filter.tags.every(tag => faq.tag.includes(tag)));
+      const matchesReadStatus = filter.readStatus === '' || (filter.readStatus === 'read' && faq.isRead) || (filter.readStatus === 'unread' && !faq.isRead);
+      const matchesTags = filter.tags.length === 0 || (faq.tag && filter.tags.every(tag => faq.tag.includes(tag)));
       return matchesSearch && matchesCategory && matchesReadStatus && matchesTags;
     });
   }, [faqs, searchTerm, filter]);
 
+   
   const filteredProblems = useMemo(() => {
     return problems.filter(problem => {
-      const matchesSearch = problem.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          problem.solution.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesSearch = problem.title.toLowerCase().includes(searchTerm.toLowerCase()) || problem.solution.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = !filter.category || problem.category === filter.category;
       const matchesDifficulty = !filter.difficulty || problem.difficulty === filter.difficulty;
-      const matchesReadStatus = filter.readStatus === '' || 
-                              (filter.readStatus === 'read' && problem.isRead) || 
-                              (filter.readStatus === 'unread' && !problem.isRead);
-      const matchesTags = filter.tags.length === 0 || 
-                        (problem.tag && filter.tags.every(tag => problem.tag.includes(tag)));
+      const matchesReadStatus = filter.readStatus === '' || (filter.readStatus === 'read' && problem.isRead) || (filter.readStatus === 'unread' && !problem.isRead);
+      const matchesTags = filter.tags.length === 0 || (problem.tag && filter.tags.every(tag => problem.tag.includes(tag)));
       return matchesSearch && matchesCategory && matchesDifficulty && matchesReadStatus && matchesTags;
     });
   }, [problems, searchTerm, filter]);
 
   const filteredFavorites = useMemo(() => {
     return favorites.filter(fav => {
-      const item = fav.type === 'faq' 
-        ? faqs.find(f => f._id === fav.id) 
-        : problems.find(p => p._id === fav.id);
+      const item = fav.type === 'faq' ? faqs.find(f => f._id === fav.id) : problems.find(p => p._id === fav.id);
 
       if (!item) return false;
 
       if (fav.type === 'faq') {
-        const matchesSearch = item.question.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                            item.answer.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesSearch = item.question.toLowerCase().includes(searchTerm.toLowerCase()) || item.answer.toLowerCase().includes(searchTerm.toLowerCase());
         const matchesCategory = !filter.category || item.category === filter.category;
-        const matchesReadStatus = filter.readStatus === '' || 
-                                (filter.readStatus === 'read' && item.isRead) || 
-                                (filter.readStatus === 'unread' && !item.isRead);
-        const matchesTags = filter.tags.length === 0 || 
-                          (item.tag && filter.tags.every(tag => item.tag.includes(tag)));
+        const matchesReadStatus = filter.readStatus === '' || (filter.readStatus === 'read' && item.isRead) || (filter.readStatus === 'unread' && !item.isRead);
+        const matchesTags = filter.tags.length === 0 || (item.tag && filter.tags.every(tag => item.tag.includes(tag)));
         return matchesSearch && matchesCategory && matchesReadStatus && matchesTags;
       } else {
-        const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                            item.solution.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase()) || item.solution.toLowerCase().includes(searchTerm.toLowerCase());
         const matchesCategory = !filter.category || item.category === filter.category;
         const matchesDifficulty = !filter.difficulty || item.difficulty === filter.difficulty;
-        const matchesReadStatus = filter.readStatus === '' || 
-                                (filter.readStatus === 'read' && item.isRead) || 
-                                (filter.readStatus === 'unread' && !item.isRead);
-        const matchesTags = filter.tags.length === 0 || 
-                          (item.tag && filter.tags.every(tag => item.tag.includes(tag)));
+        const matchesReadStatus = filter.readStatus === '' || (filter.readStatus === 'read' && item.isRead) || (filter.readStatus === 'unread' && !item.isRead);
+        const matchesTags = filter.tags.length === 0 || (item.tag && filter.tags.every(tag => item.tag.includes(tag)));
         return matchesSearch && matchesCategory && matchesDifficulty && matchesReadStatus && matchesTags;
       }
     });
   }, [favorites, faqs, problems, searchTerm, filter]);
 
   // Memoized favorite check
-  const isFavorite = useCallback((id, type) => {
-    return favorites.some(fav => fav.id === id && fav.type === type);
-  }, [favorites]);
+  const isFavorite = useCallback(
+    (id, type) => {
+      return favorites.some(fav => fav.id === id && fav.type === type);
+    },
+    [favorites],
+  );
 
   // Toggle favorite status
-  const toggleFavorite = useCallback((id, type) => {
-    setLoadingStates(prev => ({ ...prev, toggleFavorite: true }));
+  const toggleFavorite = useCallback(
+    (id, type) => {
+      setLoadingStates(prev => ({ ...prev, toggleFavorite: true }));
 
-    const favIndex = favorites.findIndex(fav => fav.id === id && fav.type === type);
+      const favIndex = favorites.findIndex(fav => fav.id === id && fav.type === type);
 
-    if (favIndex >= 0) {
-      setFavorites(favorites.filter((_, index) => index !== favIndex));
-    } else {
-      setFavorites([...favorites, { id, type }]);
-    }
+      if (favIndex >= 0) {
+        setFavorites(favorites.filter((_, index) => index !== favIndex));
+      } else {
+        setFavorites([...favorites, { id, type }]);
+      }
 
-    setTimeout(() => {
-      setLoadingStates(prev => ({ ...prev, toggleFavorite: false }));
-    }, 300);
-  }, [favorites]);
+      setTimeout(() => {
+        setLoadingStates(prev => ({ ...prev, toggleFavorite: false }));
+      }, 300);
+    },
+    [favorites],
+  );
 
   // Form handlers
-  const handleFaqSubmit = useCallback(async e => {
-    e.preventDefault();
-    setLoadingStates(prev => ({ ...prev, faqSubmit: true }));
-    try {
-      const method = isEditing ? 'PUT' : 'POST';
-      const url = isEditing ? `/api/faqs?id=${currentId}` : '/api/faqs';
+  const handleFaqSubmit = useCallback(
+    async e => {
+      e.preventDefault();
+      setLoadingStates(prev => ({ ...prev, faqSubmit: true }));
+      try {
+        const method = isEditing ? 'PUT' : 'POST';
+        const url = isEditing ? `/api/faqs?id=${currentId}` : '/api/faqs';
 
-      const response = await fetch(url, {
-        method,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(faqForm),
-      });
+        const response = await fetch(url, {
+          method,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(faqForm),
+        });
 
-      if (response.ok) {
-        const result = await response.json();
-        if (isEditing) {
-          setFaqs(faqs.map(f => (f._id === currentId ? result : f)));
-        } else {
-          setFaqs([result, ...faqs]);
+        if (response.ok) {
+          const result = await response.json();
+          if (isEditing) {
+            setFaqs(faqs.map(f => (f._id === currentId ? result : f)));
+          } else {
+            setFaqs([result, ...faqs]);
+          }
+          resetFaqForm();
+          setShowFaqForm(false);
         }
-        resetFaqForm();
-        setShowFaqForm(false);
+      } catch (error) {
+        console.error('Error saving FAQ:', error);
+      } finally {
+        setLoadingStates(prev => ({ ...prev, faqSubmit: false }));
       }
-    } catch (error) {
-      console.error('Error saving FAQ:', error);
-    } finally {
-      setLoadingStates(prev => ({ ...prev, faqSubmit: false }));
-    }
-  }, [faqForm, isEditing, currentId, faqs]);
+    },
+    [faqForm, isEditing, currentId, faqs],
+  );
 
-  const handleProblemSubmit = useCallback(async e => {
-    e.preventDefault();
-    setLoadingStates(prev => ({ ...prev, problemSubmit: true }));
-    try {
-      const method = isEditing ? 'PUT' : 'POST';
-      const url = isEditing ? `/api/problems?id=${currentId}` : '/api/problems';
+  const handleProblemSubmit = useCallback(
+    async e => {
+      e.preventDefault();
+      setLoadingStates(prev => ({ ...prev, problemSubmit: true }));
+      try {
+        const method = isEditing ? 'PUT' : 'POST';
+        const url = isEditing ? `/api/problems?id=${currentId}` : '/api/problems';
 
-      const response = await fetch(url, {
-        method,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(problemForm),
-      });
+        const response = await fetch(url, {
+          method,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(problemForm),
+        });
 
-      if (response.ok) {
-        const result = await response.json();
-        if (isEditing) {
-          setProblems(problems.map(p => (p._id === currentId ? result : p)));
-        } else {
-          setProblems([...problems, result]);
+        if (response.ok) {
+          const result = await response.json();
+          if (isEditing) {
+            setProblems(problems.map(p => (p._id === currentId ? result : p)));
+          } else {
+            setProblems([...problems, result]);
+          }
+          resetProblemForm();
+          setShowProblemForm(false);
         }
-        resetProblemForm();
-        setShowProblemForm(false);
+      } catch (error) {
+        console.error('Error saving problem:', error);
+      } finally {
+        setLoadingStates(prev => ({ ...prev, problemSubmit: false }));
       }
-    } catch (error) {
-      console.error('Error saving problem:', error);
-    } finally {
-      setLoadingStates(prev => ({ ...prev, problemSubmit: false }));
-    }
-  }, [problemForm, isEditing, currentId, problems]);
+    },
+    [problemForm, isEditing, currentId, problems],
+  );
 
   const resetFaqForm = useCallback(() => {
     setFaqForm({
@@ -438,114 +428,132 @@ export default function TechnicalCMS() {
     setShowProblemForm(true);
   }, []);
 
-  const deleteItem = useCallback(async (id, type) => {
-    if (window.confirm(t('deleteConfirm'))) {
-      setLoadingStates(prev => ({ ...prev, deleteItem: true }));
+  const deleteItem = useCallback(
+    async (id, type) => {
+      if (window.confirm(t('deleteConfirm'))) {
+        setLoadingStates(prev => ({ ...prev, deleteItem: true }));
+        try {
+          const response = await fetch(`/api/${type}?id=${id}`, {
+            method: 'DELETE',
+          });
+
+          if (response.ok) {
+            if (type === 'faqs') {
+              setFaqs(faqs.filter(f => f._id !== id));
+              setFavorites(favorites.filter(fav => !(fav.id === id && fav.type === 'faq')));
+            } else {
+              setProblems(problems.filter(p => p._id !== id));
+              setFavorites(favorites.filter(fav => !(fav.id === id && fav.type === 'problem')));
+            }
+          }
+        } catch (error) {
+          console.error('Error deleting item:', error);
+        } finally {
+          setLoadingStates(prev => ({ ...prev, deleteItem: false }));
+        }
+      }
+    },
+    [faqs, problems, favorites],
+  );
+
+  const toggleReadStatus = useCallback(
+    async (id, type, currentStatus) => {
+      setLoadingStates(prev => ({ ...prev, toggleRead: true }));
       try {
         const response = await fetch(`/api/${type}?id=${id}`, {
-          method: 'DELETE',
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ isRead: !currentStatus }),
         });
 
         if (response.ok) {
           if (type === 'faqs') {
-            setFaqs(faqs.filter(f => f._id !== id));
-            setFavorites(favorites.filter(fav => !(fav.id === id && fav.type === 'faq')));
+            setFaqs(faqs.map(f => (f._id === id ? { ...f, isRead: !currentStatus } : f)));
           } else {
-            setProblems(problems.filter(p => p._id !== id));
-            setFavorites(favorites.filter(fav => !(fav.id === id && fav.type === 'problem')));
+            setProblems(problems.map(p => (p._id === id ? { ...p, isRead: !currentStatus } : p)));
           }
         }
       } catch (error) {
-        console.error('Error deleting item:', error);
+        console.error('Error updating read status:', error);
       } finally {
-        setLoadingStates(prev => ({ ...prev, deleteItem: false }));
+        setLoadingStates(prev => ({ ...prev, toggleRead: false }));
       }
-    }
-  }, [faqs, problems, favorites]);
+    },
+    [faqs, problems],
+  );
 
-  const toggleReadStatus = useCallback(async (id, type, currentStatus) => {
-    setLoadingStates(prev => ({ ...prev, toggleRead: true }));
-    try {
-      const response = await fetch(`/api/${type}?id=${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ isRead: !currentStatus }),
-      });
+  const handleJsonImport = useCallback(
+    async type => {
+      setLoadingStates(prev => ({ ...prev, jsonImport: true }));
+      try {
+        const data = JSON.parse(jsonInput);
+        const response = await fetch(`/api/${type === 'faq' ? 'faqs' : 'problems'}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
 
-      if (response.ok) {
-        if (type === 'faqs') {
-          setFaqs(faqs.map(f => (f._id === id ? { ...f, isRead: !currentStatus } : f)));
-        } else {
-          setProblems(problems.map(p => (p._id === id ? { ...p, isRead: !currentStatus } : p)));
+        if (response.ok) {
+          const result = await response.json();
+          if (type === 'faq') {
+            setFaqs([...faqs, ...result]);
+          } else {
+            setProblems([...problems, ...result]);
+          }
+          setShowJsonImport(false);
+          setJsonInput('');
         }
+      } catch (error) {
+        console.error('Error importing data:', error);
+        alert(t('invalidJsonFormat'));
+      } finally {
+        setLoadingStates(prev => ({ ...prev, jsonImport: false }));
       }
-    } catch (error) {
-      console.error('Error updating read status:', error);
-    } finally {
-      setLoadingStates(prev => ({ ...prev, toggleRead: false }));
-    }
-  }, [faqs, problems]);
-
-  const handleJsonImport = useCallback(async type => {
-    setLoadingStates(prev => ({ ...prev, jsonImport: true }));
-    try {
-      const data = JSON.parse(jsonInput);
-      const response = await fetch(`/api/${type === 'faq' ? 'faqs' : 'problems'}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        if (type === 'faq') {
-          setFaqs([...faqs, ...result]);
-        } else {
-          setProblems([...problems, ...result]);
-        }
-        setShowJsonImport(false);
-        setJsonInput('');
-      }
-    } catch (error) {
-      console.error('Error importing data:', error);
-      alert(t('invalidJsonFormat'));
-    } finally {
-      setLoadingStates(prev => ({ ...prev, jsonImport: false }));
-    }
-  }, [jsonInput, faqs, problems]);
+    },
+    [jsonInput, faqs, problems],
+  );
 
   // Tag handlers
-  const addTagToForm = useCallback((formType, tag) => {
-    if (formType === 'faq') {
-      if (!faqForm.tags.includes(tag)) {
-        setFaqForm({ ...faqForm, tags: [...faqForm.tags, tag] });
+  const addTagToForm = useCallback(
+    (formType, tag) => {
+      if (formType === 'faq') {
+        if (!faqForm.tags.includes(tag)) {
+          setFaqForm({ ...faqForm, tags: [...faqForm.tags, tag] });
+        }
+      } else {
+        if (!problemForm.tags.includes(tag)) {
+          setProblemForm({ ...problemForm, tags: [...problemForm.tags, tag] });
+        }
       }
-    } else {
-      if (!problemForm.tags.includes(tag)) {
-        setProblemForm({ ...problemForm, tags: [...problemForm.tags, tag] });
+    },
+    [faqForm, problemForm],
+  );
+
+  const removeTagFromForm = useCallback(
+    (formType, tag) => {
+      if (formType === 'faq') {
+        setFaqForm({ ...faqForm, tags: faqForm.tags.filter(t => t !== tag) });
+      } else {
+        setProblemForm({ ...problemForm, tags: problemForm.tags.filter(t => t !== tag) });
       }
-    }
-  }, [faqForm, problemForm]);
+    },
+    [faqForm, problemForm],
+  );
 
-  const removeTagFromForm = useCallback((formType, tag) => {
-    if (formType === 'faq') {
-      setFaqForm({ ...faqForm, tags: faqForm.tags.filter(t => t !== tag) });
-    } else {
-      setProblemForm({ ...problemForm, tags: problemForm.tags.filter(t => t !== tag) });
-    }
-  }, [faqForm, problemForm]);
-
-  const createNewTag = useCallback(formType => {
-    if (newTag.trim() && !allTags.includes(newTag.trim())) {
-      setAllTags([...allTags, newTag.trim()]);
-      addTagToForm(formType, newTag.trim());
-      setNewTag('');
-    }
-  }, [newTag, allTags, addTagToForm]);
+  const createNewTag = useCallback(
+    formType => {
+      if (newTag.trim() && !allTags.includes(newTag.trim())) {
+        setAllTags([...allTags, newTag.trim()]);
+        addTagToForm(formType, newTag.trim());
+        setNewTag('');
+      }
+    },
+    [newTag, allTags, addTagToForm],
+  );
 
   const toggleTagFilter = useCallback(tag => {
     setFilter(prev => ({
@@ -565,27 +573,27 @@ export default function TechnicalCMS() {
   }, []);
 
   // Form validation
-  const isFaqFormValid = useMemo(() => 
-    faqForm.question.trim() && faqForm.answer.trim() && faqForm.category.trim(),
-    [faqForm]
-  );
+  const isFaqFormValid = useMemo(() => faqForm.question.trim() && faqForm.answer.trim() && faqForm.category.trim(), [faqForm]);
 
-  const isProblemFormValid = useMemo(() => 
-    problemForm.title.trim() && problemForm.solution.trim() && problemForm.category.trim(),
-    [problemForm]
-  );
+  const isProblemFormValid = useMemo(() => problemForm.title.trim() && problemForm.solution.trim() && problemForm.category.trim(), [problemForm]);
 
   // Toggle expansion
-  const toggleFaqExpansion = useCallback(id => {
-    setExpandedFaqId(expandedFaqId === id ? null : id);
-  }, [expandedFaqId]);
+  const toggleFaqExpansion = useCallback(
+    id => {
+      setExpandedFaqId(expandedFaqId === id ? null : id);
+    },
+    [expandedFaqId],
+  );
 
-  const toggleProblemExpansion = useCallback(id => {
-    setExpandedProblemId(expandedProblemId === id ? null : id);
-  }, [expandedProblemId]);
+  const toggleProblemExpansion = useCallback(
+    id => {
+      setExpandedProblemId(expandedProblemId === id ? null : id);
+    },
+    [expandedProblemId],
+  );
 
   // Memoized answer renderer
-  const renderAnswerWithHighlighting = useCallback((answer) => {
+  const renderAnswerWithHighlighting = useCallback(answer => {
     if (!answer) return null;
 
     const parseHtmlContent = html => {
@@ -628,12 +636,10 @@ export default function TechnicalCMS() {
         if (part.startsWith('```') && part.endsWith('```')) {
           const codeContent = part.slice(3, -3).trim();
           return renderCodeBlock(codeContent, i);
-        }
-        else if (part.startsWith('<pre><code>') && part.endsWith('</code></pre>')) {
+        } else if (part.startsWith('<pre><code>') && part.endsWith('</code></pre>')) {
           const codeContent = part.replace(/<pre><code>([\s\S]*?)<\/code><\/pre>/g, '$1').trim();
           return renderCodeBlock(codeContent, i);
-        }
-        else if (part.trim()) {
+        } else if (part.trim()) {
           const nodes = parseHtmlContent(part);
           return nodes.map((node, j) => {
             const uniqueKey = `${i}-${j}`;
@@ -732,13 +738,13 @@ export default function TechnicalCMS() {
               {filter.category ? `${filter.category} (${categoryCounts[filter.category] || 0})` : t('allCategories')}
               <ChevronDown size={16} />
             </button>
-            <div id='category-dropdown' className='hidden absolute max-h-[265px] overflow-auto z-10 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg'>
+            <div id='category-dropdown' className='hidden absolute max-h-[405px] overflow-auto z-10 mt-1 w-[270px] bg-white border border-gray-200 rounded-lg shadow-lg'>
               <button
                 onClick={() => {
                   setFilter({ ...filter, category: '' });
                   document.getElementById('category-dropdown').classList.add('hidden');
                 }}
-                className={`w-full text-left px-4 py-2 ${!filter.category ? 'bg-blue-100 text-blue-800' : 'hover:bg-gray-100'}`}>
+                className={`w-full text-left text-sm px-4 py-2 ${!filter.category ? 'bg-blue-100 text-blue-800' : 'hover:bg-gray-100'}`}>
                 {t('allCategories')}
               </button>
               {categories.map(category => (
@@ -748,7 +754,7 @@ export default function TechnicalCMS() {
                     setFilter({ ...filter, category });
                     document.getElementById('category-dropdown').classList.add('hidden');
                   }}
-                  className={`w-full text-left px-4 py-2 ${filter.category === category ? 'bg-blue-100 text-blue-800' : 'hover:bg-gray-100'}`}>
+                  className={`w-full text-left px-4 text-sm py-1 ${filter.category === category ? 'bg-blue-100 text-blue-800' : 'hover:bg-gray-100'}`}>
                   {category} ({categoryCounts[category] || 0})
                 </button>
               ))}
@@ -1451,17 +1457,3 @@ export default function TechnicalCMS() {
     </div>
   );
 }
-
-const Modal = ({ show, onClose, children }) => {
-  return (
-    <AnimatePresence>
-      {show && (
-        <motion.div onClick={onClose} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className='fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50'>
-          <motion.div onClick={e => e.stopPropagation()} initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }} className='bg-white max-h-[calc(100%-60px)] overflow-auto p-6 rounded-lg max-w-3xl w-full mx-4'>
-            {children}
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-};
